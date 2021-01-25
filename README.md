@@ -2,9 +2,11 @@
 AC31007/AC51003 Agile Software Engineering - Group Number [x]
 
 Group Members:
-- Member 1 (Matriculation Number)
-- Member 2 (Matriculation Number)
-- Member X (Matriculation Number)
+- Liam McKenzie - 170021344
+- Jacque Nalwanga - 180004882
+- Paul Crockford - 170007945
+- Godfrey Stewart Morewood - 170018315
+- Fergus McLaughlin - 170015911
 
 ## Hints:
 - You may wish to change the issue tags that are in GitHub to map to different activities that you are carrying out:
