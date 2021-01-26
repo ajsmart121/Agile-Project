@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+        <head>
+              <style>
+              form * {
+                display: block;
+                margin: 10px;
+              }
+              </style>
+                        <script language="Javascript" >
+                        function download(filename, text) {
+                          var pom = document.createElement('a');
+                          pom.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+
+                        encodeURIComponent(text));
+                          pom.setAttribute('download', filename);
+
+                          pom.style.display = 'none';
+                          document.body.appendChild(pom);
+
+                          pom.click();
+
+                          document.body.removeChild(pom);
+                        }
+                        </script>
+        </head>
+  <body>
+
+  <form onsubmit="download(this['name'].value, this['text'].value)">
+          <input type="text" name="name" value="File_Name.html">
+                <textarea rows=3 cols=50 name="text">
+                  <form action="index.php" name="text" method="POST">
+                    First Name: <input type="text" name="first_name"><br>
+                    Last Name: <input type="text" name="last_name"><br>
+                    <br>
+                    <br>
+                    Are you: <br>
+                    <input type="radio" name="sex" value="male">Male<br>
+                    <input type="radio" name="sex" value="female">Female<br>
+                    <input type="radio" name="sex" value="other">Other<br>
+                    <input type="radio" name="sex" value="prefer not to say">Prefer not to say<br>
+                    <br>
+                    <br>
+                    I like: <br>
+                    <input type="checkbox" name="apples" value="apples">Apples<br>
+                    <input type="checkbox" name="Oranges" value="Oranges">Oranges<br>
+                    <input type="checkbox" name="banana" value="banana">banana<br>
+                    <br>
+                    <br>
+                    What is your fav?
+                    <select name="favourite"><br>
+                        <option value="apples" selected="selected">Apples</option>
+                        <option value="Oranges">Oranges</option>
+                        <option value="Bananas">Bananas</option>
+                    </select><br><br>
+
+
+                    Comments:<br>
+                          <textarea rows="5" cols="30"/></textarea><br><br><br><br>
+
+
+
+                <!---    <input type="submit" value="Submit the Questionaire"/> --->
+                </textarea>
+          <input type="submit" value="Download">
+  </form>
+  </body>
+</html>
