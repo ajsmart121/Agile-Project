@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create a Questionnaire</title>
+</head>
+<body>
+
+<form>
+  <label for="qname">Questinnaire name:</label><br>
+  <input type="text" id="qname" name="qname" value=""><br>
+  <label for="formdescrip">Form description:</label><br>
+  <input type="text" id="lname" name="formdescrip" value=""><br><br>
+
+  <label for="question">Question:</label><br>
+  <input type="text" id="question" name="question"><br>
+
+  <label for="answer type">Choose an option of how you want question answered:</label>
+  <select id="answer type" name="answer type">
+    <option value="radio button">Radio Button</option>
+    <option value="check boxes">Check Boxes (multiple choice)</option>
+    <option value="drop down">Drop-down</option> <!-- -->
+    <option value="text box">Text Box</option> <!--can possibly have an option for a text box with short answers and one for long, each having a different character limit. -->
+  </select> <br>
+  <input type="checkbox" id="required" name="required" value="Required">
+  <label for="required"> Required</label> <br><!-- required checkbox can be checked if this specific question must be answered by person taking questionnaire, will not be able to submit questionnaire without it completed.-->
+  <button type="button">Duplicate question</button> <br> <!--duplicate button, duplicates question. This will be part of each question's format-->
+  <button type="button">Delete question</button> <br><br> <!--delete button, deletes question. This will be part of each question's format-->
+
+  <button type="button">Add another question</button> <br><br><br> <!--add button, adds another question, same layout. can try add 'onclick=""'so after clicking another question with above format appears. This is separate from question format and can be positioned anywhere e.g. can be on the corner of the page.-->
+  <button type="button">Create</button> <!--This button submits the questionnaire created, and it is then stored as a text file. -->
+</form>
+
+</body>
+</html>
