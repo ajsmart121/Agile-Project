@@ -7,6 +7,7 @@ Group Members:
 - Paul Crockford - 170007945
 - Godfrey Stewart Morewood - 170018315
 - Fergus McLaughlin - 170015911
+- AJ Smart - 180014563
 
 ## Hints:
 - You may wish to change the issue tags that are in GitHub to map to different activities that you are carrying out:
