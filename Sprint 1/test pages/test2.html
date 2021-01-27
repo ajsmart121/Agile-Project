@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+        <head>
+              <style>
+              form * {
+                display: block;
+                margin: 10px;
+              }
+              </style>
+                        <script language="Javascript" >
+
+
+                        var limit = 10; // Max questions
+                        var count = 1; // There are 4 questions already
+
+                        function addQuestion()
+                        {
+                            // Get the quiz form element
+                            var quiz = document.getElementById('quiz');
+
+                            // Good to do error checking, make sure we managed to get something
+                            if (quiz)
+                            {
+                                if (count < limit)
+                                {
+                                    // Create a new <p> element
+                                    var questionTXT = document.createElement('p');
+                                    questionTXT.innerHTML = 'Question ' + (count + 1);
+
+                                    // Create the new text box
+                                    var newInput = document.createElement('input');
+                                    newInput.type = 'text';
+                                    newInput.name = 'questions[]';
+
+                                    //new title
+                                    var answerTypeTXT = document.createElement('p');
+                                    answerTypeTXT.innerHTML = 'Answer Type: ';
+
+                                    //new select input
+                                    var newSelect = document.createElement('select');
+                                    newSelect.name = 'answer_type';
+                                    newSelect.id = 'answer_type';
+
+                                    //Create array of options to be added
+                                    var array = ["Radio","Checkbox","Text","Drop-Down"];
+
+                                    //Create and append the options
+                                    for (var i = 0; i <= array.length; i++) {
+                                        var option = document.createElement('option');
+                                        option.value = array[i];
+                                        option.text = array[i];
+                                        newSelect.appendChild(option);
+                                      }
+
+                                      var requiredTXT = document.createElement('p');
+                                      requiredTXT.innerHTML = 'Required Question?: ';
+
+                                      // Create the new text box
+                                      var newReqInput = document.createElement('input');
+                                      newReqInput.type = 'checkbox';
+                                      newReqInput.name = 'required';
+
+                                      var breaker = document.createElement('p');
+                                      breaker.innerHTML = '==========================================================';
+
+
+                                    // Good practice to do error checking
+                                    if (newInput && questionTXT && newSelect && answerTypeTXT && option && newReqInput && requiredTXT)
+                                    {
+                                        // Add the new elements to the form
+                                        quiz.appendChild(questionTXT);
+                                        quiz.appendChild(newInput);
+                                        quiz.appendChild(answerTypeTXT);
+                                        quiz.appendChild(newSelect);
+                                        quiz.appendChild(requiredTXT);
+                                        quiz.appendChild(newReqInput);
+                                        quiz.appendChild(breaker);
+                                        // Increment the count
+                                        count++;
+                                    }
+
+                                }
+                                else
+                                {
+                                    alert('Question limit reached');
+                                }
+                            }
+                        }
+
+
+
+
+
+
+                        function download(filename, text) {
+                          var pom = document.createElement('a');
+                          pom.setAttribute('href', 'data:text/plain;charset=utf-8,' +
+
+                        encodeURIComponent(text));
+                          pom.setAttribute('download', filename);
+
+                          pom.style.display = 'none';
+                          document.body.appendChild(pom);
+
+                          pom.click();
+
+                          document.body.removeChild(pom);
+                        }
+
+
+                        </script>
+        </head>
+  <body>
+
+  <form onsubmit="download(this['name'].value, this['questions[]'].value + ',' + this['answer_type'].value + ',' + this['required'].value)" id="quiz">
+          <p>Questionaire Name (.html)</p>
+          <input type="text" name="name" value=File_Name.html>
+
+
+                                                <input type="button" value="Add question" onclick="javascript: addQuestion();"/>
+
+                                                <p>Question 1</p>
+                                                <input type="text" name="questions[]" placeholder="Your Question Here" required>
+
+                                                <p> Answer Type: </p>
+                                                <select id="answer_type" name="answer_type">
+                                                  <option value="radio Button">Radio Button</option>
+                                                  <option value="checkbox">Checkbox</option>
+                                                  <option value="textbox">text box</option>
+                                                  <option value="drop down">drop down</option>
+                                                </select>
+                                                <br>
+                                                <label for="required">Required question?</label>
+                                                <input type="checkbox" name="required">
+                                                <br>
+          <input type="submit" value="Download">
+  </form>
+  </body>
+</html>
