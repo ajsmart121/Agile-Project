@@ -7,19 +7,18 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 
 
-$sql = "SELECT * FROM user WHERE Username = '$username' AND Password = '$password' ";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "User ID: " . $row["ID"]. " - Name: " . $row["Forename"]. " " . $row["Surname"]. "<br>";
-  }
-} else {
-  echo "0 results";
+try{
+	$userFind = $conn->prepare("SELECT * FROM user
+	WHERE Username = '$username' AND Password = '$password'");
+	$userFind->execute();
+	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
+	
+	echo $userFindResult->Username;
 }
 
-
+catch(PDOException $e){
+	echo $userFind . "<br>" . $e->getMessage();
+}
 
 ?>
 
@@ -31,5 +30,5 @@ if ($result->num_rows > 0) {
 </html>
 
 <?php
-$conn->close();
+$conn = null;
 ?>

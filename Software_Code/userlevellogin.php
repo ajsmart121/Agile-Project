@@ -2,20 +2,6 @@
 <?php
 session_start();
 include"config.php";
-
-try{
-	$userFind = $conn->prepare("SELECT * FROM user
-	WHERE Username = '$username' AND Password = '$password'");
-	$userFind->execute();
-	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
-	
-	echo $userFindResult->Username;
-}
-
-catch(PDOException $e){
-	echo $userFind . "<br>" . $e->getMessage();
-}
-
 $conn = null;
 ?>
 
