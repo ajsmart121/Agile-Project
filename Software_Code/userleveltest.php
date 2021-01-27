@@ -20,6 +20,7 @@ catch(PDOException $e){
 	echo $userFind . "<br>" . $e->getMessage();
 }
 
+	echo $userFindResult->Password;
 ?>
 
 
