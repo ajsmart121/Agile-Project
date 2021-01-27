@@ -17,6 +17,8 @@ try{
 	echo $userFindResult->Username;
 }
 
+echo $userFindResult->Password;
+
 catch(PDOException $e){
 	echo $userFind . "<br>" . $e->getMessage();
 }
