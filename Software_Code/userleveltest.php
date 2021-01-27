@@ -3,11 +3,11 @@
 session_start();
 include"config.php";
 
-//$username = $_POST["username"];
-//$password = $_POST["password"];
+$username = $_POST["username"];
+$password = $_POST["password"];
 
 
-$sql = "SELECT * FROM user";
+$sql = "SELECT * FROM user WHERE Username = '$username' AND Password = '$password' ";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
