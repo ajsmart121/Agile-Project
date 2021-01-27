@@ -1,19 +1,13 @@
+<!DOCTYPE html>
 <?php
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+session_start();
+include"config.php";
 
-$server = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$db = substr($url["path"], 1);
+//$username = $_POST["username"];
+//$password = $_POST["password"];
 
-// Create connection
-$conn = new mysqli($server, $username, $password, $db);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
 
-$sql = "SELECT ID, Forename, Surname, Email, UserLevelID FROM user";
+$sql = "SELECT * FROM user";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -24,5 +18,18 @@ if ($result->num_rows > 0) {
 } else {
   echo "0 results";
 }
+
+
+
+?>
+
+
+<html>
+<body>
+
+</body>
+</html>
+
+<?php
 $conn->close();
 ?>

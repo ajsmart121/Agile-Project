@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 session_start();
 include"config.php";
@@ -16,10 +17,10 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 
-<!DOCTYPE html>
+
 <html>
 <body>
-<form action="/action_page.php">
+<form action="/userleveltest.php">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username" value="Liam"><br>
   <label for="lname">Password:</label><br>
