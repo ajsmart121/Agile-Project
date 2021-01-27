@@ -20,7 +20,7 @@ $conn->close();
 
 <html>
 <body>
-<form action="/userleveltest.php">
+<form action="userleveltest.php">
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username" value="Liam"><br>
   <label for="lname">Password:</label><br>
