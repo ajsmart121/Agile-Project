@@ -8,6 +8,8 @@ try{
 	WHERE Username = '$username' AND Password = '$password'");
 	$userFind->execute();
 	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
+	
+	echo $userFindResult->Username;
 }
 
 catch(PDOException $e){
