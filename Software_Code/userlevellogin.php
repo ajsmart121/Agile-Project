@@ -20,11 +20,11 @@ $conn->close();
 
 <html>
 <body>
-<form action="userleveltest.php">
+<form action="userleveltest.php" method="post">
   <label for="username">Username:</label><br>
-  <input type="text" id="username" name="username" value="Liam"><br>
+  <input type="text" id="username" name="username" value="LiamMcKenzie"><br>
   <label for="lname">Password:</label><br>
-  <input type="text" id="password" name="password" value="McKenzie"><br><br>
+  <input type="text" id="password" name="password" value="Password"><br><br>
   <input type="submit" value="Submit">
 </form> 
 </body>
