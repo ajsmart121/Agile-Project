@@ -1,11 +1,8 @@
 <html>
 <body>
-      <form id="quiz" action="mailman.php" method="POST">
-
-          <input type="button" value="Add question" onclick="javascript: addQuestion();"/>
-
-          <p>Question 1</p>
-          <input type="text" name="questions[]"/>
+      <form id="quiz" action="/mailman.php" method="POST">
+  <p>Question 1</p>
+          <input type="text" name="question"/>
 
           <p> Answer Type: </p>
           <select id="answer_type" name="answer_type">
