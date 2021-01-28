@@ -2,7 +2,7 @@
 <body>
 
 
-          Question <?php echo $_POST["questions[]"];?>
+          Question <?php echo $_POST["question"];?>
 
 
 </body>
