@@ -69,7 +69,7 @@
 
 
                                     // Good practice to do error checking
-                                    if (newInput && questionTXT && newSelect && answerTypeTXT && option && newReqInput && requiredTXT && NewInputnum)
+                                    if (newInput && questionTXT && newSelect && answerTypeTXT && option && newReqInput && requiredTXT && newInputnum)
                                     {
                                         // Add the new elements to the form
                                         quiz.appendChild(questionTXT);
@@ -97,7 +97,8 @@
 
   <form id="quiz" action="mailman.php" method="POST">
           <p>Questionaire Name (.html)</p>
-          <input type="text" name="name" placeholder="File_Name.html" required> <input type="submit" value="Submit Questionnaire"><br>
+          <input type="text" name="name" placeholder="File_Name.html" required>
+          <input type="submit" value="Submit Questionnaire"><br>
 
                                                 <input type="button" value="-->Add question<--" onclick="javascript: addQuestion();"/><br>
 

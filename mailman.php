@@ -2,6 +2,7 @@
 <body>
     <?php
         $count = $_POST['questionnum'];
+
               while($count <=10){
                     echo "Question: " echo $_POST["question" + ($count + 1)];
 
