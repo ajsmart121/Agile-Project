@@ -3,10 +3,14 @@
 
 
 
-Question <?php 
+Question
 
-$value = $_POST["questions[]"]
-echo $value;?>
+<?php 
+
+$value = $_POST["questions[]"];
+echo $value;
+
+?>
 
 
 </body>
