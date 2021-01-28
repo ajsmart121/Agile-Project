@@ -1,9 +1,9 @@
 <html>
 <body>
     <?php
-        $count = $_POST['questionnum'];
+        $count = 1;
 
-              while($count <=10){
+              while($count >=10){
                     echo "Question: " + $_POST["question" + ($count + 1)];
 
                     echo  "Answer Type: " + $_POST["answer_type" + ($count + 1)];
