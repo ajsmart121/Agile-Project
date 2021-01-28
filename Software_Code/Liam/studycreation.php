@@ -9,7 +9,7 @@ include"config.php";
 <body>
 <form action="questioncreation.php" method="post">
   
-  <label for="studycreator">Study Name:</label><br>
+  <label for="studycreator">Study Creator ID:</label><br>
   <input type="text" id="studycreator" name="studycreator" value="11"><br>
   
   <label for="studyname">Study Name:</label><br>
