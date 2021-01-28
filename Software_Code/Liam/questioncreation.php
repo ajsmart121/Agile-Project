@@ -11,8 +11,8 @@ $questionquantity = $_POST["questionquantity"];
 
 
 try{
-	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
-	VALUES ('$studycreator', '$questionquantity', '$studyname')";
+	$studyInsert = "INSERT INTO Study (UserID)
+	VALUES ('$studycreator')";
 	$conn->exec($studyInsert);
 }
 
@@ -20,30 +20,5 @@ catch(PDOException $e){
 	echo $studyInsert . "<br>" . $e->getMessage();
 	}
 }
-
-
-
-
-
-
-
-
-
-?>
-
-
-<html>
-<body>
-<form action="studyconfirmation.php" method="post">
-  
-  <label for="questiontext">Question Text:</label><br>
-  <input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
-  
-  <input type="submit" value="Submit">
-</form> 
-</body>
-</html>
-
-<?php
 $conn = null;
 ?>
