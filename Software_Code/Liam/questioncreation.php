@@ -11,8 +11,8 @@ $questionquantity = $_POST["questionquantity"];
 
 
 try{
-	$studyInsert = "INSERT INTO Study (UserID, StudyName, StudyQuestionCount)
-	VALUES ('$studycreator', '$studyname', '$questionquantity')";
+	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
+	VALUES ('$studycreator', '$questionquantity', '$studyname')";
 	$conn->exec($studyInsert);
 }
 
