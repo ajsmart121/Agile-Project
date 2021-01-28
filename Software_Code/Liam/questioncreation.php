@@ -7,16 +7,13 @@ $studyname = $_POST["studyname"];
 $questionquantity = $_POST["questionquantity"];
 
 try{
-	$userFind = $conn->prepare("SELECT * FROM user");
-	$userFind->execute();
-	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
-	
-	echo $userFindResult->Username;
-	echo $userFindResult->Password;
+	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
+	VALUES ('$studycreator', '$questionquantity', '$studyname')";
+	$conn->exec($studyInsert);
 }
 
 catch(PDOException $e){
-	echo $userFind . "<br>" . $e->getMessage();
+	echo $studyInsert . "<br>" . $e->getMessage();
 }
 
 $conn = null;
