@@ -6,8 +6,8 @@
 Question
 
 <?php 
-echo $_POST["questions"];
-$value = $_POST["questions"];
+echo $_POST["questions[]"];
+$value = $_POST["questions[]"];
 echo $value;
 
 ?>
