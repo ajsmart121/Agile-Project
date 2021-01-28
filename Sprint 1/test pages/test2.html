@@ -11,7 +11,7 @@
 
 
                         var limit = 10; // Max questions
-                        var count = 1; // There are 4 questions already
+                        var count = 1; // There is 1 question already
 
                         function addQuestion()
                         {
@@ -51,7 +51,7 @@
                                         option.text = array[i];
                                         newSelect.appendChild(option);
                                       }
-
+                                        //new title
                                       var requiredTXT = document.createElement('p');
                                       requiredTXT.innerHTML = 'Required Question?: ';
 
@@ -59,7 +59,7 @@
                                       var newReqInput = document.createElement('input');
                                       newReqInput.type = 'checkbox';
                                       newReqInput.name = 'required';
-
+                                        //breaker to separate questions
                                       var breaker = document.createElement('p');
                                       breaker.innerHTML = '==========================================================';
 
@@ -91,7 +91,7 @@
 
 
 
-
+                        //dowload code section
                         function download(filename, text) {
                           var pom = document.createElement('a');
                           pom.setAttribute('href', 'data:text/plain;charset=utf-8,' +
@@ -116,7 +116,7 @@
           <p>Questionaire Name (.html)</p>
           <input type="text" name="name" value=File_Name.html>
 
-
+                                <!------ simulates first question. needs to be one. ------->
                                                 <input type="button" value="Add question" onclick="javascript: addQuestion();"/>
 
                                                 <p>Question 1</p>
