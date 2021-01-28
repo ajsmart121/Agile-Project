@@ -72,11 +72,11 @@
 
 
                                     // Good practice to do error checking
-                                    if (newInput && questionTXT && newSelect && answerTypeTXT && option && newReqInput && requiredTXT)
+                                    if (newInput && questionTXT && newSelect && answerTypeTXT && option && newReqInput && requiredTXT && NewInputnum)
                                     {
                                         // Add the new elements to the form
                                         quiz.appendChild(questionTXT);
-                                        quiz.appendChild(questionnum);
+                                        quiz.appendChild(newInputnum);
                                         quiz.appendChild(newInput);
                                         quiz.appendChild(answerTypeTXT);
                                         quiz.appendChild(newSelect);
