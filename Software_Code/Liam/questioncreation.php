@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 session_start();
 include"config.php";
@@ -19,6 +18,5 @@ try{
 catch(PDOException $e){
 	echo $studyInsert . "<br>" . $e->getMessage();
 	}
-}
 $conn = null;
 ?>
