@@ -2,7 +2,7 @@
 <body>
       <form id="quiz" action="/mailman.php" method="POST">
   <p>Question 1</p>
-          <input type="text" name="question"/>
+          <input name="question" type="text"/>
 
           <p> Answer Type: </p>
           <select id="answer_type" name="answer_type">
