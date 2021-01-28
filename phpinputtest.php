@@ -29,12 +29,14 @@
                                     var newInputnum = document.createElement('input');
                                     newInputnum.type = 'text';
                                     newInputnum.value = (count + 1);
+                                    newInputnum.disabled = true;
                                     newInputnum.name = 'questionnum' + (count + 1);
 
                                     // Create the new text box
                                     var newInput = document.createElement('input');
                                     newInput.type = 'text';
                                     newInput.name = 'question' + (count + 1);
+                                    newInput.placeholder = 'Your Question Here';
 
                                     //new title
                                     var answerTypeTXT = document.createElement('p');
@@ -116,6 +118,7 @@
                                                 <label for="required">Required question?</label>
                                                 <input type="checkbox" name="required1">
                                                 <br>
+                                                ==========================================================
   </form>
   </body>
 </html>
