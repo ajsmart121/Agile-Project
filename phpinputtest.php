@@ -25,7 +25,14 @@
                                 {
                                     // Create a new <p> element
                                     var questionTXT = document.createElement('p');
-                                    questionTXT.innerHTML = 'Question ' + (count + 1);
+                                    questionTXT.innerHTML = 'Question ';
+
+                                    // Create the new text box
+                                    var newInputnum = document.createElement('input');
+                                    newInputnum.type = 'text';
+                                    newInputnum.value = (count);
+                                    newInputnum.disabled;
+                                    newInputnum.name = 'questionnum' + (count + 1);
 
                                     // Create the new text box
                                     var newInput = document.createElement('input');
@@ -69,6 +76,7 @@
                                     {
                                         // Add the new elements to the form
                                         quiz.appendChild(questionTXT);
+                                        quiz.appendChild(questionnum);
                                         quiz.appendChild(newInput);
                                         quiz.appendChild(answerTypeTXT);
                                         quiz.appendChild(newSelect);
@@ -96,11 +104,11 @@
 
                                                 <input type="button" value="-->Add question<--" onclick="javascript: addQuestion();"/><br>
 
-                                                <p>Question 1</p>
+                                                <p>Question</p> <input type="text" name="questionnum" value=1 disabled>
                                                 <input type="text" name="question" placeholder="Your Question Here" required>
 
                                                 <p> Answer Type: </p>
-                                                <select id="answer_type" name="answer_type">
+                                                <select id="answer_type1" name="answer_type1">
                                                   <option value="radio Button">Radio Button</option>
                                                   <option value="checkbox">Checkbox</option>
                                                   <option value="textbox">text box</option>
@@ -108,7 +116,7 @@
                                                 </select>
                                                 <br>
                                                 <label for="required">Required question?</label>
-                                                <input type="checkbox" name="required">
+                                                <input type="checkbox" name="required1">
                                                 <br>
   </form>
   </body>
