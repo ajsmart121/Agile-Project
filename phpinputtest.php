@@ -8,8 +8,6 @@
               }
               </style>
                         <script language="Javascript" >
-
-
                         var limit = 10; // Max questions
                         var count = 1; // There are 4 questions already
 
@@ -25,7 +23,7 @@
                                 {
                                     // Create a new <p> element
                                     var questionTXT = document.createElement('p');
-                                    questionTXT.innerHTML = 'Question ';
+                                    questionTXT.innerHTML = 'Question: ';
 
                                     // Create the new text box
                                     var newInputnum = document.createElement('input');
@@ -104,7 +102,7 @@
                                                 <input type="button" value="-->Add question<--" onclick="javascript: addQuestion();"/><br>
 
                                                 <p>Question</p> <input type="text" name="questionnum" value=1 disabled>
-                                                <input type="text" name="question" placeholder="Your Question Here" required>
+                                                <input type="text" name="question1" placeholder="Your Question Here" required>
 
                                                 <p> Answer Type: </p>
                                                 <select id="answer_type1" name="answer_type1">
