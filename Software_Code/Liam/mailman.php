@@ -2,15 +2,7 @@
 <body>
 
 
-
-Question
-
-<?php 
-
-$value = $_POST["questions"];
-echo $value;
-
-?>
+          Question <?php echo $_POST["questions[]"];?>
 
 
 </body>
