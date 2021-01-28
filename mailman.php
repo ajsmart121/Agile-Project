@@ -11,7 +11,10 @@
                     //echo "Required: " + $_POST["required" + ($count + 1)];
 
                     $count++;
+
+                    if(strlen($_POST["question"]) == 0) {break;}
                   }
+
 
     ?>
 
