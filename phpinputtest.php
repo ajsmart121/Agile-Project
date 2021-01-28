@@ -30,7 +30,7 @@
                                     // Create the new text box
                                     var newInput = document.createElement('input');
                                     newInput.type = 'text';
-                                    newInput.name = 'question';
+                                    newInput.name = 'question' + (count + 1);
 
                                     //new title
                                     var answerTypeTXT = document.createElement('p');
@@ -38,8 +38,8 @@
 
                                     //new select input
                                     var newSelect = document.createElement('select');
-                                    newSelect.name = 'answer_type';
-                                    newSelect.id = 'answer_type';
+                                    newSelect.name = 'answer_type' + (count + 1);
+                                    newSelect.id = 'answer_type' + (count + 1);
 
                                     //Create array of options to be added
                                     var array = ["Radio","Checkbox","Text","Drop-Down"];
@@ -58,7 +58,7 @@
                                       // Create the new text box
                                       var newReqInput = document.createElement('input');
                                       newReqInput.type = 'checkbox';
-                                      newReqInput.name = 'required';
+                                      newReqInput.name = 'required' + (count + 1);;
 
                                       var breaker = document.createElement('p');
                                       breaker.innerHTML = '==========================================================';

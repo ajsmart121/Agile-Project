@@ -1,14 +1,16 @@
 <html>
 <body>
+    <?php
+        $count = $_POST['count'];
+              while($count <=10){
+                    echo "Question: " echo $_POST["question" + $count];
 
+                    echo  "Answer Type: " echo $_POST["answer_type" + $count];
 
-          Question: <?php echo $_POST["question"];?><br>
+                    echo "Required: " echo $_POST["required" + $count];
+                  }
 
-          Answer Type: <?php echo $_POST["answer_type"];?><br>
-
-          Required: <?php echo $_POST["required"];?><br>
-          <br>
-
+    ?>
 
 
 </body>
