@@ -30,8 +30,7 @@
                                     // Create the new text box
                                     var newInputnum = document.createElement('input');
                                     newInputnum.type = 'text';
-                                    newInputnum.value = (count);
-                                    newInputnum.disabled;
+                                    newInputnum.value = (count + 1);
                                     newInputnum.name = 'questionnum' + (count + 1);
 
                                     // Create the new text box
