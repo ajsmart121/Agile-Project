@@ -17,7 +17,7 @@
                     echo  "Answer Type: " . $_POST["answer_type" . ($count)] . ", ";
 
                     echo "Required: " . $_POST["required" . ($count)] . "| ";
-                  } else {break;}
+                  //} else {break;}
 
 
 
