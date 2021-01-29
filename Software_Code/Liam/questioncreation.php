@@ -4,10 +4,8 @@ include"config.php";
 
 if(isset($_POST["questionquantity"])){
 	$questionquantity = $_POST["questionquantity"];
-	$_SESSION["questionsremaining"] = $_POST["questionquantity"];
-	
+	$_SESSION["questionsremaining"] = $_POST["questionquantity"];	
 }
-echo $_SESSION["questionsremaining"];
 	
 if(isset($_POST["studycreator"])){
 	unset($_SESSION['studyID']);
@@ -46,7 +44,7 @@ else{
 	<html>
 	<body>
 		<?php
-		if($_SESSION["questionsremaining"]>0){
+		if($_SESSION["questionsremaining"]>1){
 			?>
 		<form action method="post" onsubmit="addQuestion()">
 			<label for="questiontext">Question Text:</label><br>
