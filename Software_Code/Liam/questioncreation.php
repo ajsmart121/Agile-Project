@@ -37,6 +37,7 @@ if(isset($_SESSION['studyID'])){
 }
 else{
 	echo "Goodbye";
+}
 ?>
 
 
