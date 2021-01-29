@@ -60,7 +60,6 @@ if($_SESSION["questionsremaining"]>0){
 		<?php
 		$questiontext = $_POST["questiontext"];
 		try{
-			$_SESSION["questionsremaining"]--;
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
@@ -75,6 +74,7 @@ if($_SESSION["questionsremaining"]>0){
 	</script>
 
 	<?php
+	$_SESSION["questionsremaining"]--;
 }
 else{
 	echo "Questions completed!";
