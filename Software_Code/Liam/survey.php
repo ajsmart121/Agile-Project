@@ -28,8 +28,8 @@ catch(PDOException $e){
 	<?php
 	for($i = 0; $i < $questionCount; $i++){
 		?>
-		<label for="question <?php $i+1 ?> "> <?php echo $QuestionsFindResult[$i][0]; ?> </label><br>
-		<input type="text" id="question <?php $i+1 ?> " name="question <?php $i+1 ?> " value=""><br>
+		<label for="question[<?php $i+1 ?>]"> <?php echo $QuestionsFindResult[$i][0]; ?> </label><br>
+		<input type="text" id="question[<?php $i+1 ?>]" name="question[<?php $i+1 ?>]" value=""><br>
 	<?php
 	}
 	?>
