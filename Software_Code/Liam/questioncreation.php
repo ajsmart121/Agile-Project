@@ -41,17 +41,24 @@ if(!isset($_SESSION['studyID'])){
 else{
 	$studyID = $_SESSION['studyID'];
 }
-if($_SESSION["questionsremaining"]>0){
+
 	?>
-
-
 	<html>
 	<body>
-		<form action method="post"">
+		<?php
+		if($_SESSION["questionsremaining"]>0){
+			?>
+		<form action method="post" onsubmit="addQuestion()">
 			<label for="questiontext">Question Text:</label><br>
 			<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
-			<input type="submit" value="Submit" onClick="return addQuestion();>
+			<input type="submit" value="Submit">
 		</form> 
+		<?php
+		}
+		else{
+			echo "Questions submitted!";
+		}
+		?>
 	</body>
 	</html>
 
@@ -63,8 +70,9 @@ if($_SESSION["questionsremaining"]>0){
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
+			$_SESSION["questionsremaining"]--;
 		}
-
+		
 		catch(PDOException $e){
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}
@@ -72,12 +80,6 @@ if($_SESSION["questionsremaining"]>0){
 		return true;
 	}
 	</script>
-
-	<?php
-	$_SESSION["questionsremaining"]--;
-}
-else{
-	echo "Questions completed!";
-}	
+<?php
 $conn = null;
 ?>
