@@ -2,7 +2,10 @@
 session_start();
 include"config.php";
 
-$questionquantity = $_POST["questionquantity"];
+if(isset($_POST["questionquantity"])){
+	$questionquantity = $_POST["questionquantity"];
+	$_SESSION['questionquantity'] = $questionquantity;
+}
 
 if(isset($_POST["studycreator"])){
 	$studycreator = $_POST["studycreator"];
@@ -20,9 +23,9 @@ if(isset($_POST["studycreator"])){
 	}
 }
 
-echo $questionquantity;
-$questionquantity = $questionquantity - 1;
-if($questionquantity >= 0){
+$_SESSION['questionquantity']--;
+
+if($_SESSION['questionquantity'] >= 0){
 	
 ?>
 
@@ -31,18 +34,37 @@ if($questionquantity >= 0){
 
 <html>
 <body>
-<form action method="post">
+<form action method="post" onsubmit="addQuestion()">
 
 	<label for="questiontext">Study Creator ID:</label><br>
 	<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
-	<input type="hidden" id ="questionquantity" name="questionquantity" value=<?php echo $questionquantity; ?> readonly>
-	
 	<input type="submit" value="Submit">
 	</form> 
 </body>
 </html>
 
+<script>
+function addQuestion(){
+	<?php
+	$questiontext = $_POST["questiontext"];
+	try{
+		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
+		VALUES ('$questiontext', '1', '11')";
+		$conn->exec($questionInsert);
+	}
+
+	catch(PDOException $e){
+		echo $questionInsert . "<br>" . $e->getMessage();
+	}
+	?>
+	return true;
+}
+</script>
+
 <?php
+}
+else{
+	echo "Questions all added!";	
 }
 
 $conn = null;
