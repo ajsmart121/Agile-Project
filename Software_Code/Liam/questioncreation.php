@@ -20,6 +20,9 @@ if(isset($_POST["studycreator"])){
 	}
 }
 
+
+if($questionquantity > 0){
+	
 ?>
 
 
@@ -39,7 +42,7 @@ if(isset($_POST["studycreator"])){
 </html>
 
 <?php
-
+}
 
 $conn = null;
 ?>
