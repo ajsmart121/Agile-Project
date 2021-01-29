@@ -2,7 +2,10 @@
 session_start();
 include"config.php";
 
-$questionquantity = $_POST["questionquantity"];
+if(isset($_POST["questionquantity"])){
+	$_SESSION['questionsremaining'] = $_POST["questionquantity"];
+}
+else $_SESSION['questionsremaining']--;
 
 if(isset($_POST["studycreator"])){
 	unset($_SESSION['studyID']);
@@ -36,40 +39,43 @@ if(!isset($_SESSION['studyID'])){
 else{
 	$studyID = $_SESSION['studyID'];
 }
-
-?>
-
-
-<html>
-<body>
-	<form action method="post" onsubmit="addQuestion()">
-		<label for="questiontext">Question Text:</label><br>
-		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
-		<input type="hidden" name="questionquantity" value=<?php echo $questionquantity ?> readonly>
-		<input type="submit" value="Submit">
-	</form> 
-</body>
-</html>
-
-<script>
-function addQuestion(){
-	<?php
-	$questiontext = $_POST["questiontext"];
-	try{
-		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-		VALUES ('$questiontext', '1', '$studyID')";
-		$conn->exec($questionInsert);
-	}
-
-	catch(PDOException $e){
-		echo $questionInsert . "<br>" . $e->getMessage();
-	}
+if($_SESSION['questionsremaining']>0)
+{
 	?>
-	return true;
+
+
+	<html>
+	<body>
+		<form action method="post" onsubmit="addQuestion()">
+			<label for="questiontext">Question Text:</label><br>
+			<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
+			<input type="submit" value="Submit">
+		</form> 
+	</body>
+	</html>
+
+	<script>
+	function addQuestion(){
+		<?php
+		$questiontext = $_POST["questiontext"];
+		try{
+			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
+			VALUES ('$questiontext', '1', '$studyID')";
+			$conn->exec($questionInsert);
+		}
+
+		catch(PDOException $e){
+			echo $questionInsert . "<br>" . $e->getMessage();
+		}
+		?>
+		return true;
+	}
+	</script>
+
+	<?php
 }
-</script>
-
-<?php
-
+else{
+	echo "Questions completed!";
+}	
 $conn = null;
 ?>
