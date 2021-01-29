@@ -3,11 +3,12 @@ session_start();
 include"config.php";
 
 if(isset($_POST["questionquantity"])){
-	$_SESSION['questionsremaining'] = $_POST["questionquantity"];
+	$questionquantity = $_POST["questionquantity"];
+	$_SESSION["questionsremaining"] = $_POST["questionquantity"];
 }
 
 if(isset($_POST["questionsremaining"])){
-	echo $_SESSION['questionsremaining'];
+	echo $_SESSION["questionsremaining"];
 }
 
 	
@@ -43,7 +44,7 @@ if(!isset($_SESSION['studyID'])){
 else{
 	$studyID = $_SESSION['studyID'];
 }
-if($_SESSION['questionsremaining']>0){
+if($_SESSION["questionsremaining"]>0){
 	?>
 
 
@@ -62,7 +63,7 @@ if($_SESSION['questionsremaining']>0){
 		<?php
 		$questiontext = $_POST["questiontext"];
 		try{
-			$_SESSION['questionsremaining']--;
+			$_SESSION["questionsremaining"]--;
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
