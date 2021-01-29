@@ -6,7 +6,6 @@ include"config.php";
 
 <?php
 $survey = $_GET['surveyid'];
-echo $survey;
 
 $questionList = "";
 try{
@@ -16,8 +15,7 @@ try{
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	
 	foreach($QuestionsFindResult as $row) {
-		$questionList = $questionList.$row['QuestionText']."\n";
-		echo $questionList;
+		echo = $questionList.$row['QuestionText']."\n";
 	}
 }
 catch(PDOException $e){
