@@ -20,7 +20,7 @@ if(isset($_POST["studycreator"])){
 	}
 	
 	try{
-		$studyIDFind = "SELECT * FROM Table ORDER BY ID DESC LIMIT 1";
+		$studyIDFind = "SELECT * FROM Study ORDER BY ID DESC LIMIT 1";
 		$conn->exec($studyIDFind);
 		$_SESSION['studyID'] = $studyIDFind->ID;
 		echo $_SESSION['studyID'];
