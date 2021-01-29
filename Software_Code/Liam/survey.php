@@ -5,7 +5,7 @@ include"config.php";
 ?>
 
 <?php
-$survey = $GET['surveyID'];
+$survey = $GET['surveyid'];
 echo $survey;
 ?>
 
