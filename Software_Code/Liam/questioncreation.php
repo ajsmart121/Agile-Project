@@ -5,8 +5,8 @@ include"config.php";
 if(isset($_POST["questionquantity"])){
 	$_SESSION['questionsremaining'] = $_POST["questionquantity"];
 }
-else $_SESSION['questionsremaining']--;
 
+	
 if(isset($_POST["studycreator"])){
 	unset($_SESSION['studyID']);
 	$studycreator = $_POST["studycreator"];
@@ -62,6 +62,7 @@ if($_SESSION['questionsremaining']>0)
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
+			$_SESSION['questionsremaining']--;
 		}
 
 		catch(PDOException $e){
