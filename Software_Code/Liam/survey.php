@@ -12,13 +12,8 @@ try{
 	$QuestionsFind = $conn->prepare("SELECT QuestionText FROM Question
 	WHERE StudyID = '$survey'");
 	$QuestionsFind->execute();
-	$QuestionsFindResult = $QuestionsFind->fetchALL();
-	
-	foreach($QuestionsFindResult as $row) {
-		$questionList = $questionList.$row['QuestionText']."\n";
-		
-	}
-	echo $questionList[0];
+	$lrow = $QuestionsFind->fetchAll(PDO::FETCH_COLUMN || PDO::FETCH_GROUP, 0);
+	echo $lrow[0];
 	}
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
