@@ -9,8 +9,8 @@
               while($count <= 10)
               {
 
-                    if($_POST["answer_type"] . $count == "Radio Button" || $_POST["answer_type"] . $count == "Check Box" || $_POST["answer_type"] . $count == "Text Box" || $_POST["answer_type"] . $count == "Drop Down")
-                    {
+                  //  if($_POST["answer_type"] . $count == "Radio Button" || $_POST["answer_type"] . $count == "Check Box" || $_POST["answer_type"] . $count == "Text Box" || $_POST["answer_type"] . $count == "Drop Down")
+                  //  {
 
                     echo "Question " . $count .": ". $_POST["question" . ($count)] . ", ";
 
@@ -20,7 +20,7 @@
                   } else {break;}
 
 
-                   
+
                     $count++;
 
                 }
