@@ -3,13 +3,14 @@
     <?php
         $count = 1;
 
-        echo $_POST['name'];
+      echo "Questionnaire: " . cho $_POST['name'];
+        echo $_POST["question"];
 
               while($count <= 10)
               {
 
-                    if(strlen($_POST["question"]) == 0){
-                        break;}
+                    //if(strlen($_POST["question"]) == 0){
+                      //  break;}
 
 
                     echo "-==Question" . $count . $_POST["question" . ($count)] . "=-,";
