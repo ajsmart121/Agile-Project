@@ -48,10 +48,10 @@
                                     newSelect.id = 'answer_type' + (count + 1);
 
                                     //Create array of options to be added
-                                    var array = ["Radio","Checkbox","Text","Drop-Down"];
+                                    var array = ["Radio Button","Check Box","Text Box","Drop Down"];
 
                                     //Create and append the options
-                                    for (var i = 0; i <= array.length; i++) {
+                                    for (var i = 1; i <= array.length; i++) {
                                         var option = document.createElement('option');
                                         option.value = array[i];
                                         option.text = array[i];
@@ -109,10 +109,10 @@
 
                                                 <p> Answer Type: </p>
                                                 <select id="answer_type1" name="answer_type1">
-                                                  <option value="radio Button">Radio Button</option>
-                                                  <option value="checkbox">Checkbox</option>
-                                                  <option value="textbox">text box</option>
-                                                  <option value="drop down">drop down</option>
+                                                  <option value="Radio Button">Radio Button</option>
+                                                  <option value="Check Box">Checkbox</option>
+                                                  <option value="Text Box">text box</option>
+                                                  <option value="Drop Down">drop down</option>
                                                 </select>
                                                 <br>
                                                 <label for="required">Required question?</label>
