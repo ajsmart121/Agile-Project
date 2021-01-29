@@ -15,7 +15,8 @@ try{
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	
 	foreach($QuestionsFindResult as $row) {
-		echo = $questionList.$row['QuestionText']."\n";
+		$questionList = $questionList.$row['QuestionText']."\n";
+		echo $questionList;
 	}
 }
 catch(PDOException $e){
