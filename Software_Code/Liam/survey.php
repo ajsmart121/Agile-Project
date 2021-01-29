@@ -18,11 +18,11 @@ try{
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
 	}
-	$counter = count($QuestionsFindResult);
-	echo $counter;
-	echo $QuestionsFindResult[0][0];
-
-
+	$questionCount = count($QuestionsFindResult);
+	
+	for($i = 0; $i < $questionCount; $i++){
+		echo $QuestionsFindResult[$i][0];
+	}
 
 ?>
 
