@@ -1,0 +1,78 @@
+/*Dundee blue: Red-66 Green-100 Blue-225 Hex-4264e1*/
+/*Dark blue: Hex 5f81fd */
+
+/*For the background*/
+body {
+    background-image: url("LoginBackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*For blue box*/
+.container{
+    background-color: #4264e1;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 25px;
+    padding: 20px;
+    color: white;
+    margin-top: 220px;
+    width: 500px;
+    box-shadow: 20px 10px 8px #494b53;
+}
+/*For the heading*/
+h1{
+    margin:auto;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    padding: 10px;
+}
+/*For the UoD logo*/
+img{
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+    width: 90%;
+    padding-left: 50px;
+    height: auto;
+
+}
+/*For Go button*/
+button{
+  border-radius: 12px;
+  background-color: #5f81fd;
+  color: white;
+  font-size: 20px;
+  align-self: left;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 5px 30px;
+  border: none;
+}
+/*For Username and Password input boxes*/
+input{
+  border-radius: 12px;
+  font-size: 25px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border: none;
+}
+/*Password label*/
+.password{
+  margin-bottom: 30px;
+  font-size: 25px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/*Space between input boxes*/
+span{
+  margin: 20px;
+}
+/*For Go button*/
+.loginButton{
+  width: 100%;
+  border: none;
+}
+/*For Username and Password button*/
+label{
+  font-size: 20px;
+}
