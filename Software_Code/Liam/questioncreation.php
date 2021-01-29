@@ -6,6 +6,10 @@ if(isset($_POST["questionquantity"])){
 	$_SESSION['questionsremaining'] = $_POST["questionquantity"];
 }
 
+if(isset($_POST["questionsremaining"])){
+	echo $_SESSION['questionsremaining'];
+}
+
 	
 if(isset($_POST["studycreator"])){
 	unset($_SESSION['studyID']);
@@ -39,8 +43,7 @@ if(!isset($_SESSION['studyID'])){
 else{
 	$studyID = $_SESSION['studyID'];
 }
-if($_SESSION['questionsremaining']>0
-{
+if($_SESSION['questionsremaining']>0){
 	?>
 
 
@@ -59,10 +62,10 @@ if($_SESSION['questionsremaining']>0
 		<?php
 		$questiontext = $_POST["questiontext"];
 		try{
+			$_SESSION['questionsremaining']--;
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
-			$_SESSION['questionsremaining']--;
 		}
 
 		catch(PDOException $e){
