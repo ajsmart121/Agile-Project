@@ -20,7 +20,7 @@ if(isset($_POST["studycreator"])){
 	}
 }
 
-
+echo $questionquantity;
 if($questionquantity > 0){
 	
 ?>
