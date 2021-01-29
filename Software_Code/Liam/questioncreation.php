@@ -23,7 +23,6 @@ if(isset($_POST["studycreator"])){
 		$studyIDFind = "SELECT * FROM Study ORDER BY ID DESC LIMIT 1";
 		$conn->exec($studyIDFind);
 		$_SESSION['studyID'] = $studyIDFind->ID;
-		echo $_SESSION['studyID'];
 	}
 
 	catch(PDOException $e){
@@ -33,7 +32,9 @@ if(isset($_POST["studycreator"])){
 	
 
 }
-
+if(isset($_SESSION['studyID'])){
+	echo $_SESSION['studyID'];
+}
 ?>
 
 
@@ -41,7 +42,7 @@ if(isset($_POST["studycreator"])){
 <body>
 <form action method="post" onsubmit="addQuestion()">
 
-	<label for="questiontext">Study Creator ID:</label><br>
+	<label for="questiontext">Question Text:</label><br>
 	<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
 	<input type="hidden" name="questionquantity" value=<?php echo $questionquantity ?> readonly>
 	<input type="submit" value="Submit">
