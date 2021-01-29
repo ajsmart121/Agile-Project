@@ -4,8 +4,6 @@ session_start();
 include"config.php";
 $_SESSION['userID'] = 61;
 $userID = $_SESSION['userID'];
-print_r( $_POST['answer']);
-echo $_POST['answer'][1];
 
 $userAnswerCount = count($_POST['answer']);
 
@@ -21,7 +19,6 @@ for($i = 0; $i < $userAnswerCount; $i++){
 	}
 
 	catch(PDOException $e){
-		echo $userAnswerInsert . "<br>" . $e->getMessage();
 	}
 }
 
