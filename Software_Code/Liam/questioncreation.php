@@ -2,7 +2,10 @@
 session_start();
 include"config.php";
 
-$questionquantity = $_POST["questionquantity"];
+if(isset($_POST["questionquantity"])){
+	$questionquantity = $_POST["questionquantity"];
+	$_SESSION['questionquantity'] = $questionquantity;
+}
 
 if(isset($_POST["studycreator"])){
 	$studycreator = $_POST["studycreator"];
@@ -20,8 +23,9 @@ if(isset($_POST["studycreator"])){
 	}
 }
 
-echo $questionquantity;
-if($questionquantity > 0){
+$_SESSION['questionquantity']--;
+
+if($_SESSION['questionquantity'] >= 0){
 	
 ?>
 
@@ -34,7 +38,6 @@ if($questionquantity > 0){
 
 	<label for="questiontext">Study Creator ID:</label><br>
 	<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
-	<input type="hidden" id ="questionquantity" name="questionquantity" value=<?php echo $questionquantity-- ?> readonly>
 	
 	<input type="submit" value="Submit">
 	</form> 
