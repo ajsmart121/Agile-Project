@@ -14,11 +14,16 @@ try{
 	$QuestionsFind->execute();
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	
-	foreach($QuestionsFindResult as $column) {
-		$questionList = $questionList.$column['QuestionText']."\n";
-		
-	}
-	echo $questionList[0];
+	
+	$languagestmt = $conn->prepare ("SELECT QuestionText FROM Question
+	WHERE StudyID = '$survey'");
+
+	
+	$lrow = $languagestmt->fetchAll(PDO::FETCH_COLUMN || PDO::FETCH_GROUP, 0);
+
+	
+	echo $lrow[1];
+
 	}
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
