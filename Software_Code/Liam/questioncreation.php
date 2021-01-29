@@ -33,8 +33,10 @@ if(isset($_POST["studycreator"])){
 
 }
 if(isset($_SESSION['studyID'])){
-	echo $_SESSION['studyID'];
+	echo "Hello";
 }
+else{
+	echo "Goodbye";
 ?>
 
 
