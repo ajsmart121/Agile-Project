@@ -3,7 +3,7 @@
 session_start();
 include"config.php";
 
-echo $_POST['question[1]'];
+print_r( $_POST['question']);
 ?>
 
 
