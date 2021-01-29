@@ -6,7 +6,9 @@ if(isset($_POST["questionquantity"])){
 	$_SESSION['questionsremaining'] = $_POST["questionquantity"];
 }
 
-echo $_SESSION['questionsremaining'];
+if(isset($_POST["questionsremaining"])){
+	echo $_SESSION['questionsremaining'];
+}
 
 	
 if(isset($_POST["studycreator"])){
