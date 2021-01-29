@@ -17,6 +17,7 @@ try{
 	
 	foreach($QuestionsFindResult as $row) {
 		$studyList = $studyList.$row['QuestionText']."\n";
+		echo $studyList;
 	}
 }
 catch(PDOException $e){
