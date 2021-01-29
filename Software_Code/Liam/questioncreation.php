@@ -33,6 +33,7 @@ if(!isset($_SESSION['studyID'])){
 	$_SESSION['studyID'] = $studyIDFindResult->ID;
 }
 	$studyID = $_SESSION['studyID'];
+}
 
 ?>
 
