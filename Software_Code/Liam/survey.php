@@ -14,11 +14,13 @@ try{
 	$QuestionsFind->execute();
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	
-	echo $QuestionsFindResult[0][0];
 	}
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
 	}
+	
+	$questionCount= count(QuestionsFindResult);
+	echo $questionCount;
 	echo $QuestionsFindResult[0][0];
 
 
