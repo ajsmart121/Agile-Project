@@ -15,16 +15,11 @@ try{
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	
 	echo $QuestionsFindResult[0][0];
-	
-	foreach($QuestionsFindResult as $row) {
-		$questionList = $questionList.$row['QuestionText']."\n";
-		
-	}
-	echo $questionList;
 	}
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
-	}	
+	}
+	echo $QuestionsFindResult[0][0];
 
 
 
