@@ -26,18 +26,16 @@ if(isset($_POST["studycreator"])){
 	}
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
-	}
-	
-	
-
+	}	
 }
-$_SESSION['studyID'] = $studyIDFindResult->ID;
-if(isset($_SESSION['studyID'])){
-	echo "Hello";
+
+if(!isset($_SESSION['studyID'])){
+	$_SESSION['studyID'] = $studyIDFindResult->ID;
 }
 else{
-	echo "Goodbye";
+	$studyID = $_SESSION['studyID'];
 }
+
 ?>
 
 
@@ -59,7 +57,7 @@ function addQuestion(){
 	$questiontext = $_POST["questiontext"];
 	try{
 		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-		VALUES ('$questiontext', '1', '11')";
+		VALUES ('$questiontext', '1', '$studyID')";
 		$conn->exec($questionInsert);
 	}
 
