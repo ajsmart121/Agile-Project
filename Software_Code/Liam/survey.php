@@ -14,7 +14,7 @@ try{
 	$QuestionsFind->execute();
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	
-	echo $QuestionsFindResult[0[0]];
+	echo $QuestionsFindResult[0][0];
 	
 	foreach($QuestionsFindResult as $row) {
 		$questionList = $questionList.$row['QuestionText']."\n";
