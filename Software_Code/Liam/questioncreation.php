@@ -5,9 +5,6 @@ include"config.php";
 if(isset($_POST["questionquantity"])){
 	$questionquantity = $_POST["questionquantity"];
 	$_SESSION["questionsremaining"] = $_POST["questionquantity"];
-}
-
-if(isset($_POST["questionsremaining"])){
 	echo $_SESSION["questionsremaining"];
 }
 
