@@ -16,7 +16,7 @@ include"config.php";
   <input type="text" id="studyname" name="studyname"><br>
   
   <label for="questionquantity">Number of Questions:</label><br>
-  <input type="text" id="questionquantity" name="questionquantity" value="1"><br>
+  <input type="text" id="questionquantity" name="questionquantity" value="3"><br>
   
   <input type="submit" value="Submit">
 </form> 

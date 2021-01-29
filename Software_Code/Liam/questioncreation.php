@@ -32,21 +32,18 @@ if(isset($_POST["studycreator"])){
 if(!isset($_SESSION['studyID'])){
 	$_SESSION['studyID'] = $studyIDFindResult->ID;
 }
-else{
 	$studyID = $_SESSION['studyID'];
-}
 
 ?>
 
 
 <html>
 <body>
-<form action method="post" onsubmit="addQuestion()">
-
-	<label for="questiontext">Question Text:</label><br>
-	<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
-	<input type="hidden" name="questionquantity" value=<?php echo $questionquantity ?> readonly>
-	<input type="submit" value="Submit">
+	<form action method="post" onsubmit="addQuestion()">
+		<label for="questiontext">Question Text:</label><br>
+		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
+		<input type="hidden" name="questionquantity" value=<?php echo $questionquantity ?> readonly>
+		<input type="submit" value="Submit">
 	</form> 
 </body>
 </html>
