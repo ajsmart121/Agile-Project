@@ -2,10 +2,7 @@
 session_start();
 include"config.php";
 
-if(isset($_POST["questionquantity"])){
-	$questionquantity = $_POST["questionquantity"];
-	$_SESSION['questionquantity'] = $questionquantity;
-}
+$questionquantity = $_POST["questionquantity"];
 
 if(isset($_POST["studycreator"])){
 	$studycreator = $_POST["studycreator"];
@@ -21,23 +18,37 @@ if(isset($_POST["studycreator"])){
 	catch(PDOException $e){
 		echo $studyInsert . "<br>" . $e->getMessage();
 	}
-}
-
-$_SESSION['questionquantity']--;
-
-if($_SESSION['questionquantity'] >= 0){
 	
+	try{
+		$studyIDFind = "SELECT * FROM Study ORDER BY ID DESC LIMIT 1";
+		$conn->exec($studyIDFind);
+		
+	}
+
+	catch(PDOException $e){
+		echo $studyIDFind . "<br>" . $e->getMessage();
+	}
+	
+	
+
+}
+$_SESSION['studyID'] = $studyIDFind->ID;
+if(isset($_SESSION['studyID'])){
+	echo "Hello";
+}
+else{
+	echo "Goodbye";
+}
 ?>
-
-
 
 
 <html>
 <body>
 <form action method="post" onsubmit="addQuestion()">
 
-	<label for="questiontext">Study Creator ID:</label><br>
+	<label for="questiontext">Question Text:</label><br>
 	<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
+	<input type="hidden" name="questionquantity" value=<?php echo $questionquantity ?> readonly>
 	<input type="submit" value="Submit">
 	</form> 
 </body>
@@ -62,10 +73,6 @@ function addQuestion(){
 </script>
 
 <?php
-}
-else{
-	echo "Questions all added!";	
-}
 
 $conn = null;
 ?>
