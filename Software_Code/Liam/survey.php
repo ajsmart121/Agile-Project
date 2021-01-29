@@ -18,7 +18,7 @@ try{
 		$questionList = $questionList.$column['QuestionText']."\n";
 		
 	}
-	echo $questionList;
+	echo $questionList[0];
 	}
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
