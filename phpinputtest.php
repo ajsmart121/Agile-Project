@@ -110,9 +110,9 @@
                                                 <p> Answer Type: </p>
                                                 <select id="answer_type1" name="answer_type1">
                                                   <option value="Radio Button">Radio Button</option>
-                                                  <option value="Check Box">Checkbox</option>
-                                                  <option value="Text Box">text box</option>
-                                                  <option value="Drop Down">drop down</option>
+                                                  <option value="Check Box">Check Box</option>
+                                                  <option value="Text Box">Text Box</option>
+                                                  <option value="Drop Down">Drop Down</option>
                                                 </select>
                                                 <br>
                                                 <label for="required">Required question?</label>
