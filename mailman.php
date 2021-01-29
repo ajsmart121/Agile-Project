@@ -3,7 +3,7 @@
     <?php
         $count = 1;
 
-      echo "Questionnaire: " . echo $_POST['name'];
+      echo "Questionnaire: " . $_POST['name'];
         echo $_POST["question"];
 
               while($count <= 10)
