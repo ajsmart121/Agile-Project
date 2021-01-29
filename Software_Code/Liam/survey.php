@@ -8,16 +8,16 @@ include"config.php";
 $survey = $_GET['surveyid'];
 echo $survey;
 
-
+$questionList = "";
 try{
 	$QuestionsFind = $conn->prepare("SELECT * FROM Question
 	WHERE StudyID = '$survey'");
 	$QuestionsFind->execute();
-	$QuestionsFindResult = $QuestionsFind->fetch(PDO::FETCH_All);
+	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	
 	foreach($QuestionsFindResult as $row) {
-		$studyList = $studyList.$row['QuestionText']."\n";
-		echo $studyList;
+		$questionList = $questionList.$row['QuestionText']."\n";
+		echo $questionList;
 	}
 }
 catch(PDOException $e){
