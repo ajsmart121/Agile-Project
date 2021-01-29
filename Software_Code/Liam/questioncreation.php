@@ -19,15 +19,6 @@ if(isset($_POST["studycreator"])){
 	}
 	
 	try{
-		$studyIDFind = "SELECT * FROM Study ORDER BY ID DESC LIMIT 1";
-		$conn->exec($studyIDFind);	
-	}
-
-	catch(PDOException $e){
-		echo $studyIDFind . "<br>" . $e->getMessage();
-	}
-	
-	try{
 		$studyIDFind = $conn->prepare("SELECT * FROM Study ORDER BY ID DESC LIMIT 1");
 		$studyIDFind->execute();
 		$studyIDFindResult = $studyIDFind->fetch(PDO::FETCH_OBJ);
