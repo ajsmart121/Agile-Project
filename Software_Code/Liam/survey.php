@@ -9,7 +9,7 @@ $survey = $_GET['surveyid'];
 
 $questionList = "";
 try{
-	$QuestionsFind = $conn->prepare("SELECT * FROM Question
+	$QuestionsFind = $conn->prepare("SELECT QuestionText FROM Question
 	WHERE StudyID = '$survey'");
 	$QuestionsFind->execute();
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
