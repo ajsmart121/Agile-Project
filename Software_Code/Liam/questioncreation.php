@@ -41,7 +41,6 @@ if(!isset($_SESSION['studyID'])){
 else{
 	$studyID = $_SESSION['studyID'];
 }
-if($_SESSION["questionsremaining"]>0){
 	?>
 
 
@@ -58,6 +57,7 @@ if($_SESSION["questionsremaining"]>0){
 	<script>
 	function addQuestion(){
 		<?php
+		if($_SESSION["questionsremaining"]>0){
 		$questiontext = $_POST["questiontext"];
 		try{
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
