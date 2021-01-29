@@ -41,15 +41,16 @@ if(!isset($_SESSION['studyID'])){
 else{
 	$studyID = $_SESSION['studyID'];
 }
+if($_SESSION["questionsremaining"]>0){
 	?>
 
 
 	<html>
 	<body>
-		<form action method="post" onsubmit="addQuestion()">
+		<form action method="post"">
 			<label for="questiontext">Question Text:</label><br>
 			<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
-			<input type="submit" value="Submit">
+			<input type="submit" value="Submit" onClick="return addQuestion();>
 		</form> 
 	</body>
 	</html>
@@ -57,7 +58,6 @@ else{
 	<script>
 	function addQuestion(){
 		<?php
-		if($_SESSION["questionsremaining"]>0){
 		$questiontext = $_POST["questiontext"];
 		try{
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
