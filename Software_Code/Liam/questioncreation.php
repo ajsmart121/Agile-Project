@@ -32,6 +32,7 @@ if(isset($_POST["studycreator"])){
 if(!isset($_SESSION['studyID'])){
 	$_SESSION['studyID'] = $studyIDFindResult->ID;
 }
+else{
 	$studyID = $_SESSION['studyID'];
 }
 
