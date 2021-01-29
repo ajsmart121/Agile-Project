@@ -9,13 +9,11 @@
               while($count <= 10)
               {
 
-                  //  if(strlen($_POST["required"] . $count) == 0){
-                    //    break;}
+                    if($_POST["answer_type"] . $count) == null){
+                        break;}
 
 
                     echo "Question " . $count .": ". $_POST["question" . ($count)] . ", ";
-
-                    echo strlen($_POST["question"]);
 
                     echo  "Answer Type: " . $_POST["answer_type" . ($count)] . ", ";
 
