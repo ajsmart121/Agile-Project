@@ -18,9 +18,21 @@ if(isset($_POST["studycreator"])){
 	catch(PDOException $e){
 		echo $studyInsert . "<br>" . $e->getMessage();
 	}
+	
+	try{
+		$studyIDFind = "SELECT * FROM Table ORDER BY ID DESC LIMIT 1";
+		$conn->exec($studyIDFind);
+		$_SESSION['studyID'] = $studyIDFind->ID;
+		echo $_SESSION['studyID'];
+	}
+
+	catch(PDOException $e){
+		echo $studyIDFind . "<br>" . $e->getMessage();
+	}
+	
+	
+
 }
-
-
 
 ?>
 
