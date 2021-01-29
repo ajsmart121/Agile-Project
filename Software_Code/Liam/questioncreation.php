@@ -40,17 +40,17 @@ if(isset($_POST["studycreator"])){
 <script>
 function addQuestion(){
 	<?php
-	//$questiontext = $_POST["questiontext"];
-	//try{
-		//$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-		//VALUES ('$questiontext', '1', '11')";
-		//$conn->exec($questionInsert);
-	//}
+	$questiontext = $_POST["questiontext"];
+	try{
+		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
+		VALUES ('$questiontext', '1', '11')";
+		$conn->exec($questionInsert);
+	}
 
-	//catch(PDOException $e){
-		//echo $questionInsert . "<br>" . $e->getMessage();
-	//}
-	//?>
+	catch(PDOException $e){
+		echo $questionInsert . "<br>" . $e->getMessage();
+	}
+	?>
 	return true;
 }
 </script>
