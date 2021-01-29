@@ -5,9 +5,9 @@ include"config.php";
 if(isset($_POST["questionquantity"])){
 	$questionquantity = $_POST["questionquantity"];
 	$_SESSION["questionsremaining"] = $_POST["questionquantity"];
-	echo $_SESSION["questionsremaining"];
+	
 }
-
+echo $_SESSION["questionsremaining"];
 	
 if(isset($_POST["studycreator"])){
 	unset($_SESSION['studyID']);
