@@ -15,7 +15,7 @@
 
                     echo "Question " . $count .": ". $_POST["question" . ($count)] . ", ";
 
-                    echo strlen($_POST["question"] . $count);
+                    echo strlen($_POST["question"]);
 
                     echo  "Answer Type: " . $_POST["answer_type" . ($count)] . ", ";
 
