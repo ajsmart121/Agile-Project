@@ -8,7 +8,6 @@ if(isset($_POST["studycreator"])){
 	$studycreator = $_POST["studycreator"];
 	$studyname = $_POST["studyname"];
 
-
 	try{
 		$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
 		VALUES ('$studycreator', '$questionquantity', '$studyname')";
@@ -21,17 +20,27 @@ if(isset($_POST["studycreator"])){
 	
 	try{
 		$studyIDFind = "SELECT * FROM Study ORDER BY ID DESC LIMIT 1";
-		$conn->exec($studyIDFind);
-		$_SESSION['studyID'] = $studyIDFind->ID;
+		$conn->exec($studyIDFind);	
 	}
 
 	catch(PDOException $e){
 		echo $studyIDFind . "<br>" . $e->getMessage();
 	}
 	
+	try{
+		$studyIDFind = $conn->prepare("SELECT * FROM Study ORDER BY ID DESC LIMIT 1");
+		$studyIDFind->execute();
+		$studyIDFindResult = $studyIDFind->fetch(PDO::FETCH_OBJ);
+
+	}
+	catch(PDOException $e){
+		echo "Error: " . $e->getMessage();
+	}
+	
 	
 
 }
+$_SESSION['studyID'] = $studyIDFindResult->ID;
 if(isset($_SESSION['studyID'])){
 	echo "Hello";
 }
