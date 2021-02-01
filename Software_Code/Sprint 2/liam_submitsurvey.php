@@ -8,17 +8,17 @@ $userID = $_SESSION['userID'];
 $userAnswerCount = count($_POST['answer']);
 $questionIDs = unserialize($_POST['questionIDs']);
 
-
+/*
 for($i = 0; $i < $userAnswerCount; $i++){
 	$useranswer = $_POST['answer'][$i];
 	$questionid = $questionIDs[$i][1];
 	echo nl2br("The answer for question with ID ".$questionid." is ".$useranswer.". \r\n ");
 }
+*/
 
-/*
 for($i = 0; $i < $userAnswerCount; $i++){
-	$useranswer = $_POST['answer'][$i+1];
-	$questionid = $_POST['questionID'][$i+1];
+	$useranswer = $_POST['answer'][$i];
+	$questionid = $questionIDs[$i][1];
 	
 	try{
 		$userAnswerInsert = "INSERT INTO useranswer (QuestionID, UserID, UserAnswerText)
@@ -29,7 +29,7 @@ for($i = 0; $i < $userAnswerCount; $i++){
 	catch(PDOException $e){
 	}
 }
-*/
+
 
 ?>
 
