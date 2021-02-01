@@ -23,7 +23,7 @@ catch(PDOException $e){
 <html>
 <body>
 
-<form action="submitsurvey.php" method="post">
+<form action="liam_submitsurvey.php" method="post">
 	<?php
 	for($i = 0; $i < $questionCount; $i++){
 		?>
