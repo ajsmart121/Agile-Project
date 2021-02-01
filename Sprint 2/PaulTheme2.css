@@ -1,0 +1,164 @@
+/*adds background*/
+#p2 {background-color: #3e5bc7 }
+/*Dundee Logo Image*/
+img {
+  display: block;
+  margin-left: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+/*Information box*/
+#box1 {
+  position: relative;
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: :5px;
+  margin-bottom:5px;
+  border-radius: 15px;
+
+  background-color:#efefef;
+  width:94.4%;
+  height:20%;
+  border-top: : 10px solid purple;
+  border: 5px solid purple;
+
+}
+/*Main box*/
+#box2 {
+position: relative;
+margin-right: 5%;
+margin-left: -5%;
+border-radius: 15px;
+padding-left: 4%;
+padding-right:-10%;
+padding-top:2%;
+padding-bottom:1% ;
+background-color:#efefef;
+width:110%;
+height:120%;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+/*button 3 didnt work in the body?*/
+.button3 {
+  transition-duration: 0.4s;
+}
+/*changes the buttons colour when its boused over*/
+.button3 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button3:hover {
+  background-color: #5f81fd; /* Green */
+  color: white;
+}
+
+.button3 {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: :5px;
+  margin-bottom:5px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  border-radius: 6px;
+  border: none;
+  color: white;
+  width:46%;
+  height:20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*Larger Log out Button*/
+.button4 {
+  /*animates the button*/
+  transition-duration: 0.4s;
+}
+.button4 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button4:hover {
+  background-color: #536882; /* Green */
+  color: white;
+}
+.button4 {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: :5px;
+  margin-bottom:5px;
+  background-color: #232e3b; /* Dundee Colours */
+  border-radius: 6px;
+  border: none;
+  color: white;
+  width:95%;
+  height:20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/*Pink add button*/
+.button5 {
+  transition-duration: 0.4s;
+}
+.button5 {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.button5:hover {
+  background-color: #e833a0; /* Green */
+  color: white;
+}
+.button5 {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: :5px;
+  margin-bottom:5px;
+  background-color: #c42986; /* Dundee Colours */
+  border-radius: 6px;
+  border: none;
+  color: white;
+  width:46%;
+  height:20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*Smaller Home Button*/
+.button2 {
+  transition-duration: 0.4s;
+}
+
+.button2:hover {
+  background-color: #5f81fd; /* Green */
+  color: white;
+}
+.button2 {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: :5px;
+  margin-bottom:5px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  border-radius: 6px;
+  width:8%;
+  height:5%;
+  border: none;
+  color: white;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.Accessibility{
+  margin: right;
+}
