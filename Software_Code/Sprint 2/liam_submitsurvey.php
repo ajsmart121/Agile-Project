@@ -12,7 +12,7 @@ $userAnswerCount = count($_POST['answer']);
 for($i = 0; $i < $userAnswerCount; $i++){
 	$useranswer = $_POST['answer'][$i];
 	$questionid = $_POST['questionID'][$i];
-	echo nl2br("The answer for question with ID ".$questionid." is ".$useranswer.". /r\n ");
+	echo nl2br("The answer for question with ID ".$questionid." is ".$useranswer.". \r\n ");
 }
 
 /*
