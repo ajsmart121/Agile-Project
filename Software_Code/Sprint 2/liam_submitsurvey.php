@@ -26,7 +26,6 @@ for($i = 0; $i < $userAnswerCount; $i++){
 ?>
 
 
-
 <?php
 $conn = null;
 ?>
