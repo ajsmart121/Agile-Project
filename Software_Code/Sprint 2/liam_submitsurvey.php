@@ -6,7 +6,8 @@ $_SESSION['userID'] = 61;
 $userID = $_SESSION['userID'];
 $questions = $_SESSION['questions'];
 
-print_r($questions);
+//print_r($questions);
+echo $questions[0][0];
 echo $questions[0][ID];
 
 $userAnswerCount = count($_POST['answer']);
