@@ -12,7 +12,7 @@ echo $hashedPassword;
 
 try{
 	$userFind = $conn->prepare("SELECT * FROM user
-	WHERE Username = '$username' AND Password = '$password'");
+	WHERE Username = '$username' AND Password = '$hashedPassword'");
 	$userFind->execute();
 	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
 
