@@ -7,6 +7,9 @@ $userID = $_SESSION['userID'];
 
 $userAnswerCount = count($_POST['answer']);
 $questionIDs = unserialize($_POST['questionIDs']);
+echo $questionIDs[0][1];
+echo $questionIDs[1][1];
+echo $questionIDs[2][1];
 
 for($i = 0; $i < $userAnswerCount; $i++){
 	$useranswer = $_POST['answer'][$i];
@@ -14,7 +17,7 @@ for($i = 0; $i < $userAnswerCount; $i++){
 	
 	try{
 		$userAnswerInsert = "INSERT INTO useranswer (QuestionID, UserID, UserAnswerText)
-		VALUES ('', '$userID', '$useranswer')";
+		VALUES ('$questionid', '$userID', '$useranswer')";
 		echo nl2br("The answer for question with ID ".$questionid." is ".$useranswer.". \r\n ");
 		$conn->exec($userAnswerInsert);
 	}
