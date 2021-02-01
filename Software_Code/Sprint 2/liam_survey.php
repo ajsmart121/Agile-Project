@@ -9,18 +9,32 @@ $survey = $_GET['surveyid'];
 $questionList = "";
 
 try{
-	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID FROM Question
+	$QuestionTextFind = $conn->prepare("SELECT QuestionText, ID FROM Question
 	WHERE StudyID = '$survey'");
-	$QuestionsFind->execute();
-	$QuestionsFindResult = $QuestionsFind->fetchALL();
-	$questionCount = count($QuestionsFindResult);
+	$QuestionTextFind->execute();
+	$QuestionTextFindResult = $QuestionTextFind->fetchALL();
+	$questionCount = count($QuestionTextFindResult);
 	
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
 }
 
-$dataString = serialize($QuestionsFindResult);
+try{
+	$QuestionIDFind = $conn->prepare("SELECT QuestionText, ID FROM Question
+	WHERE StudyID = '$survey'");
+	$QuestionIDFind->execute();
+	$QuestionIDFindResult = $QuestionIDFind->fetchALL();
+	$questionCount = count($QuestionIDFindResult);
+	
+}
+catch(PDOException $e){
+	echo "Error: " . $e->getMessage();
+}
+
+
+
+$dataString = serialize($QuestionIDFindResult);
 
 ?>
 <html>
@@ -31,7 +45,7 @@ $dataString = serialize($QuestionsFindResult);
 	for($i = 0; $i < $questionCount; $i++){
 		echo "ID: ".$QuestionsFindResult[$i][1];
 		?>
-		<label for="answer[<?php $i+1 ?>]"> <?php echo $QuestionsFindResult[$i][0]; ?> </label><br>
+		<label for="answer[<?php $i+1 ?>]"> <?php echo $QuestionTextFindResult[$i]; ?> </label><br>
 		<input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
 		<input type="hidden" name="questionIDs" value=<?php echo $dataString; ?> readonly>
 	<?php
