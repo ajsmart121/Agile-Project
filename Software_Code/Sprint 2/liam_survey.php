@@ -30,7 +30,7 @@ catch(PDOException $e){
 		?>
 		<label for="answer[<?php $i+1 ?>]"> <?php echo $QuestionsFindResult[$i][0]; ?> </label><br>
 		<input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
-		<input type="hidden" name="questionID" value=<?php echo $QuestionsFindResult[$i][1]; ?> readonly>
+		<input type="hidden" name="questionIDs" value=<?php echo $QuestionsFindResult; ?> readonly>
 	<?php
 	}
 	?>
