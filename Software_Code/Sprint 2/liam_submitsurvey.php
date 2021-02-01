@@ -7,7 +7,10 @@ $userID = $_SESSION['userID'];
 
 $userAnswerCount = count($_POST['answer']);
 
+echo "User has answered: ".$userAnswerCount." questions!";
 
+
+/*
 for($i = 0; $i < $userAnswerCount; $i++){
 	$useranswer = $_POST['answer'][$i+1];
 	$questionid = $_POST['questionID'][$i+1];
@@ -21,9 +24,10 @@ for($i = 0; $i < $userAnswerCount; $i++){
 	catch(PDOException $e){
 	}
 }
-
+*/
 
 ?>
+
 
 
 <?php
