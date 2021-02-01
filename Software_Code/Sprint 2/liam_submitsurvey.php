@@ -17,22 +17,22 @@ $userAnswerCount = count($_POST['answer']);
 
 
 
-/*
+
 for($i = 0; $i < $userAnswerCount; $i++){
 	$useranswer = $_POST['answer'][$i];
-	$questionid = $questionIDs[$i][1];
+	$questionid = $questions[$i][1];
 	
 	try{
 		$userAnswerInsert = "INSERT INTO useranswer (QuestionID, UserID, UserAnswerText)
 		VALUES ('$questionid', '$userID', '$useranswer')";
-		echo nl2br("The answer for question with ID ".$questionid." is ".$useranswer.". \r\n ");
+		//echo nl2br("The answer for question with ID ".$questionid." is ".$useranswer.". \r\n ");
 		$conn->exec($userAnswerInsert);
 	}
 
 	catch(PDOException $e){
 	}
 }
-*/
+
 
 
 ?>
