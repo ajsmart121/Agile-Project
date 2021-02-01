@@ -7,6 +7,7 @@ include"config.php";
 <?php
 $survey = $_GET['surveyid'];
 $questionList = "";
+
 try{
 	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID FROM Question
 	WHERE StudyID = '$survey'");
@@ -19,6 +20,8 @@ catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
 }
 
+$dataString = serialize($QuestionsFindResult);
+
 ?>
 <html>
 <body>
@@ -30,7 +33,7 @@ catch(PDOException $e){
 		?>
 		<label for="answer[<?php $i+1 ?>]"> <?php echo $QuestionsFindResult[$i][0]; ?> </label><br>
 		<input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
-		<input type="hidden" name="questionIDs" value=<?php echo $QuestionsFindResult; ?> readonly>
+		<input type="hidden" name="questionIDs" value=<?php echo $dataString; ?> readonly>
 	<?php
 	}
 	?>
