@@ -16,7 +16,6 @@ for($i = 0; $i < $userAnswerCount; $i++){
 		$userAnswerInsert = "INSERT INTO useranswer (QuestionID, UserID, UserAnswerText)
 		VALUES ('$questionid', '$userID', '$useranswer')";
 		$conn->exec($userAnswerInsert);
-		//echo nl2br("Answer ".$useranswer." successfully added as user ".$userID."'s response to question ".$questionid."!\n\n");
 	}
 
 	catch(PDOException $e){
