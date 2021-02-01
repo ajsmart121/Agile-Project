@@ -6,11 +6,13 @@ $_SESSION['userID'] = 61;
 $userID = $_SESSION['userID'];
 
 $userAnswerCount = count($_POST['answer']);
-$questionIDs = unserialize($_POST['questionIDs']);
-echo $questionIDs[0][1];
-echo $questionIDs[1][1];
-echo $questionIDs[2][1];
+$questionIDs = $_POST['questionIDs'];
 
+$splitIDs = unserialize($questionIDs);
+echo $splitIDs[1][1];
+
+
+/*
 for($i = 0; $i < $userAnswerCount; $i++){
 	$useranswer = $_POST['answer'][$i];
 	$questionid = $questionIDs[$i][1];
@@ -25,6 +27,7 @@ for($i = 0; $i < $userAnswerCount; $i++){
 	catch(PDOException $e){
 	}
 }
+*/
 
 
 ?>
