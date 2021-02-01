@@ -14,7 +14,8 @@ for($i = 0; $i < $userAnswerCount; $i++){
 	
 	try{
 		$userAnswerInsert = "INSERT INTO useranswer (QuestionID, UserID, UserAnswerText)
-		VALUES ('$questionid', '$userID', '$useranswer')";
+		VALUES ('', '$userID', '$useranswer')";
+		echo nl2br("The answer for question with ID ".$questionid." is ".$useranswer.". \r\n ");
 		$conn->exec($userAnswerInsert);
 	}
 
