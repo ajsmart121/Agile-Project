@@ -9,7 +9,7 @@ $survey = $_GET['surveyid'];
 $questionList = "";
 
 try{
-	$QuestionTextFind = $conn->prepare("SELECT QuestionText, ID FROM Question
+	$QuestionTextFind = $conn->prepare("SELECT QuestionText FROM Question
 	WHERE StudyID = '$survey'");
 	$QuestionTextFind->execute();
 	$QuestionTextFindResult = $QuestionTextFind->fetchALL();
@@ -21,7 +21,7 @@ catch(PDOException $e){
 }
 
 try{
-	$QuestionIDFind = $conn->prepare("SELECT QuestionText, ID FROM Question
+	$QuestionIDFind = $conn->prepare("SELECT ID FROM Question
 	WHERE StudyID = '$survey'");
 	$QuestionIDFind->execute();
 	$QuestionIDFindResult = $QuestionIDFind->fetchALL();
@@ -43,7 +43,7 @@ $dataString = serialize($QuestionIDFindResult);
 <form action="liam_submitsurvey.php" method="post">
 	<?php
 	for($i = 0; $i < $questionCount; $i++){
-		echo "ID: ".$QuestionsFindResult[$i][1];
+		echo "ID: ".$QuestionIDFindResult[$i];
 		?>
 		<label for="answer[<?php $i+1 ?>]"> <?php echo $QuestionTextFindResult[$i]; ?> </label><br>
 		<input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
