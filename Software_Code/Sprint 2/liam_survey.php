@@ -14,13 +14,12 @@ try{
 	$QuestionsFind->execute();
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	$questionCount = count($QuestionsFindResult);
+	$_SESSION['questions'] = $QuestionsFindResult;
 	
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
 }
-
-$dataString = serialize($QuestionsFindResult);
 
 ?>
 <html>
@@ -36,7 +35,6 @@ $dataString = serialize($QuestionsFindResult);
 	<?php
 	}
 	?>
-	<input type="hidden" name="questionIDs" value=<?php echo $dataString; ?> readonly>
 	<input type="submit" value="Submit">
 </form> 
 

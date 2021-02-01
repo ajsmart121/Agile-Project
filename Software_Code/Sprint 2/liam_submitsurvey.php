@@ -4,12 +4,13 @@ session_start();
 include"config.php";
 $_SESSION['userID'] = 61;
 $userID = $_SESSION['userID'];
+$questions = $_SESSION['questions'];
+
+print_r($questions);
 
 $userAnswerCount = count($_POST['answer']);
-$questionIDs = $_POST['questionIDs'];
 
-$splitIDs = unserialize($questionIDs);
-echo "please ".$splitIDs[1][1];
+
 
 
 /*
