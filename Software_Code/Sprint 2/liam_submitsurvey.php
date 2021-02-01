@@ -6,7 +6,9 @@ $_SESSION['userID'] = 61;
 $userID = $_SESSION['userID'];
 $questions = $_SESSION['questions'];
 
-echo '<pre>'; print_r($questions); echo '</pre>';
+//echo '<pre>'; print_r($questions); echo '</pre>';
+
+echo $questions[0][1];
 
 
 
