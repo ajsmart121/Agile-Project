@@ -21,7 +21,6 @@ catch(PDOException $e){
 }
 
 $dataString = serialize($QuestionsFindResult);
-echo $dataString;
 
 ?>
 <html>
