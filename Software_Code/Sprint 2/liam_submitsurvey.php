@@ -6,6 +6,7 @@ $_SESSION['userID'] = 61;
 $userID = $_SESSION['userID'];
 
 $userAnswerCount = count($_POST['answer']);
+echo $questionIDs;
 $questionIDs = unserialize($_POST['questionIDs']);
 
 for($i = 0; $i < $userAnswerCount; $i++){
