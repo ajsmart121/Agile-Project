@@ -56,7 +56,7 @@ else{
 		else{
 			echo "Questions submitted!";
 			?>
-			<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Liam/survey.php?surveyid=<?php echo $_SESSION['studyID']; ?>">Survey Link</a>
+			<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Liam/liam_survey.php?surveyid=<?php echo $_SESSION['studyID']; ?>">Survey Link</a>
 			<?php
 		}
 		?>
