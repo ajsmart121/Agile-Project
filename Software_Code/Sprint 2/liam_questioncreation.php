@@ -13,7 +13,7 @@ include"config.php";
 	
 	if($_SESSION["questionsremaining"]>0){
 	?>
-	<form class="my-form" action method="post">
+	<form action method="post">
 		<label for="questiontext">Question Text:</label><br>
 		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
 		<!--
@@ -39,29 +39,28 @@ include"config.php";
 		<?php
 	}
 	?>
+
+
+	<script>
+	function addQuestion(){
+		<?php
+		$questiontext = $_POST["questiontext"];
+		try{
+			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
+			VALUES ('$questiontext', '1', '$studyID')";
+			$conn->exec($questionInsert);
+			$_SESSION["questionsremaining"]--;
+		}
+		
+		catch(PDOException $e){
+			echo $questionInsert . "<br>" . $e->getMessage();
+		}
+		?>
+		return true;
+	}
+	</script>
 </body>
 </html>
-
-<script>
-$('.my-form').on('submit', function () {
-	<?php
-	$questiontext = $_POST["questiontext"];
-	echo "help";
-	try{
-		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-		VALUES ('$questiontext', '1', '$studyID')";
-		$conn->exec($questionInsert);
-		$_SESSION["questionsremaining"]--;
-	}
-	
-	catch(PDOException $e){
-		echo $questionInsert . "<br>" . $e->getMessage();
-	}
-	?>
-	return true;
-});
-</script>
-
 
 <?php
 $conn = null;
