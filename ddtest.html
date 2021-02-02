@@ -1,0 +1,41 @@
+<html>
+ <head>
+  <script type="text/javascript">
+
+   function changeFunc() {
+    var selectBox = document.getElementById("selectBox");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    //alert(selectedValue);
+    //var selectedValue = document.createElement('input');
+    //selectedValue.type = 'text';
+    //selectedValue.name = 'answerTXT';
+    // if (value==1)
+    // {
+    //   var ansTXT = document.createElement('input');
+    //   ansTXT.type = 'text';
+    //   ansTXT.name = 'answerTXT';
+    // }
+    switch (selectedValue){
+      case 1:
+      var ansTXT = document.createElement('input');
+      ansTXT.type = 'text';
+      ansTXT.name = 'answerTXT';
+      ansTXT.display = "none";
+      break;
+      case 2:
+      //
+      break;
+    default:
+      alert('Error');
+    }
+  }
+
+  </script>
+ </head>
+ <body>
+  <select id="selectBox" onchange="changeFunc();">
+   <option value="1">Option #1</option>
+   <option value="2">Option #2</option>
+  </select>
+ </body>
+</html>
