@@ -26,13 +26,12 @@ include"config.php";
 		<input type="text" id="questionanswerquantity" name="questionanswerquantity" value="1"><br>
 		-->
 		
-		<input type="submit" value="Submit" onclick="addQuestion">
+		<input id="demo" type="submit" value="Submit">
 	</form> 
 	<?php
 	}
 	else{
 		unset($_SESSION["questionsremaining"]);
-		unset($_SESSION["counter"]);
 		echo "Questions submitted!";
 		?>
 		<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>
@@ -42,7 +41,10 @@ include"config.php";
 
 
 	<script>
-	function addQuestion(){
+	document.getElementById("demo").onclick = function() {myFunction()};
+
+	
+	function myFunction() {
 		<?php
 		$questiontext = $_POST["questiontext"];
 		try{
