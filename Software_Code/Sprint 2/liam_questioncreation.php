@@ -33,6 +33,7 @@ include"config.php";
 	</form> 
 	<?php
 	
+		$_SESSION["questionsremaining"]--;
 	}
 	else{
 		unset($_SESSION["questionsremaining"]);
@@ -53,7 +54,6 @@ function addQuestion(){
 		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 		VALUES ('$questiontext', '1', '$studyID')";
 		$conn->exec($questionInsert);
-		$_SESSION["questionsremaining"]--;
 	}
 	
 	catch(PDOException $e){
