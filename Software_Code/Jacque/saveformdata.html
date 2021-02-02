@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create a Questionnaire</title>
+</head>
+<body>
+
+<script>
+var limit = 10; // Max questions
+var count = 1; // There are 4 questions already
+var ansLimit = 3; // Max answer options that can be added
+var ansCount = 1; // answer option counter, already one added.
+
+function addQuestion()
+{
+    // Get the quiz form element
+    //var quiz = document.getElementByClassName("quiz");
+    var quiz = document.getElementByID("quiz");
+
+    // Good to do error checking, make sure we managed to get something
+    if (quiz)
+    {
+        if (count < limit)
+        {
+            // Create a new <p> element
+            var questionTXT = document.createElement('p');
+            questionTXT.innerHTML = 'Question ' + (count + 1);
+
+            // Create the new text box
+            var newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.name = 'questions[]';
+
+            //new title
+            var answerTypeTXT = document.createElement('p');
+            answerTypeTXT.innerHTML = 'Answer Type: ';
+
+            //new select input
+            var newSelect = document.createElement('select');
+            newSelect.name = 'ansType';
+            newSelect.id = 'ansType';
+
+            //Create array of options to be added
+            var array = ["Radio","Checkbox","Text","Drop-Down"];
+
+            //Create and append the options
+            for (var i = 0; i <= array.length; i++) {
+                var option = document.createElement('option');
+                option.value = array[i];
+                option.text = array[i];
+                newSelect.appendChild(option);
+              }
+
+              var requiredTXT = document.createElement('p');
+              requiredTXT.innerHTML = 'Required Question?: ';
+
+              // Create the new text box
+              var newReqInput = document.createElement('input');
+              newReqInput.type = 'checkbox';
+              newReqInput.name = 'required';
+
+              var breaker = document.createElement('p');
+              breaker.innerHTML = '==========================================================';
+              // Good practice to do error checking
+              if (newInput && questionTXT && newSelect && answerTypeTXT && option && newReqInput && requiredTXT)
+              {
+                  // Add the new elements to the form
+                  quiz.appendChild(questionTXT);
+                  quiz.appendChild(newInput);
+                  quiz.appendChild(answerTypeTXT);
+                  quiz.appendChild(newSelect);
+                  quiz.appendChild(requiredTXT);
+                  quiz.appendChild(newReqInput);
+                  quiz.appendChild(breaker);
+                  // Increment the count
+                  count++;
+              }
+
+          }
+              else
+              {
+                  alert('Question limit reached');
+              }
+      }
+  }
+
+  function radioAT()
+  {
+    //var radioOpts = document.getElementByClassName("radioOpts");
+    var radioOpts = document.getElementByID("radioOpts");
+    if (radioOpts)
+    {
+      if (ansCount < ansLimit) // need add answer button to implement thiss
+      {
+        var newRadiobtn = document.createElement('input');
+        newRadiobtn.type = 'radio';
+        newRadiobtn.name = 'radiobtn';
+
+        if(newRadiobtn)
+        {
+          radioOpts.appendChild(newRadiobtn);
+
+          ansCount++;
+        }
+      }
+      else
+      {
+        alert ('Answer options limit reached');
+      }
+    }
+  }
+
+  function checkboxAT()
+  {
+    //var checkboxOpts = document.getElementByClassName("checkboxOpts");
+    var checkboxOpts = document.getElementByID("checkboxOpts");
+    if(checkboxOpts)
+    {
+      if(ansCount < ansLimit)
+      {
+        var newCheckbox = document.createElement('input');
+        newCheckbox.type = 'checkbox';
+        newCheckbox.name = 'checkbox';
+        if(newCheckbox)
+        {
+          checkboxOpts.appendChild(newCheckbox);
+
+          ansCount++;
+        }
+      }
+    }
+    else
+    {
+      alert('Answer options limit reached');
+    }
+ }
+
+  function dropdownAT()
+  {
+    //var ddOpts = document.getElementByClassName("ddOpts");
+    var ddOpts = document.getElementByID("ddOpts");
+    if (ddOpts)
+    {
+    var dropdownArray = ["option 1","option 2", "option 3", "option 4"];
+
+    for (var i = 0; i <= array.length; i++)
+    {
+        var ansOption = document.createElement('option');
+        option.value = array[i];
+        option.text = array[i];
+        //newSelect.appendChild(ansOption);
+    }
+  }
+
+
+ }
+
+  function textboxAT()
+  {
+    //var tbOpts = document.getElementByclassName("tbOpts");
+    var tbOpts = document.getElementByID("tbOpts");
+    if (tbOpts)
+    {
+    var ansTXT = document.createElement('input');
+    ansTXT.type = 'text';
+    ansTXT.name = 'answerTXT';
+    }
+    else{
+      alert ('Textbox cannot appear.');
+    }
+  }
+
+
+
+
+</script>
+<form id="quiz" method="post" action="<?php echo $_SERVER['eu-cdbr-west-03.cleardb.net'];?>">
+<!-- <div class="quiz tbOpts">Questionnaire Name: <input type="text" name="qname"> </div> -->
+  Questionnaire Name: <input type="text" name="qname">
+
+  <p>Question 1</p>
+  <input type="text" name="question"/>
+
+  <p> Answer Type: </p>
+  <select id="ansType" name="ansType">
+    <option value="radio Button">Radio Button</option>
+    <option value="checkbox">Checkbox</option>
+    <option value="textbox" id="tbOpts" onclick="textboxAT();">Textbox</option>
+    <option value="drop down">Drop-down</option>
+  </select><br>
+    <br>
+    <label for="required">Required question?</label><br>
+    <input type="checkbox" name="required">
+    <br>
+
+    <input type="button" value="Add question" onclick="addQuestion();"/>
+    <br>
+    <br>
+  <input type="submit">
+</form>
+
+<!-- <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // collect value of input field
+  $name = $_POST['qname'];
+  if (empty($name)) {
+    echo "Name is empty";
+  } else {
+    echo $name;
+  }
+}
+?> -->
+
+
+</form>
+
+</body>
+</html>
