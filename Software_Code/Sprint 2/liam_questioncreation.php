@@ -12,7 +12,6 @@ include"config.php";
 	echo $_SESSION["questionsremaining"];
 	
 	if($_SESSION["questionsremaining"]>0){
-	$_SESSION["questionsremaining"]--;
 	?>
 	<form action method="post">
 		<label for="questiontext">Question Text:</label><br>
@@ -51,8 +50,7 @@ function addQuestion{
 		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 		VALUES ('$questiontext', '1', '$studyID')";
 		$conn->exec($questionInsert);
-		
-		
+		$_SESSION["questionsremaining"]--;
 	}
 	
 	catch(PDOException $e){
