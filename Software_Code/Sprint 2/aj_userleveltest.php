@@ -6,7 +6,8 @@ include"config.php";
 $study = $_POST["study"];
 $username = $_POST["username"];
 $password = password_hash($password, "sha256");
-$password = $_POST[$password];
+//$password = $_POST[$password];
+
 
 
 try{
