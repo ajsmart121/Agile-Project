@@ -7,6 +7,7 @@ img {
   margin-top: 1%;
   margin-bottom: 1%;
 }
+
 /*Information box*/
 #box1 {
   position: relative;
@@ -21,22 +22,22 @@ img {
   height:20%;
   border-top: : 10px solid purple;
   border: 5px solid purple;
-
 }
+
 /*Main box*/
 #box2 {
-position: relative;
-margin-right: 5%;
-margin-left: -5%;
-border-radius: 15px;
-padding-left: 4%;
-padding-right:-10%;
-padding-top:2%;
-padding-bottom:1% ;
-background-color:#efefef;
-width:110%;
-height:120%;
-box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  position: relative;
+  margin-right: 5%;
+  margin-left: -5%;
+  border-radius: 15px;
+  padding-left: 4%;
+  padding-right:-10%;
+  padding-top:2%;
+  padding-bottom:1% ;
+  background-color:#efefef;
+  width:110%;
+  height:120%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 /*button 3 didnt work in the body?*/
 .button3 {
