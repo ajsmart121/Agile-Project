@@ -65,6 +65,7 @@ function addQuestion(){
 }
 </script>
 */
+?>
 <?php
 $conn = null;
 ?>
