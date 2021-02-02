@@ -14,7 +14,7 @@ if(isset($surveyID) && isset($userID)){
 	
 	try{
 		$QuestionsFind = $conn->prepare("SELECT q.QuestionText, ua.UserAnswerText FROM Question q, useranswer ua
-		WHERE StudyID = '$surveyID'
+		WHERE q.StudyID = '$surveyID'
 		AND ua.QuestionID = q.ID");
 		$QuestionsFind->execute();
 		$QuestionsFindResult = $QuestionsFind->fetchALL();
