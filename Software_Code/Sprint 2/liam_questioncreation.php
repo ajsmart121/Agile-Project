@@ -9,11 +9,6 @@ include"config.php";
 	if(!isset($_SESSION["questionsremaining"])){
 		$_SESSION["questionsremaining"] = $_GET['questionquantity'];
 	}
-	echo $_SESSION["questionsremaining"];
-	
-	if(!isset($_SESSION["counter"])){
-		$_SESSION["counter"] = 0;
-	}
 	
 	if($_SESSION["questionsremaining"]>0){
 	?>
@@ -49,7 +44,6 @@ include"config.php";
 	<script>
 	function addQuestion(){
 		<?php
-		if ($_SESSION["counter"] > 0){
 		$questiontext = $_POST["questiontext"];
 		try{
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
@@ -62,9 +56,7 @@ include"config.php";
 		catch(PDOException $e){
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}
-		}
-		
-		$_SESSION["counter"]++;
+
 		?>
 		return true;
 	}
