@@ -55,7 +55,7 @@ include"config.php";
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
 			$_SESSION["questionsremaining"]--;
-			$_SESSION["counter"]++
+			$_SESSION["counter"]++;
 		}
 		
 		catch(PDOException $e){
