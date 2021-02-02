@@ -46,6 +46,7 @@ include"config.php";
 $('.my-form').on('submit', function () {
 	<?php
 	$questiontext = $_POST["questiontext"];
+	echo "help";
 	try{
 		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 		VALUES ('$questiontext', '1', '$studyID')";
