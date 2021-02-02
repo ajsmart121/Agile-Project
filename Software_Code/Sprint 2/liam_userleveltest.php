@@ -8,6 +8,7 @@ $username = $_POST["username"];
 
 $password = $_POST["password"];
 //$password = password_hash($password, "sha256");
+$password = hash("sha256", $password);
 
 echo $username;
 echo "\n";
