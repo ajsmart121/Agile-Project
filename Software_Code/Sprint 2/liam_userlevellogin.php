@@ -8,14 +8,17 @@ $conn = null;
 
 <html>
 <body>
-<form action="liam_userleveltest.php" method="post">
+<form action="aj_userleveltest.php" method="post">
   <label for="study">Study ID:</label><br>
   <input type="text" id="study" name="study" value="1"><br>
   <label for="username">Username:</label><br>
-  <input type="text" id="username" name="username" value="Liam"><br>
+  <input type="text" id="username" name="username" value="username"><br>
   <label for="password">Password:</label><br>
   <input type="text" id="password" name="password" value="Password"><br><br>
   <input type="submit" value="Submit">
-</form> 
+</form>
 </body>
 </html>
+
+
+<!-- Adapted from Liam's login code, adding security !-->
