@@ -14,7 +14,7 @@ $conn = null;
   <label for="username">Username:</label><br>
   <input type="text" id="username" name="username" value="username"><br>
   <label for="password">Password:</label><br>
-  <input type="text" id="password" name="password" value="Password"><br><br>
+  <input type="text" id="password" name="password" value="password"><br><br>
   <input type="submit" value="Submit">
 </form>
 </body>
