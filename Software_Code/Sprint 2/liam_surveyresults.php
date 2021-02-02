@@ -12,18 +12,21 @@ if(isset($_GET["userID"])){
 
 if(isset($surveyID) && isset($userID)){
 	
+	$answerslist = "";
 	try{
 		$QuestionsFind = $conn->prepare("SELECT q.QuestionText, ua.UserAnswerText FROM Question q, useranswer ua
 		WHERE q.StudyID = '$surveyID'
 		AND ua.QuestionID = q.ID");
 		$QuestionsFind->execute();
 		$QuestionsFindResult = $QuestionsFind->fetchALL();
-		echo "Success!";
+		
+		foreach($QuestionsFindResult as $row) {
+			$answerslist = $answerslist.$row['QuestionText']." ".$row['UserAnswerText']."\n";
+		}
 	}
 	
 	catch(PDOException $e){
-		echo "Error: " . $e->getMessage();
-		echo "No!";
+		echo "Error: " . $e->getMessage();=
 	}
 }	
 
