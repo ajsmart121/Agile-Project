@@ -37,6 +37,7 @@ include"config.php";
 	}
 	else{
 		unset($_SESSION["questionsremaining"]);
+		unset($_SESSION["counter"]);
 		echo "Questions submitted!";
 		?>
 		<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>
