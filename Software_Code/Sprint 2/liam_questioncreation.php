@@ -2,44 +2,17 @@
 session_start();
 include"config.php";
 
-if(isset($_POST["questionquantity"])){
-	$questionquantity = $_POST["questionquantity"];
-	$_SESSION["questionsremaining"] = $_POST["questionquantity"];	
-}
-	
-if(isset($_POST["studycreator"])){
-	unset($_SESSION['studyID']);
-	$studycreator = $_POST["studycreator"];
-	$studyname = $_POST["studyname"];
-
-	try{
-		$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
-		VALUES ('$studycreator', '$questionquantity', '$studyname')";
-		$conn->exec($studyInsert);
-	}
-
-	catch(PDOException $e){
-		echo $studyInsert . "<br>" . $e->getMessage();
-	}
-	
 	try{
 		$studyIDFind = $conn->prepare("SELECT * FROM Study ORDER BY ID DESC LIMIT 1");
 		$studyIDFind->execute();
 		$studyIDFindResult = $studyIDFind->fetch(PDO::FETCH_OBJ);
+		$studyID = $studyIDFindResult->ID;
 
 	}
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
 	}	
 }
-
-if(!isset($_SESSION['studyID'])){
-	$_SESSION['studyID'] = $studyIDFindResult->ID;
-}
-else{
-	$studyID = $_SESSION['studyID'];
-}
-
 	?>
 	<html>
 	<body>
@@ -49,6 +22,19 @@ else{
 		<form action method="post" onsubmit="addQuestion()">
 			<label for="questiontext">Question Text:</label><br>
 			<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
+			<label for="questiontype">Question Type:</label><br>
+			
+			
+			<!--
+			<select id="questiontype" name="questiontype">
+				<option value="1">Text</option>
+				<option value="2">Single Choice</option>
+				<option value="3">Multiple Choice</option>
+			</select>
+			<label for="questionanswerquantity">Question Answer Quantity:</label><br>
+			<input type="text" id="questionanswerquantity" name="questionanswerquantity" value="1"><br>
+			-->
+			
 			<input type="submit" value="Submit">
 		</form> 
 		<?php
