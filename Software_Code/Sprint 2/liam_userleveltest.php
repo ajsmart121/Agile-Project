@@ -19,8 +19,8 @@ try{
 	$userFind->execute();
 	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
 
-	echo $userFindResult->Username;
-	echo $userFindResult->Password;
+	//echo $userFindResult->Username;
+	//echo $userFindResult->Password;
 }
 
 catch(PDOException $e){
