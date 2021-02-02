@@ -27,7 +27,7 @@ include"config.php";
 		<input type="text" id="questionanswerquantity" name="questionanswerquantity" value="1"><br>
 		-->
 		
-		<input type="submit" value="Submit">
+		<input type="submit" value="Submit" onclick="addQuestion">
 	</form> 
 	<?php
 	}
