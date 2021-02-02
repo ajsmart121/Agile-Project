@@ -44,7 +44,7 @@ include"config.php";
 </html>
 
 <script>
-function addQuestion(){
+function addQuestion{
 	<?php
 	$questiontext = $_POST["questiontext"];
 	try{
