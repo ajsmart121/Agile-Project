@@ -2,6 +2,7 @@
 <?php
 session_start();
 include"config.php";
+unset($_SESSION["questionsremaining"]);
 
 $studycreator = $_POST["studycreator"];
 $studyname = $_POST["studyname"];
