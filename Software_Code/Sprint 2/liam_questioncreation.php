@@ -10,11 +10,27 @@ include"config.php";
 		$_SESSION["questionsremaining"] = $_GET['questionquantity'];
 	}
 	
+	if(!isset($_SESSION["adding"])){
+		$_SESSION["adding"] = $_POST['adding'];
+				$questiontext = $_POST["questiontext"];
+		try{
+			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
+			VALUES ('$questiontext', '1', '$studyID')";
+			$conn->exec($questionInsert);
+			$_SESSION["questionsremaining"]--;
+			
+		}
+		
+		catch(PDOException $e){
+			echo $questionInsert . "<br>" . $e->getMessage();
+		}
+	
 	if($_SESSION["questionsremaining"]>0){
 	?>
 	<form action method="post">
 		<label for="questiontext">Question Text:</label><br>
 		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
+		<input type="hidden" id="adding" name="adding" value="1"><br>
 		<!--
 		<label for="questiontype">Question Type:</label><br>
 		<select id="questiontype" name="questiontype">
@@ -32,6 +48,7 @@ include"config.php";
 	}
 	else{
 		unset($_SESSION["questionsremaining"]);
+		unset($_SESSION["adding"]);
 		echo "Questions submitted!";
 		?>
 		<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>
@@ -39,30 +56,6 @@ include"config.php";
 	}
 	?>
 
-
-	<script>
-	document.getElementById("demo").onclick = function() {myFunction()};
-
-	
-	function myFunction() {
-		<?php
-		$questiontext = $_POST["questiontext"];
-		try{
-			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-			VALUES ('$questiontext', '1', '$studyID')";
-			$conn->exec($questionInsert);
-			$_SESSION["questionsremaining"]--;
-			
-		}
-		
-		catch(PDOException $e){
-			echo $questionInsert . "<br>" . $e->getMessage();
-		}
-
-		?>
-		return true;
-	}
-	</script>
 </body>
 </html>
 
