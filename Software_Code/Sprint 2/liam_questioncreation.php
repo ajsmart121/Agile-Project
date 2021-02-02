@@ -56,13 +56,15 @@ include"config.php";
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
 			$_SESSION["questionsremaining"]--;
-			$_SESSION["counter"]++;
+			
 		}
 		
 		catch(PDOException $e){
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}
 		}
+		
+		$_SESSION["counter"]++;
 		?>
 		return true;
 	}
