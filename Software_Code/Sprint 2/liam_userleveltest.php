@@ -14,21 +14,22 @@ echo $username;
 echo "\n";
 echo $password;
 
-/*
+
 try{
 	$userFind = $conn->prepare("SELECT * FROM user
 	WHERE Username = '$username' AND Password = '$password'");
 	$userFind->execute();
 	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
 
-	//echo $userFindResult->Username;
-	//echo $userFindResult->Password;
+	echo $userFindResult->Username;
+	echo "\n";
+	echo $userFindResult->Password;
 }
 
 catch(PDOException $e){
 	echo $userFind . "<br>" . $e->getMessage();
 }
-*/
+
 ?>
 
 
