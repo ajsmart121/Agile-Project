@@ -30,7 +30,7 @@ include"config.php";
 		}
 	}
 	
-	if($_SESSION["questionsremaining"]>0){
+	if($_SESSION["questionsremaining"]>1){
 	?>
 	<form action method="post">
 		<label for="questiontext">Question Text:</label><br>
