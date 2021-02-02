@@ -17,11 +17,12 @@ for($i = 0; $i < $userAnswerCount; $i++){
 	try{
 		$userAnswerInsert = "INSERT INTO useranswer (QuestionID, UserID, UserAnswerText, StudyID)
 		VALUES ('$questionid', '$userID', '$useranswer', '$studyID')";
-		//echo nl2br("The answer for question with ID ".$questionid." is ".$useranswer.". \r\n ");
+		echo nl2br("User with ID: ".$userID." has successfully answered question with ID: ".$questionid." with the response of: ".$useranswer."!\r\n ");
 		$conn->exec($userAnswerInsert);
 	}
 
 	catch(PDOException $e){
+		echo $userAnswerInsert . "<br>" . $e->getMessage();
 	}
 }
 
