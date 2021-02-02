@@ -1,21 +1,27 @@
 <?php
 session_start();
 include"config.php";
-
-try{
-	$studyIDFind = $conn->prepare("SELECT * FROM Study ORDER BY ID DESC LIMIT 1");
-	$studyIDFind->execute();
-	$studyIDFindResult = $studyIDFind->fetch(PDO::FETCH_OBJ);
-	$studyID = $studyIDFindResult->ID;
-
-}
-catch(PDOException $e){
-	echo "Error: " . $e->getMessage();
-}	
 ?>
 <html>
 <body>
 	<?php
+	if(!isset($_SESSION["questionsremaining"]){
+		
+		$studyID = $_GET['surveyid']
+
+		try{
+			$questionsRemainingFind = $conn->prepare("SELECT * FROM Study
+			WHERE ID = '$studyID'");
+			$studyIDFind->execute();
+			$studyIDFindResult = $studyIDFind->fetch(PDO::FETCH_OBJ);
+			$_SESSION["questionsremaining"]  = $studyIDFindResult->StudyQuestionCount;
+		}
+		catch(PDOException $e){
+			echo "Error: " . $e->getMessage();
+		}
+	}
+	
+	
 	if($_SESSION["questionsremaining"]>0){
 		?>
 	<form action method="post" onsubmit="addQuestion()">

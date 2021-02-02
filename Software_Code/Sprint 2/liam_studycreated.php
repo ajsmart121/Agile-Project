@@ -16,12 +16,22 @@ try{
 catch(PDOException $e){
 	echo $studyInsert . "<br>" . $e->getMessage();
 }
+
+try{
+	$studyIDFind = $conn->prepare("SELECT * FROM Study ORDER BY ID DESC LIMIT 1");
+	$studyIDFind->execute();
+	$studyIDFindResult = $studyIDFind->fetch(PDO::FETCH_OBJ);
+	$studyID = $studyIDFindResult->ID;
+}
+catch(PDOException $e){
+	echo "Error: " . $e->getMessage();
+}	
 ?>
 
 
 <html>
 <body>
-<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_questioncreation.php">Add Questions</a>			
+<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_questioncreation.php?surveyid=<?php echo $studyID; ?>">Add Questions</a>			
 </body>
 </html>
 
