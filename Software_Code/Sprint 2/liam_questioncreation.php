@@ -12,8 +12,12 @@ include"config.php";
 	
 	if(!isset($_SESSION["adding"])){
 		$_SESSION["adding"] = $_POST['adding'];
-				$questiontext = $_POST["questiontext"];
+		
+	}
+	else{
 		try{
+			
+			$questiontext = $_POST["questiontext"];
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
