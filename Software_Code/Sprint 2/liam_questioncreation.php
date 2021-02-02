@@ -13,7 +13,7 @@ include"config.php";
 	
 	if($_SESSION["questionsremaining"]>0){
 	?>
-	<form action method="post" onSubmit="addQuestion">
+	<form action method="post" onSubmit="return addQuestion">
 		<label for="questiontext">Question Text:</label><br>
 		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
 		<!--
@@ -43,21 +43,18 @@ include"config.php";
 </html>
 
 <script>
-function addQuestion{
+function addQuestion(){
 	<?php
-	if(isset($_POST["questiontext"])){
-		
-		$questiontext = $_POST["questiontext"];
-		try{
-			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-			VALUES ('$questiontext', '1', '$studyID')";
-			$conn->exec($questionInsert);
-			$_SESSION["questionsremaining"]--;
-		}
-		
-		catch(PDOException $e){
-			echo $questionInsert . "<br>" . $e->getMessage();
-		}
+	$questiontext = $_POST["questiontext"];
+	try{
+		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
+		VALUES ('$questiontext', '1', '$studyID')";
+		$conn->exec($questionInsert);
+		$_SESSION["questionsremaining"]--;
+	}
+	
+	catch(PDOException $e){
+		echo $questionInsert . "<br>" . $e->getMessage();
 	}
 	?>
 	return true;
