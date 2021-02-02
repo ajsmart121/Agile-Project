@@ -23,8 +23,8 @@ if(isset($surveyID) && isset($userID)){
 		
 		
 		for($i = 0; $i < $questionCount; $i++){
-			echo nl2br("Question: ".($i+1)." ".$QuestionsFindResult[$i][0]."\n");
-			echo nl2br("Answer: ".($i+1)." ".$QuestionsFindResult[$i][1]."\n");
+			echo nl2br("Question: ".($i+1)." ".$QuestionsFindResult[$i][0]."\r\n");
+			echo nl2br("Answer: ".($i+1)." ".$QuestionsFindResult[$i][1]."\r\n\r\n");
 		}
 		
 		
