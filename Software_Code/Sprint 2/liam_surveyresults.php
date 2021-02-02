@@ -12,6 +12,10 @@ if(isset($_GET["userID"])){
 	echo "User ID: ".$userID;
 }
 
+if(isset($surveyID) && isset($userID)){
+	echo "They're set";
+}	
+
 ?>
 
 <html>
@@ -23,7 +27,7 @@ if(isset($_GET["userID"])){
 	<br>
 	<label for="surveyID">Please enter the ID of the survey:</label><br>
 	<input type="text" id="surveyID" name="surveyID" value=""><br>
-	<label for="surveyUser">Please enter the ID of the user::</label><br>
+	<label for="surveyUser">Please enter the ID of the user:</label><br>
 	<input type="text" id="userID" name="userID" value=""><br>
 	<input type="submit" value="Submit">
 </form> 
