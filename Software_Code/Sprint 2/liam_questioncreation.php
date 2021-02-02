@@ -16,10 +16,8 @@ include"config.php";
 	<form action method="post" onsubmit="addQuestion()">
 		<label for="questiontext">Question Text:</label><br>
 		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
-		<label for="questiontype">Question Type:</label><br>
-		
-		
 		<!--
+		<label for="questiontype">Question Type:</label><br>
 		<select id="questiontype" name="questiontype">
 			<option value="1">Text</option>
 			<option value="2">Single Choice</option>
@@ -32,8 +30,6 @@ include"config.php";
 		<input type="submit" value="Submit">
 	</form> 
 	<?php
-	
-		$_SESSION["questionsremaining"]--;
 	}
 	else{
 		unset($_SESSION["questionsremaining"]);
@@ -54,6 +50,7 @@ function addQuestion(){
 		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 		VALUES ('$questiontext', '1', '$studyID')";
 		$conn->exec($questionInsert);
+		$_SESSION["questionsremaining"]--;
 	}
 	
 	catch(PDOException $e){
