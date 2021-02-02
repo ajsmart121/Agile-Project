@@ -5,9 +5,8 @@ include"config.php";
 <html>
 <body>
 	<?php
-	if(!isset($_SESSION["questionsremaining"]){
-		
-		$studyID = $_GET['surveyid']
+	$studyID = $_GET['surveyid']
+	if(!isset($_SESSION["questionsremaining"])){
 
 		try{
 			$questionsRemainingFind = $conn->prepare("SELECT * FROM Study
