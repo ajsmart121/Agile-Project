@@ -24,6 +24,7 @@ include"config.php";
 		catch(PDOException $e){
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}
+	}
 	
 	if($_SESSION["questionsremaining"]>0){
 	?>
