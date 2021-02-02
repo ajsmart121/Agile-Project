@@ -6,10 +6,9 @@ include"config.php";
 
 <?php
 $survey = $_GET['surveyid'];
-$questionList = "";
 
 try{
-	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID FROM Question
+	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID, StudyID FROM Question
 	WHERE StudyID = '$survey'");
 	$QuestionsFind->execute();
 	$QuestionsFindResult = $QuestionsFind->fetchALL();

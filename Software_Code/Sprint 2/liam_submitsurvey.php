@@ -6,21 +6,13 @@ $_SESSION['userID'] = 61;
 $userID = $_SESSION['userID'];
 $questions = $_SESSION['questions'];
 
-//echo '<pre>'; print_r($questions); echo '</pre>';
-
-echo $questions[0][1];
-
-
-
 $userAnswerCount = count($_POST['answer']);
-
-
-
 
 
 for($i = 0; $i < $userAnswerCount; $i++){
 	$useranswer = $_POST['answer'][$i];
 	$questionid = $questions[$i][1];
+	$studyID = $questions[$i][2];
 	
 	try{
 		$userAnswerInsert = "INSERT INTO useranswer (QuestionID, UserID, UserAnswerText)
