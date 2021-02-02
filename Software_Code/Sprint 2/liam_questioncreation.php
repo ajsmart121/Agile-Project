@@ -5,24 +5,16 @@ include"config.php";
 <html>
 <body>
 	<?php
-	$studyID = $_GET['surveyid']
-	if(!isset($_SESSION["questionsremaining"])){
-
-		try{
-			$questionsRemainingFind = $conn->prepare("SELECT * FROM Study
-			WHERE ID = '$studyID'");
-			$studyIDFind->execute();
-			$studyIDFindResult = $studyIDFind->fetch(PDO::FETCH_OBJ);
-			$_SESSION["questionsremaining"]  = $studyIDFindResult->StudyQuestionCount;
-		}
-		catch(PDOException $e){
-			echo "Error: " . $e->getMessage();
-		}
+	$studyID = $_GET['surveyid'];
+	if(!isset($_GET['questionquantity'])){
+		$questionsremaining = $_GET['questionquantity'];
 	}
+	echo $studyID;
+	echo $questionsremaining;
 	
-	
+	/*
 	if($_SESSION["questionsremaining"]>0){
-		?>
+	?>
 	<form action method="post" onsubmit="addQuestion()">
 		<label for="questiontext">Question Text:</label><br>
 		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
@@ -72,6 +64,7 @@ function addQuestion(){
 	return true;
 }
 </script>
+*/
 <?php
 $conn = null;
 ?>

@@ -22,6 +22,7 @@ try{
 	$studyIDFind->execute();
 	$studyIDFindResult = $studyIDFind->fetch(PDO::FETCH_OBJ);
 	$studyID = $studyIDFindResult->ID;
+	$questionquantity = $studyIDFindResult->StudyQuestionCount;
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
@@ -31,7 +32,7 @@ catch(PDOException $e){
 
 <html>
 <body>
-<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_questioncreation.php?surveyid=<?php echo $studyID; ?>">Add Questions</a>			
+<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_questioncreation.php?surveyid=<?php echo $studyID; ?>&questionquantity=<?php echo $questionquantity; ?>">Add Questions</a>
 </body>
 </html>
 
