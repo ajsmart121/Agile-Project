@@ -44,7 +44,7 @@ else{
 	<html>
 	<body>
 		<?php
-		if($_SESSION["questionsremaining"]>1){
+		if($_SESSION["questionsremaining"]>0){
 			?>
 		<form action method="post" onsubmit="addQuestion()">
 			<label for="questiontext">Question Text:</label><br>
@@ -52,8 +52,10 @@ else{
 			<input type="submit" value="Submit">
 		</form> 
 		<?php
+		$_SESSION["questionsremaining"]--;
 		}
 		else{
+			unset($_SESSION["questionsremaining"]);
 			echo "Questions submitted!";
 			?>
 			<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_survey.php?surveyid=<?php echo $_SESSION['studyID']; ?>">Survey Link</a>
@@ -71,7 +73,6 @@ else{
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
 			VALUES ('$questiontext', '1', '$studyID')";
 			$conn->exec($questionInsert);
-			$_SESSION["questionsremaining"]--;
 		}
 		
 		catch(PDOException $e){
