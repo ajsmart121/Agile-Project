@@ -5,9 +5,11 @@ include"config.php";
 
 if(isset($_GET["surveyID"])){
 	$surveyID = $_GET["surveyID"];
+	echo "Survey ID: ".$surveyID;
 }
 if(isset($_GET["userID"])){
 	$userID = $_GET["userID"];
+	echo "User ID: ".$userID;
 }
 
 ?>
