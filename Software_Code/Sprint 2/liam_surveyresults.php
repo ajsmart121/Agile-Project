@@ -5,15 +5,26 @@ include"config.php";
 
 if(isset($_GET["surveyID"])){
 	$surveyID = $_GET["surveyID"];
-	echo "Survey ID: ".$surveyID;
 }
 if(isset($_GET["userID"])){
 	$userID = $_GET["userID"];
-	echo "User ID: ".$userID;
 }
 
 if(isset($surveyID) && isset($userID)){
-	echo "They're set";
+	
+	try{
+		$QuestionsFind = $conn->prepare("SELECT q.QuestionText, ua.UserAnswerText FROM Question q, useranswer au
+		WHERE StudyID = '$surveyID'
+		AND ua.QuestionID = q.ID");
+		$QuestionsFind->execute();
+		$QuestionsFindResult = $QuestionsFind->fetchALL();
+		echo "Success!";
+	}
+	
+	catch(PDOException $e){
+		echo "Error: " . $e->getMessage();
+		echo "No!";
+	}
 }	
 
 ?>
