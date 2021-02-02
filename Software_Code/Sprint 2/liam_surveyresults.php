@@ -13,7 +13,7 @@ if(isset($_GET["userID"])){
 if(isset($surveyID) && isset($userID)){
 	
 	try{
-		$QuestionsFind = $conn->prepare("SELECT q.QuestionText, ua.UserAnswerText FROM Question q, useranswer au
+		$QuestionsFind = $conn->prepare("SELECT q.QuestionText, ua.UserAnswerText FROM Question q, useranswer ua
 		WHERE StudyID = '$surveyID'
 		AND ua.QuestionID = q.ID");
 		$QuestionsFind->execute();
