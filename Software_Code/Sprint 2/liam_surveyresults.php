@@ -19,6 +19,7 @@ if(isset($surveyID) && isset($userID)){
 		AND ua.QuestionID = q.ID");
 		$QuestionsFind->execute();
 		$QuestionsFindResult = $QuestionsFind->fetchALL();
+		$questionCount = count($QuestionsFindResult);
 		
 		
 		for($i = 0; $i < $questionCount; $i++){
