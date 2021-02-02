@@ -20,17 +20,17 @@ if(isset($surveyID) && isset($userID)){
 		$QuestionsFind->execute();
 		$QuestionsFindResult = $QuestionsFind->fetchALL();
 		
-		/*
+		
 		for($i = 0; $i < $questionCount; $i++){
 			echo nl2br("Question: ".($i+1)." ".$QuestionsFindResult[$i][0]."\n");
 			echo nl2br("Answer: ".($i+1)." ".$QuestionsFindResult[$i][1]."\n");
 		}
-		*/
+		
 		
 	}
 	
 	catch(PDOException $e){
-		echo "Error: " . $e->getMessage();=
+		echo "Error: " . $e->getMessage();
 	}
 	
 }	
