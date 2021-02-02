@@ -13,7 +13,7 @@ include"config.php";
 	
 	if($_SESSION["questionsremaining"]>0){
 	?>
-	<form action method="post" onSubmit="return addQuestion">
+	<form action method="post" onSubmit="addQuestion">
 		<label for="questiontext">Question Text:</label><br>
 		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
 		<!--
@@ -58,7 +58,7 @@ function addQuestion(){
 	}
 	?>
 	return true;
-}
+};
 </script>
 
 
