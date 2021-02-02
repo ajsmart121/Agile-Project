@@ -5,7 +5,12 @@ include"config.php";
 
 $study = $_POST["study"];
 $username = $_POST["username"];
-$password = $_POST["password"];
+$password = password_hash($password, "sha256");
+//$password = $_POST[$password];
+
+echo $username;
+echo "\n";
+echo $password;
 
 
 try{
@@ -13,7 +18,7 @@ try{
 	WHERE Username = '$username' AND Password = '$password'");
 	$userFind->execute();
 	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
-	
+
 	echo $userFindResult->Username;
 	echo $userFindResult->Password;
 }
