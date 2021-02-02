@@ -8,7 +8,7 @@ $conn = null;
 
 <html>
 <body>
-<form action="aj_userleveltest.php" method="post">
+<form action="liam_userleveltest.php" method="post">
   <label for="study">Study ID:</label><br>
   <input type="text" id="study" name="study" value="1"><br>
   <label for="username">Username:</label><br>
