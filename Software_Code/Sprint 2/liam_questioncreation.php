@@ -13,7 +13,7 @@ include"config.php";
 	
 	if($_SESSION["questionsremaining"]>0){
 	?>
-	<form action method="post">
+	<form action method="post" onSubmit="addQuestion">
 		<label for="questiontext">Question Text:</label><br>
 		<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
 		<!--
@@ -27,7 +27,7 @@ include"config.php";
 		<input type="text" id="questionanswerquantity" name="questionanswerquantity" value="1"><br>
 		-->
 		
-		<input type="submit" value="Submit" onClick="addQuestion">
+		<input type="submit" value="Submit">
 	</form> 
 	<?php
 	}
