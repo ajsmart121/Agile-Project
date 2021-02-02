@@ -46,17 +46,20 @@ include"config.php";
 function addQuestion(){
 	<?php
 	$questiontext = $_POST["questiontext"];
-	try{
-		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-		VALUES ('$questiontext', '1', '$studyID')";
-		$conn->exec($questionInsert);
-		$_SESSION["questionsremaining"]--;
-	}
-	
-	catch(PDOException $e){
-		echo $questionInsert . "<br>" . $e->getMessage();
+	if($questiontext != ""){
+		try{
+			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
+			VALUES ('$questiontext', '1', '$studyID')";
+			$conn->exec($questionInsert);
+			$_SESSION["questionsremaining"]--;
+		}
+		
+		catch(PDOException $e){
+			echo $questionInsert . "<br>" . $e->getMessage();
+		}
 	}
 	?>
+	
 	return true;
 }
 </script>
