@@ -9,6 +9,7 @@ include"config.php";
 	if(!isset($_SESSION["questionsremaining"])){
 		$_SESSION["questionsremaining"] = $_GET['questionquantity'];
 	}
+	echo $_SESSION["questionsremaining"];
 	
 	if($_SESSION["questionsremaining"]>0){
 	?>
