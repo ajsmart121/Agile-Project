@@ -6,11 +6,11 @@ include"config.php";
 <body>
 	<?php
 	$studyID = $_GET['surveyid'];
-	if(!isset($_GET['questionquantity'])){
-		$questionsremaining = $_GET['questionquantity'];
+	if(!isset($_SESSION["questionsremaining"])){
+		$_SESSION["questionsremaining"] = $_GET['questionquantity'];
 	}
 	echo $studyID;
-	echo $questionsremaining;
+	echo $_SESSION["questionsremaining"];
 	
 	/*
 	if($_SESSION["questionsremaining"]>0){
