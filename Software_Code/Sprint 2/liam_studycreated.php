@@ -11,7 +11,6 @@ try{
 	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
 	VALUES ('$studycreator', '$questionquantity', '$studyname')";
 	$conn->exec($studyInsert);
-	header("Location: https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_questioncreation.php");
 }
 
 catch(PDOException $e){
@@ -22,7 +21,7 @@ catch(PDOException $e){
 
 <html>
 <body>
-
+<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_questioncreation.php">Add Questions</a>			
 </body>
 </html>
 
