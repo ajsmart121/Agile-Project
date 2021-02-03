@@ -27,7 +27,7 @@ include"config.php";
 		}
 	
 		if($questiontype!="TextBox"){
-			header('Location: https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_createanswer.php?questiontype=$questiontype&questionanswerquantity=$questionanswerquantity');
+			header('Location: https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_answercreation.php?questiontype=$questiontype&questionanswerquantity=$questionanswerquantity');
 			exit;
 		}
 	
