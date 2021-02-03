@@ -16,16 +16,18 @@ include"config.php";
 	$questiontext = $_POST["questiontext"];
 	
 	if($questiontext != ""){
-	try{
-		$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-		VALUES ('$questiontext', '1', '$studyID')";
-		$conn->exec($questionInsert);
-		$_SESSION["questionsremaining"]--;
-	}
-	
-	catch(PDOException $e){
-		echo $questionInsert . "<br>" . $e->getMessage();
-	}
+		$questionanswerquantity = $_POST["questionanswerquantity"];
+		try{
+			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
+			VALUES ('$questiontext', '$questionanswerquantity', '$studyID')";
+			$conn->exec($questionInsert);
+			$_SESSION["questionsremaining"]--;
+		}
+
+		catch(PDOException $e){
+			echo $questionInsert . "<br>" . $e->getMessage();
+		}
+		
 	}
 
 	if($_SESSION["questionsremaining"]>0){
@@ -33,6 +35,8 @@ include"config.php";
 		<form action method="post">
 			<label for="questiontext">Question Text:</label><br>
 			<input type="text" id="questiontext" name="questiontext" value=""><br>
+			<label for="questionanswerquantity">Question Answer Quantity:</label><br>
+			<input type="text" id="questionanswerquantity" name="questionanswerquantity" value=""><br>
 			<input type="hidden" id="counter" name="counter" value="0"><br>
 			<input type="submit" value="Submit">
 		</form> 
