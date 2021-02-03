@@ -26,7 +26,7 @@ include"config.php";
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}
 	
-		if($questiontype!="TextBox"){
+		if($questiontype!="textbox"){
 			
 			?>
 			<meta http-equiv="refresh" content="1; URL=https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_answercreation.php?questiontype=<?php echo $questiontype; ?>&questionanswerquantity=<?php echo $questionanswerquantity; ?>"/>
