@@ -12,13 +12,9 @@ include"config.php";
 	}
 	
 	if(isset($_POST["questiontext"])){
-		echo "It's set";
-	}
 	
 	$questiontext = $_POST["questiontext"];
-	
-	
-	if($questiontext != ""){
+
 		$questionanswerquantity = $_POST["questionanswerquantity"];
 		try{
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
