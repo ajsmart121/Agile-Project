@@ -37,7 +37,12 @@ include"config.php";
 			<input type="text" id="questiontext" name="questiontext" value=""><br>
 			<label for="questionanswerquantity">Question Answer Quantity:</label><br>
 			<input type="text" id="questionanswerquantity" name="questionanswerquantity" value=""><br>
-			<input type="hidden" id="counter" name="counter" value="0"><br>
+			<label for="questiontype">Question Type:</label>
+			<select id="questiontype" name="questiontype">
+				<option value="textbox">Text Box</option>
+				<option value="radiobuttons">Radio Buttons</option>
+				<option value="checkbox">Check Boxes</option>
+			</select>
 			<input type="submit" value="Submit">
 		</form> 
 		<?php
