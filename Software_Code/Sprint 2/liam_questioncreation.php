@@ -11,9 +11,12 @@ include"config.php";
 		$_SESSION["questionsremaining"] = $_GET['questionquantity'];
 	}
 	
-	echo nl2br("Questions Remaining: ".$_SESSION["questionsremaining"]."\r\n\r\n");
+	if(isset($_POST["questiontext"])){
+		echo "It's set";
+	}
 	
 	$questiontext = $_POST["questiontext"];
+	
 	
 	if($questiontext != ""){
 		$questionanswerquantity = $_POST["questionanswerquantity"];
@@ -27,7 +30,6 @@ include"config.php";
 		catch(PDOException $e){
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}
-		
 	}
 
 	if($_SESSION["questionsremaining"]>0){
@@ -42,7 +44,7 @@ include"config.php";
 				<option value="textbox">Text Box</option>
 				<option value="radiobuttons">Radio Buttons</option>
 				<option value="checkbox">Check Boxes</option>
-			</select>
+			</select><br>
 			<input type="submit" value="Submit">
 		</form> 
 		<?php
