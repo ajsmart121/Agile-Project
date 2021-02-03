@@ -12,13 +12,12 @@ include"config.php";
 	}
 	
 	if(isset($_POST["questiontext"])){
-	
-	$questiontext = $_POST["questiontext"];
-
+		$questiontext = $_POST["questiontext"];
+		$questiontype=$_POST["questiontype"];
 		$questionanswerquantity = $_POST["questionanswerquantity"];
 		try{
-			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID)
-			VALUES ('$questiontext', '$questionanswerquantity', '$studyID')";
+			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID, QuestionType)
+			VALUES ('$questiontext', '$questionanswerquantity', '$studyID', '0')";
 			$conn->exec($questionInsert);
 			$_SESSION["questionsremaining"]--;
 		}
@@ -26,7 +25,14 @@ include"config.php";
 		catch(PDOException $e){
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}
+	
+		if($questiontype!="TextBox"){
+			header('Location: https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_createanswer.php?questiontype=$questiontype&questionanswerquantity=$questionanswerquantity');
+			exit;
+		}
+	
 	}
+	
 
 	if($_SESSION["questionsremaining"]>0){
 		?>
