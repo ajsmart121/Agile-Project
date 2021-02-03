@@ -4,9 +4,9 @@ include"config.php";
 
 if(isset($_POST["questionquantity"])){
 	$questionquantity = $_POST["questionquantity"];
-	$_SESSION["questionsremaining"] = $_POST["questionquantity"];	
+	$_SESSION["questionsremaining"] = $_POST["questionquantity"];
 }
-	
+
 if(isset($_POST["studycreator"])){
 	unset($_SESSION['studyID']);
 	$studycreator = $_POST["studycreator"];
@@ -21,7 +21,7 @@ if(isset($_POST["studycreator"])){
 	catch(PDOException $e){
 		echo $studyInsert . "<br>" . $e->getMessage();
 	}
-	
+
 	try{
 		$studyIDFind = $conn->prepare("SELECT * FROM Study ORDER BY ID DESC LIMIT 1");
 		$studyIDFind->execute();
@@ -30,7 +30,7 @@ if(isset($_POST["studycreator"])){
 	}
 	catch(PDOException $e){
 		echo "Error: " . $e->getMessage();
-	}	
+	}
 }
 
 if(!isset($_SESSION['studyID'])){
@@ -48,15 +48,15 @@ else{
 			?>
 		<form action method="post" onsubmit="addQuestion()">
 			<label for="questiontext">Question Text:</label><br>
-			<input type="text" id="questiontext" name="questiontext" value="Is this an example question?"><br>
+			<input type="text" id="questiontext" name="questiontext" placeholder="Is this an example question?"><br>
 			<input type="submit" value="Submit">
-		</form> 
+		</form>
 		<?php
 		}
 		else{
-			echo "Questions submitted!";
+			echo "Questions submitted, Questionnaire created!";
 			?>
-			<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Liam/survey.php?surveyid=<?php echo $_SESSION['studyID']; ?>">Survey Link</a>
+			<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Liam/survey.php?surveyid=<?php echo $_SESSION['studyID']; ?>">Link To Questionnaire</a>
 			<?php
 		}
 		?>
@@ -73,7 +73,7 @@ else{
 			$conn->exec($questionInsert);
 			$_SESSION["questionsremaining"]--;
 		}
-		
+
 		catch(PDOException $e){
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}

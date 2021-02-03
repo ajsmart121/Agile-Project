@@ -13,7 +13,7 @@ try{
 	$QuestionsFind->execute();
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	$questionCount = count($QuestionsFindResult);
-	
+
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
@@ -25,6 +25,7 @@ catch(PDOException $e){
 
 <form action="submitsurvey.php" method="post">
 	<?php
+
 	for($i = 0; $i < $questionCount; $i++){
 		?>
 		<label for="answer[<?php $i+1 ?>]"> <?php echo $QuestionsFindResult[$i][0]; ?> </label><br>
@@ -33,8 +34,11 @@ catch(PDOException $e){
 	<?php
 	}
 	?>
+	<!-- ethics text-->
+	<label for="ethicscheck">I Have read and understood the above disclosure and consent to my data being collected and used for this questionnaire.</label>
+	<input type="checkbox" id="ethicscheck" name="ethicscheck" required>
 	<input type="submit" value="Submit">
-</form> 
+</form>
 
 </body>
 </html>
