@@ -17,7 +17,7 @@ include"config.php";
 		$questionanswerquantity = $_POST["questionanswerquantity"];
 		try{
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID, QuestionType)
-			VALUES ('$questiontext', '$questionanswerquantity', '$studyID', '0')";
+			VALUES ('$questiontext', '$questionanswerquantity', '$studyID', '$questiontype')";
 			$conn->exec($questionInsert);
 			$_SESSION["questionsremaining"]--;
 		}
