@@ -13,7 +13,7 @@ include"config.php";
   <input type="text" id="studycreator" name="studycreator" value="11"><br>
 
   <label for="email">Study Creator Email:</label><br>
-  <input type="text" id="email" name="email" required pattern="[A-Za-z0-9]@[A-Za-z0-9].[A-Za-z0-9]" placeholder="Example@example.example"><br>
+  <input type="text" id="email" name="email" required placeholder="Example@example.example"><br>
 
   <label for="studyname">Study Name:</label><br>
   <input type="text" id="studyname" name="studyname"><br>
