@@ -199,3 +199,148 @@ img {
 .Accessibility:hover {
   background-color: #5f81fd; /* Green */
   color: white;
+}
+
+.XXSmallFontSize{
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
+}
+
+.XSmallFontSize{
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
+}
+
+.SmallFontSize{
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
+}
+
+.MediumFontSize{
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
+}
+
+.LargeFontSize{
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
+}
+
+.XLargeFontSize{
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
+}
+
+.XXLargeFontSize{
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
+}
+
+.FontSize{
+  margin: auto;
+  background-color: #3e5bc7; /* Dundee Colours */
+  border-radius: 12px;
+  width:auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 1px 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+}
