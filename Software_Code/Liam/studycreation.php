@@ -19,7 +19,7 @@ include"config.php";
   <input type="text" id="studyname" name="studyname"><br>
 
   <label for="ethicscode">Ethics Approval Code:</label><br>
-  <input type="text" id="ethicscode" name="ethicscode" placeholder="ABC-123-DEF" required pattern="[A-Za-z]{3}-[A-Za-z]{3}-[0-9]{3}" title="ABC-123-DEF"><br>
+  <input type="text" id="ethicscode" name="ethicscode" placeholder="ABC-123-DEF" required pattern="[A-Za-z]{3}+-+\[A-Za-z]{3}+-+\[0-9]{3}" title="ABC-123-DEF"><br>
 
   <label for="ethicscode">Ethics Link:</label><br>
   <input type="text" id="ethicslink" name="ethicslink" placeholder="Link to approved ethics form" required><br>
