@@ -10,14 +10,12 @@ $questionquantity = $_POST["questionquantity"];
 $email = $_POST["email"];
 $approvalcode = $_POST["ethicscode"];
 $ethicslink = $_POST["ethicslink"];
-$ethicssubmitted = $_POST["ethicssubmitted"];
-$ethicsapproved = $_POST["ethicsapproved"];
 $ethicsdis = $_POST["ethicsdis"];
 
 
 try{
-	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName, CreatorEmail, EthicsApprovalCode, EthicsLink, EthicsSubmitted, EthicsApproved, EthicsDisclosureText);
-	VALUES ('$studycreator', '$questionquantity', '$studyname','$email','$approvalcode','$ethicslink','$ethicssubmitted','$ethicsapproved','$ethicsdis')";
+	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName, CreatorEmail, EthicsApprovalCode, EthicsLink, EthicsDisclosureText);
+	VALUES ('$studycreator', '$questionquantity', '$studyname','$email','$approvalcode','$ethicslink','$ethicsdis')";
 	$conn->exec($studyInsert);
 }
 
