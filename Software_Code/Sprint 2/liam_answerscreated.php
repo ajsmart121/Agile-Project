@@ -35,7 +35,7 @@ else{
 	unset($_SESSION['question']);
 	echo "Questions submitted!";
 	?>
-	<meta http-equiv="refresh" content="0; URL=liam_survey.php?surveyid=<?php echo $studyID; ?>"/>
+	<meta http-equiv="refresh" content="0; URL=liam_survey.php?studyid=<?php echo $studyID; ?>"/>
 	<?php
 }
 ?>
