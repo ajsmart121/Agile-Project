@@ -69,7 +69,7 @@ include"config.php";
 		unset($_SESSION['question']);
 		echo "Questions submitted!";
 		?>
-		<a href="liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>
+		<a href="liam_survey.php?studyid=<?php echo $studyID; ?>">Survey Link</a>
 		<?php
 	}
 	?>
