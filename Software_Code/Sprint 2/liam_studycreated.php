@@ -14,7 +14,7 @@ $ethicsdis = $_POST["ethicsdis"];
 
 
 try{
-	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName, CreatorEmail, EthicsApprovalCode);
+	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName, creatorEmail, ethicsApprovalCode);
 	VALUES ('$studycreator', '$questionquantity', '$studyname','$email','$approvalcode')";
 	$conn->exec($studyInsert);
 }
