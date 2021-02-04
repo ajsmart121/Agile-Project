@@ -16,8 +16,8 @@ $ethicsapproved = $_POST["ethicsapproval"];
 $ethicsdis = $_POST["ethicsdis"];
 
 try{
-	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
-	VALUES ('$studycreator', '$questionquantity', '$studyname')";
+	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName, EthicsApproved, creatorEmail, ethicsApprovalCode, ethicsLink, ethicsSubmitted, ethicsDisclosureText)
+	VALUES ('$studycreator', '$questionquantity', '$studyname', '$ethicsapproved', '$email', '$approvalcode', '$ethicslink', '$ethicssubmitted', '$ethicsdis')";
 	$conn->exec($studyInsert);
 }
 catch(PDOException $e){
