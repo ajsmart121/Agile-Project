@@ -64,6 +64,9 @@ include"config.php";
 	}
 	else{
 		unset($_SESSION["questionsremaining"]);
+		unset($_SESSION['type']);
+		unset($_SESSION['studyID']);
+		unset($_SESSION['question']);
 		echo "Questions submitted!";
 		?>
 		<a href="liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>

@@ -16,7 +16,7 @@ for($i = 0; $i < $answerOptionCount; $i++){
 	
 	try{
 		$AnswerInsert = "INSERT INTO Answer (AnswerText, AnswerType, QuestionID)
-		VALUES (''$AnswerText', '$questiontype', '$questionID')";
+		VALUES ('$AnswerText', '$questiontype', '$questionID')";
 		$conn->exec($AnswerInsert);
 	}
 
@@ -31,10 +31,13 @@ if($_SESSION["questionsremaining"]>0){
 	<?php
 }
 else{
-	unset($_SESSION["questionsremaining"]);
+	unset($_SESSION['questionsremaining']);
+	unset($_SESSION['type']);
+	unset($_SESSION['studyID']);
+	unset($_SESSION['question']);
 	echo "Questions submitted!";
 	?>
-	<a href="liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>
+	<meta http-equiv="refresh" content="0; URL=liam_survey.php?surveyid=<?php echo $studyID; ?>"/>
 	<?php
 }
 ?>
