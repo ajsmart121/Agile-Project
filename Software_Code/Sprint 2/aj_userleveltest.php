@@ -19,6 +19,8 @@ try{
 
 	echo $userFindResult->Username;
 	echo $userFindResult->Password;
+	
+	?> <script> document.location.href="PaulHome.html" </script> <?php
 }
 
 catch(PDOException $e){
