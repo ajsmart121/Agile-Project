@@ -6,13 +6,11 @@ include"config.php";
 $questionID = $_SESSION['question'];
 $questiontype = $_SESSION['type'];
 $studyID = $_SESSION['studyID'];
-$answertext = $_POST['answertext'];
-
 
 $answerOptionCount = count($_POST['option']);
 
 for($i = 0; $i < $answerOptionCount; $i++){
-	$answeroption = $_POST['option'][$i];
+	$answertext = $_POST['answertext'][$i];
 	
 	try{
 		$AnswerInsert = "INSERT INTO Answer (AnswerText, AnswerType, QuestionID)
