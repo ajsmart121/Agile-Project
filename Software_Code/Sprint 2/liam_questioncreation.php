@@ -12,9 +12,11 @@ include"config.php";
 	}
 	
 	if(isset($_POST["questiontext"])){
+		
 		$questiontext = $_POST["questiontext"];
 		$questiontype=$_POST["questiontype"];
 		$questionanswerquantity = $_POST["questionanswerquantity"];
+		
 		try{
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID, QuestionType)
 			VALUES ('$questiontext', '$questionanswerquantity', '$studyID', '$questiontype')";
@@ -25,11 +27,22 @@ include"config.php";
 		catch(PDOException $e){
 			echo $questionInsert . "<br>" . $e->getMessage();
 		}
+		
+		try{
+			$questionIDFind = $conn->prepare("SELECT * FROM Question ORDER BY ID DESC LIMIT 1");
+			$questionIDFind->execute();
+			$questionIDFindResult = $questionIDFind->fetch(PDO::FETCH_OBJ);
+			$q = $questionIDFindResult->ID;
+		}
+		
+		catch(PDOException $e){
+			echo "Error: " . $e->getMessage();
+		}	
 	
 		if($questiontype!="textbox"){
 			
 			?>
-			<meta http-equiv="refresh" content="0; URL=https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_answercreation.php?questiontype=<?php echo $questiontype; ?>&questionanswerquantity=<?php echo $questionanswerquantity; ?>&studyID=<?php echo $studyID; ?>"/>
+			<meta http-equiv="refresh" content="0; URL=liam_answercreation.php?questionID=<?php echo $questionID; ?>&questiontype=<?php echo $questiontype; ?>&questionanswerquantity=<?php echo $questionanswerquantity; ?>&studyID=<?php echo $studyID; ?>"/>
 			<?php
 			
 		}
@@ -58,7 +71,7 @@ include"config.php";
 		unset($_SESSION["questionsremaining"]);
 		echo "Questions submitted!";
 		?>
-		<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>
+		<a href="liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>
 		<?php
 	}
 	?>

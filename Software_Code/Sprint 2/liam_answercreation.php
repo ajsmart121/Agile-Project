@@ -4,11 +4,11 @@ session_start();
 include"config.php";
 
 
-echo $_GET['questiontype'];
+$questionID $_GET['questionID'];
+$questionID $_GET['questiontype'];
+$questionID $_GET['questionanswerquantity'];
 
-echo $_GET['questionanswerquantity'];
-
-echo $_GET['studyID'];
+$_GET['studyID'];
 $questionanswerquantity = $_GET['questionanswerquantity'];
 
 ?>
@@ -20,7 +20,7 @@ $questionanswerquantity = $_GET['questionanswerquantity'];
 	<?php
 	for($i = 0; $i < $questionanswerquantity; $i++){
 		?>
-		<label for="option[<?php $i+1 ?>]"> <?php echo "Option ".$i; ?> </label><br>
+		<label for="option[<?php $i+1 ?>]"> <?php echo "Option ".$i+1; ?> </label><br>
 		<input type="text" id="option[<?php $i+1 ?>]" name="option[<?php $i+1 ?>]" value=""><br>
 		<?php
 	}
