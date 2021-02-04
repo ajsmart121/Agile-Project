@@ -21,7 +21,7 @@ echo nl2br($studyID."\r\n");
 <html>
 <body>
 
-<form action="liam_answerscreated.php method="post">
+<form action="liam_answerscreated.php" method="post">
 	<?php
 	
 	for($i = 0; $i < $questionanswerquantity; $i++){
