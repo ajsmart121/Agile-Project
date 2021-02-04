@@ -34,8 +34,27 @@ catch(PDOException $e){
 		<label for="answer[<?php $i+1 ?>]"> <?php echo $QuestionsFindResult[$i][0]; ?> </label><br>
 		<?php
 		//The line below checks the question type
-		if($QuestionsFindResult[$i][4]!="textbox"){
-			echo "This is not a textbox, this is a ".$QuestionsFindResult[$i][4];
+		if($QuestionsFindResult[$i][4]=="radiobuttons"){
+			//We then assign the ID of the current question to questionID
+			$questionID = $QuestionsFindResult[$i][1];
+			//We then search for all the answers assigned to this question
+			try{
+				$AnswersFind = $conn->prepare("SELECT ID, AnswerText
+				FROM Answer
+				WHERE QuestionID = '$questionID'");
+				$AnswersFind->execute();
+				$AnswersFindResult = $AnswersFind->fetchALL();
+			}
+			catch(PDOException $e){
+				echo "Error: " . $e->getMessage();
+			}
+			//We then start a for loop that runs for the amount of answers assigned to the question
+			for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
+				?>
+				<input type="radio" id="answer" name="answer" value="<?php echo $AnswersFindResult[$j][0] ?>">
+				<label for="male"><?php echo $AnswersFindResult[$j][0] ?></label><br>
+				<?php
+			}	
 		}	
 		?>
 		<br><input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
