@@ -12,8 +12,8 @@ try{
 	WHERE StudyID = '$studyID'");
 	$QuestionsFind->execute();
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
-	//$questionCount = count($QuestionsFindResult);
-	//$_SESSION['questions'] = $QuestionsFindResult;
+	$questionCount = count($QuestionsFindResult);
+	$_SESSION['questions'] = $QuestionsFindResult;
 	
 }
 catch(PDOException $e){
