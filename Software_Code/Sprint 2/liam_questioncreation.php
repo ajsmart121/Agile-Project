@@ -40,7 +40,7 @@ include"config.php";
 			$_SESSION['options'] = $questionanswerquantity;
 			$_SESSION['type'] = $questiontype;
 			?>
-			<meta http-equiv="refresh" content="0; URL=liam_answercreation.php"/>
+			<script> document.location.href="liam_answercreation.php" </script>
 			<?php	
 		}
 	}
