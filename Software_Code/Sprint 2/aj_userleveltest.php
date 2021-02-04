@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
-<?php 
+<?php
+session_start();
+include"config.php";
+
 $study = $_POST["study"];
 $username = $_POST["username"];
 $password = $_POST["password"];
-$hashedPassword = hash("sha256", $password);
-echo $hashedPassword;
+$password = hash("sha256", $password);
+
 
 
 try{
 	$userFind = $conn->prepare("SELECT * FROM user
-	WHERE Username = '$username' AND Password = '$hashedPassword'");
+	WHERE Username = '$username' AND Password = '$password'");
 	$userFind->execute();
 	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
 
 	echo $userFindResult->Username;
 	echo $userFindResult->Password;
-
-	if($userFindResult->ID!=0){
-		?> 
-		<script> document.location.href="PaulHome.html"</script>
-<?php
-	}
 }
+
 catch(PDOException $e){
 	echo $userFind . "<br>" . $e->getMessage();
 }
