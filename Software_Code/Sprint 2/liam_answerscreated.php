@@ -13,8 +13,8 @@ for($i = 0; $i < $answerOptionCount; $i++){
 	$answertext = $_POST['answertext'][$i];
 	
 	try{
-		$AnswerInsert = "INSERT INTO Answer (AnswerText, AnswerType, QuestionID)
-		VALUES ('0', '$questiontype', '$questionID')";
+		$AnswerInsert = "INSERT INTO Answer (AnswerText, QuestionID)
+		VALUES ('$answertext', '$questionID')";
 		$conn->exec($AnswerInsert);
 	}
 
