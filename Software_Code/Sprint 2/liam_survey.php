@@ -6,7 +6,6 @@ include"config.php";
 
 <?php
 $studyID = $_GET['studyID'];
-echo "Study ID = ".$studyID;
 
 try{
 	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID, StudyID FROM Question
@@ -15,8 +14,6 @@ try{
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	$questionCount = count($QuestionsFindResult);
 	$_SESSION['questions'] = $QuestionsFindResult;
-	
-	echo "Count ".$questionCount;
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
