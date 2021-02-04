@@ -25,7 +25,7 @@ for($i = 0; $i < $answerOptionCount; $i++){
 
 if($_SESSION["questionsremaining"]>0){
 	?>
-	<script> document.location.href="liam_questioncreation" </script>
+	<script> document.location.href="liam_questioncreation.php" </script>
 	<?php
 }
 else{
