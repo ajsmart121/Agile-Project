@@ -8,6 +8,13 @@ unset($_SESSION["counter"]);
 $studycreator = $_POST["studycreator"];
 $studyname = $_POST["studyname"];
 $questionquantity = $_POST["questionquantity"];
+$email = $_POST["email"];
+$approvalcode = $_POST["ethicscode"];
+$ethicslink = $_POST["ethicslink"];
+$ethicssubmitted = $_POST["ethicssubmitted"];
+$ethicsapproved = $_POST["ethicsapproval"];
+$ethicsdis = $_POST["ethicsdis"];
+
 try{
 	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
 	VALUES ('$studycreator', '$questionquantity', '$studyname')";
