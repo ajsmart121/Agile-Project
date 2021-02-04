@@ -26,8 +26,8 @@ echo nl2br($studyID."\r\n");
 	
 	for($i = 0; $i < $questionanswerquantity; $i++){
 		?>
-		<label for="option[<?php $i+1 ?>]"> <?php echo "Option ".$i+1; ?> </label><br>
-		<input type="text" id="option[<?php $i+1 ?>]" name="option[<?php $i+1 ?>]" value=""><br>
+		<label for="answertext[<?php $i+1 ?>]"> <?php echo "Option ".$i+1; ?> </label><br>
+		<input type="text" id="answertext[<?php $i+1 ?>]" name="answertext[<?php $i+1 ?>]" value=""><br>
 		<?php
 	}
 	

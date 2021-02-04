@@ -3,6 +3,11 @@
 session_start();
 include"config.php";
 
+$questionID = $_SESSION['question'];
+$questiontype = $_SESSION['type'];
+$studyID = $_SESSION['studyID'];
+$answertext = $_POST['answertext'];
+
 
 $answerOptionCount = count($_POST['option']);
 
@@ -11,7 +16,7 @@ for($i = 0; $i < $answerOptionCount; $i++){
 	
 	try{
 		$AnswerInsert = "INSERT INTO Answer (AnswerText, AnswerType, QuestionID)
-		VALUES (''$AnswerText', '$AnswerType', '$questionID')";
+		VALUES (''$AnswerText', '$questiontype', '$questionID')";
 		$conn->exec($AnswerInsert);
 	}
 
@@ -20,11 +25,9 @@ for($i = 0; $i < $answerOptionCount; $i++){
 	}
 }
 
-
 if($_SESSION["questionsremaining"]>0){
 	?>
-	<meta http-equiv="refresh" content="0; URL=liam_questioncreation.php?surveyid=
-	<?php echo $studyID; ?>&questionquantity=<?php echo $questionquantity; ?>"/>	
+	<meta http-equiv="refresh" content="0; URL=liam_questioncreation.php"/>	
 	<?php
 }
 else{

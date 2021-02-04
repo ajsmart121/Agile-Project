@@ -38,7 +38,7 @@ catch(PDOException $e){
 ?>
 <html>
 <body>
-<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_questioncreation.php">Add Questions</a>
+<a href="liam_questioncreation.php">Add Questions</a>
 </body>
 </html>
 <?php
