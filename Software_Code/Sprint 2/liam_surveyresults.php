@@ -39,6 +39,7 @@ if(isset($surveyID) && isset($userID)){
 ?>
 
 <html>
+	<link rel="stylesheet" type="text/css" href="fergus_login_fixed_font.css"> <!--use the theme CSS-->
 <body>
 
 <form action method="get">
