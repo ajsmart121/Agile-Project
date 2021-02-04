@@ -6,6 +6,8 @@ include"config.php";
 
 
 <html>
+  	<link rel="stylesheet" type="text/css" href="fergus_login_fixed_font.css"> <!--use the theme CSS-->
+	<link rel="stylesheet" type="text/css" href="PaulTheme2.css"> <!--use the theme CSS-->
 <body>
 <form action="liam_studycreated.php" method="post">
 
