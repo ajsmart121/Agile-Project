@@ -7,14 +7,14 @@ $questionID = $_SESSION['question'];
 $questiontype = $_SESSION['type'];
 $studyID = $_SESSION['studyID'];
 
-$answerOptionCount = count($_POST['option']);
+$answerOptionCount = count($_POST['answertext']);
 
 for($i = 0; $i < $answerOptionCount; $i++){
 	$answertext = $_POST['answertext'][$i];
 	
 	try{
 		$AnswerInsert = "INSERT INTO Answer (AnswerText, AnswerType, QuestionID)
-		VALUES ('$AnswerText', '$questiontype', '$questionID')";
+		VALUES ('0', '$questiontype', '$questionID')";
 		$conn->exec($AnswerInsert);
 	}
 
