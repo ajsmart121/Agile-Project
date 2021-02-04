@@ -23,14 +23,15 @@ for($i = 0; $i < $answerOptionCount; $i++){
 
 if($_SESSION["questionsremaining"]>0){
 	?>
-	<meta http-equiv="refresh" content="0; URL=liam_questioncreation.php?surveyid=<?php echo $studyID; ?>&questionquantity=<?php echo $questionquantity; ?>"/>	
+	<meta http-equiv="refresh" content="0; URL=liam_questioncreation.php?surveyid=
+	<?php echo $studyID; ?>&questionquantity=<?php echo $questionquantity; ?>"/>	
 	<?php
 }
 else{
+	unset($_SESSION["questionsremaining"]);
+	echo "Questions submitted!";
 	?>
-	<meta http-equiv="refresh" content="0; URL=liam_answercreation.php?questiontype=
-	<?php echo $questiontype; ?>&questionanswerquantity=<?php echo $questionanswerquantity; ?>"/>
-	
+	<a href="liam_survey.php?surveyid=<?php echo $studyID; ?>">Survey Link</a>
 	<?php
 }
 ?>

@@ -6,10 +6,7 @@ include"config.php";
 <body>
 	<?php
 
-	$studyID = $_GET['surveyid'];
-	if(!isset($_SESSION["questionsremaining"])){
-		$_SESSION["questionsremaining"] = $_GET['questionquantity'];
-	}
+	$studyID = $_SESSION['studyID'];
 	
 	if(isset($_POST["questiontext"])){
 		
@@ -32,7 +29,6 @@ include"config.php";
 			$questionIDFind = $conn->prepare("SELECT * FROM Question ORDER BY ID DESC LIMIT 1");
 			$questionIDFind->execute();
 			$questionIDFindResult = $questionIDFind->fetch(PDO::FETCH_OBJ);
-			$questionID = $questionIDFindResult->ID;
 		}
 		
 		catch(PDOException $e){
@@ -40,16 +36,15 @@ include"config.php";
 		}	
 	
 		if($questiontype!="textbox"){
-			
+			$_SESSION['question'] = $questionIDFindResult->ID;
+			$_SESSION['options'] = $questionanswerquantity;
+			$_SESSION['type'] = $questiontype;
 			?>
-			<meta http-equiv="refresh" content="0; URL=liam_answercreation.php?questionID=<?php echo $questionID; ?>&questiontype=<?php echo $questiontype; ?>&questionanswerquantity=<?php echo $questionanswerquantity; ?>&studyID=<?php echo $studyID; ?>"/>
-			<?php
-			
+			<meta http-equiv="refresh" content="0; URL=liam_answercreation.php"/>
+			<?php	
 		}
-	
 	}
 	
-
 	if($_SESSION["questionsremaining"]>0){
 		?>
 		<form action method="post">
