@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <link rel="stylesheet" type="text/css" href="ferus_login_fixed_font.css"> <!--use the theme CSS-->
+  <link rel="stylesheet" type="text/css" href="fergus_login_fixed_font.css"> <!--use the theme CSS-->
 <?php
 session_start();
 include"config.php";
