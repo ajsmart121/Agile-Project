@@ -65,8 +65,9 @@ include"config.php";
 		unset($_SESSION['type']);
 		unset($_SESSION['studyID']);
 		unset($_SESSION['question']);
-		
-		echo "<script type=\\"text/javascript\\"> alert('Thank you. Posting has been edited.'); location.href = \\"liam_survey.php?studyID=$studyID\\"; </script>";
+		header('Location: liam_survey.php?studyID=$studyID');
+exit;	exit;
+		//echo "<script type=\\"text/javascript\\"> alert('Thank you. Posting has been edited.'); location.href = \\"liam_survey.php?studyID=$studyID\\"; </script>";
 		
 	}
 	?>
