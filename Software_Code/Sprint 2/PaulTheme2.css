@@ -370,19 +370,17 @@ img {
   padding: 1px 1px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  display: none;
   font-size: 12px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   transition-duration: 0.4s;
   float: right;
-
-
     z-index: 1;
 }
 
 .FontSize button{
   display: block;
-  width: 35%;
+  width: 50%;
 }
 
 .FontSize button:not(:last-child) {
@@ -392,4 +390,27 @@ img {
 .dropbtn{
   border: none;
   cursor: pointer;
+}
+.show {display: block;}
+.FontSize:hover {
+  background-color: #5f81fd; /* Green */
+  color: white;
+}
+
+.FontButton{
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
 }
