@@ -5,8 +5,8 @@ include"config.php";
 
 
 $questionID $_GET['questionID'];
-$questionID $_GET['questiontype'];
-$questionID $_GET['questionanswerquantity'];
+$questiontype $_GET['questiontype'];
+$questionanswerquantity $_GET['questionanswerquantity'];
 
 $_GET['studyID'];
 $questionanswerquantity = $_GET['questionanswerquantity'];

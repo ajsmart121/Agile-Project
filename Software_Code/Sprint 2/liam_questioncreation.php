@@ -32,7 +32,7 @@ include"config.php";
 			$questionIDFind = $conn->prepare("SELECT * FROM Question ORDER BY ID DESC LIMIT 1");
 			$questionIDFind->execute();
 			$questionIDFindResult = $questionIDFind->fetch(PDO::FETCH_OBJ);
-			$q = $questionIDFindResult->ID;
+			$questionID = $questionIDFindResult->ID;
 		}
 		
 		catch(PDOException $e){
