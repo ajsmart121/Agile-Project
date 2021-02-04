@@ -15,6 +15,7 @@ try{
 	$questionCount = count($QuestionsFindResult);
 	$_SESSION['questions'] = $QuestionsFindResult;
 	
+	echo "Count ".$questionCount;
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
