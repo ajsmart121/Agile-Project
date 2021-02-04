@@ -5,16 +5,9 @@ include"config.php";
 
 
 $questionID = $_SESSION['question'];
-echo nl2br($questionID."\r\n");
-
 $questiontype = $_SESSION['type'];
-echo nl2br($questiontype."\r\n");
-
 $questionanswerquantity = $_SESSION['options'];
-echo nl2br($questionanswerquantity."\r\n");
-
 $studyID = $_SESSION['studyID'];
-echo nl2br($studyID."\r\n");
 
 ?>
 
