@@ -4,12 +4,14 @@ session_start();
 include"config.php";
 
 
-$questionID $_GET['questionID'];
-$questiontype $_GET['questiontype'];
-$questionanswerquantity $_GET['questionanswerquantity'];
-
-$_GET['studyID'];
+$questionID = $_GET['questionID'];
+echo nl2br($questionID."\r\n");
+$questiontype = $_GET['questiontype'];
+echo nl2br($questiontype."\r\n");
 $questionanswerquantity = $_GET['questionanswerquantity'];
+echo nl2br($questionanswerquantity."\r\n");
+$studyID = $_GET['studyID'];
+echo nl2br($studyID."\r\n");
 
 ?>
 
@@ -18,12 +20,14 @@ $questionanswerquantity = $_GET['questionanswerquantity'];
 
 <form action="liam_answerscreated.php method="post">
 	<?php
+	
 	for($i = 0; $i < $questionanswerquantity; $i++){
 		?>
 		<label for="option[<?php $i+1 ?>]"> <?php echo "Option ".$i+1; ?> </label><br>
 		<input type="text" id="option[<?php $i+1 ?>]" name="option[<?php $i+1 ?>]" value=""><br>
 		<?php
 	}
+	
 	?>
 	<input type="submit" value="Submit">
 </form> 
