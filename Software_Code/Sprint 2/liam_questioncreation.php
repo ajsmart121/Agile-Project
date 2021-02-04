@@ -39,9 +39,7 @@ include"config.php";
 			$_SESSION['question'] = $questionIDFindResult->ID;
 			$_SESSION['options'] = $questionanswerquantity;
 			$_SESSION['type'] = $questiontype;
-			?>
-			<script> document.location.href="liam_answercreation.php" </script>
-			<?php	
+			?> <script> document.location.href="liam_answercreation.php" </script> <?php	
 		}
 	}
 	
@@ -67,10 +65,8 @@ include"config.php";
 		unset($_SESSION['type']);
 		unset($_SESSION['studyID']);
 		unset($_SESSION['question']);
-		echo "Questions submitted!";
-		?>
-		<a href="liam_survey.php?studyID=<?php echo $studyID; ?>">Survey Link</a>
-		<?php
+
+					?> <script> document.location.href="liam_answercreation.php@studyID="</script><?phpecho $studyID;
 	}
 	?>
 
