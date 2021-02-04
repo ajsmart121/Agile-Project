@@ -14,7 +14,21 @@ try{
 	$QuestionsFindResult = $QuestionsFind->fetchALL();
 	$questionCount = count($QuestionsFindResult);
 	$_SESSION['questions'] = $QuestionsFindResult;
-	
+
+}
+catch(PDOException $e){
+	echo "Error: " . $e->getMessage();
+}
+
+try{
+	$StudyFind = $conn->prepare("SELECT CreatorEmail, EthicsLink, EthicsDisclosureText FROM Study
+	WHERE ID = '$survey'");
+	$StudyFind->execute();
+	$StudyFindResult = $StudyFind->fetch(PDO::FETCH_OBJ);
+	$email = $StudyFindResult->CreatorEmail;
+	$ethicslink = $StudyFindResult->EthicsLink;
+	$ethicsdis = $StudyFindResult->EthicsDisclosureText;
+
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
@@ -26,6 +40,11 @@ catch(PDOException $e){
 
 <form action="liam_submitsurvey.php" method="post">
 	<?php
+
+	echo nl2br($email."\r\n");
+	echo nl2br($ethicslink."\r\n");
+	echo nl2br($ethicsdis."\r\n");
+	
 	for($i = 0; $i < $questionCount; $i++){
 		echo "ID: ".$QuestionsFindResult[$i][1];
 		?>
@@ -35,7 +54,7 @@ catch(PDOException $e){
 	}
 	?>
 	<input type="submit" value="Submit">
-</form> 
+</form>
 
 </body>
 </html>
