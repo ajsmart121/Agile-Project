@@ -1,3 +1,4 @@
+<?php 
 $study = $_POST["study"];
 $username = $_POST["username"];
 $password = password_hash($password, "sha256");
@@ -15,6 +16,11 @@ try{
 
 	echo $userFindResult->Username;
 	echo $userFindResult->Password;
+
+	if($userFindResult->ID!=0){
+		?> <script> document.location.href="PaulHome.html"</script>
+<?php
+	}
 }
 catch(PDOException $e){
 	echo $userFind . "<br>" . $e->getMessage();
