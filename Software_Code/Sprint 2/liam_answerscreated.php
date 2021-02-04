@@ -33,9 +33,8 @@ else{
 	unset($_SESSION['type']);
 	unset($_SESSION['studyID']);
 	unset($_SESSION['question']);
-	echo "Questions submitted!";
-	?> 
-	<script> document.location.href="liam_survey.php?studyID=" </script> <?php echo $studyID;
+	header('Location: liam_survey.php?studyID='.$studyID);
+	exit;
 }
 ?>
 
