@@ -12,26 +12,33 @@
         }
     </style>
 
-    <div class = "Accessibility" id="Accessibility">
-        <button id="AccessibilityButtonNormal" class="AccessibilityButton" onclick="ChangeColorNormal()" type = "NormalColour">Normal</button>
-        <button id="AccessibilityButtonProtan" class="AccessibilityButton" onclick="ChangeColorProtan()" type = "ProtanColour">Protan</button>
-        <button id="AccessibilityButtonDeutran" class="AccessibilityButton" onclick="ChangeColorDeutran()" type = "DeutranColour">Deutran</button>
-        <button id="AccessibilityButtonTritan" class="AccessibilityButton" onclick="ChangeColorTritan()" type = "TritanColour">Tritan</button>
-    </div>
-
-    <div class = "FontSize" id="FontSize">
-      <button id="XXSmallFontSize" class="XXSmallFontSize" onclick="XXSmallFontSize()" type = "XXSmallTextSize">XX-Small Font Size</button>
-      <button id="XSmallFontSize" class="XSmallFontSize" onclick="XSmallFontSize()" type = "XSmallTextSize">X-Small Font Size</button>
-      <button id="SmallFontSize" class="SmallFontSize" onclick="SmallFontSize()" type = "SmallTextSize">Small Font Size</button>
-      <button id="MediumFontSize" class="MediumFontSize" onclick="MediumFontSize()" type = "MediumFontSize">Medium Font Size</button>
-      <button id="LargeFontSize" class="LargeFontSize" onclick="LargeFontSize()" type = "LargeFontSize">Large Font Size</button>
-      <button id="XLargeFontSize" class="XLargeFontSize" onclick="XLargeFontSize()" type = "XLargeFontSize">X-Large Font Size</button>
-      <button id="XXLargeFontSize" class="XXLargeFontSize" onclick="XXLargeFontSize()" type = "XXLargeFontSize">XX-Large Font Size</button>
-    </div>
 </head>
 
 <!--Dundee Logo -->
 <body>
+  <div class="dropdown" id="dropdownAccessibility">
+    <button onclick="showAccessibilty()" class="dropbtn">Colours</button>
+  <div class = "Accessibility" id="Accessibility">
+      <button herf="#" id="AccessibilityButtonNormal" class="AccessibilityButton" onclick="ChangeColorNormal()" type = "NormalColour">Normal</button>
+      <button herf="#" id="AccessibilityButtonProtan" class="AccessibilityButton" onclick="ChangeColorProtan()" type = "ProtanColour">Protan</button>
+      <button herf="#" id="AccessibilityButtonDeutran" class="AccessibilityButton" onclick="ChangeColorDeutran()" type = "DeutranColour">Deutran</button>
+      <button herf="#" id="AccessibilityButtonTritan" class="AccessibilityButton" onclick="ChangeColorTritan()" type = "TritanColour">Tritan</button>
+  </div>
+</div>
+
+ <div class="dropdown" id="dropdownFontSize">
+   <button onclick="showFont()" class="dropbtn">Font Size</button>
+  <div class = "FontSize" id="FontSize">
+    <button herf="#" id="XXSmallFontSize" class="XXSmallFontSize" onclick="XXSmallFontSize()" type = "XXSmallTextSize">XX-Small Font Size</button>
+    <button herf="#" id="XSmallFontSize" class="XSmallFontSize" onclick="XSmallFontSize()" type = "XSmallTextSize">X-Small Font Size</button>
+    <button herf="#" id="SmallFontSize" class="SmallFontSize" onclick="SmallFontSize()" type = "SmallTextSize">Small Font Size</button>
+    <button herf="#" id="MediumFontSize" class="MediumFontSize" onclick="MediumFontSize()" type = "MediumFontSize">Medium Font Size</button>
+    <button herf="#" id="LargeFontSize" class="LargeFontSize" onclick="LargeFontSize()" type = "LargeFontSize">Large Font Size</button>
+    <button herf="#" id="XLargeFontSize" class="XLargeFontSize" onclick="XLargeFontSize()" type = "XLargeFontSize">X-Large Font Size</button>
+    <button herf="#" id="XXLargeFontSize" class="XXLargeFontSize" onclick="XXLargeFontSize()" type = "XXLargeFontSize">XX-Large Font Size</button>
+  </div>
+</div>
+
 <script src="PaulAccessibility.js"></script>
 
 <div class = "Header Layout">
@@ -43,6 +50,7 @@
   <input id="button2" type="button2" class="button2" value="Home" onclick="document.location=''">
 
   <!--For accessibility options-->
+
 
 </div>
 

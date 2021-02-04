@@ -20,6 +20,8 @@ function ChangeColorNormal()
       document.getElementById("XLargeFontSize").style.backgroundColor = "#3e5bc7";
       document.getElementById("XXLargeFontSize").style.backgroundColor = "#3e5bc7";
       document.getElementById("FontSize").style.backgroundColor = "#3e5bc7";
+      document.getElementById("dropdownAccessibility").style.backgroundColor = "#3e5bc7";
+      document.getElementById("dropdownFontSize").style.backgroundColor = "#3e5bc7";
 
     }
 
@@ -45,6 +47,8 @@ function ChangeColorNormal()
       document.getElementById("XLargeFontSize").style.backgroundColor = "#0064b1";
       document.getElementById("XXLargeFontSize").style.backgroundColor = "#0064b1";
       document.getElementById("FontSize").style.backgroundColor = "#0064b1";
+      document.getElementById("dropdownAccessibility").style.backgroundColor = "#0064b1";
+      document.getElementById("dropdownFontSize").style.backgroundColor = "#0064b1";
     }
 
     //Deutran Colours
@@ -69,6 +73,8 @@ function ChangeColorNormal()
       document.getElementById("XLargeFontSize").style.backgroundColor = "#0064b1";
       document.getElementById("XXLargeFontSize").style.backgroundColor = "#0064b1";
       document.getElementById("FontSize").style.backgroundColor = "#0064b1";
+      document.getElementById("dropdownAccessibility").style.backgroundColor = "#0064b1";
+      document.getElementById("dropdownFontSize").style.backgroundColor = "#0064b1";
     }
 
     //Tritan Colours
@@ -93,6 +99,8 @@ function ChangeColorNormal()
       document.getElementById("XLargeFontSize").style.backgroundColor = "#007385";
       document.getElementById("XXLargeFontSize").style.backgroundColor = "#007385";
       document.getElementById("FontSize").style.backgroundColor = "#007385";
+      document.getElementById("dropdownAccessibility").style.backgroundColor = "#007385";
+      document.getElementById("dropdownFontSize").style.backgroundColor = "#007385";
     }
 
     //Font size xx-small
@@ -240,4 +248,39 @@ function ChangeColorNormal()
       document.getElementById("LargeFontSize").style.fontSize = "xx-large";
       document.getElementById("XLargeFontSize").style.fontSize = "xx-large";
       document.getElementById("XXLargeFontSize").style.fontSize = "xx-large";
+    }
+
+    function showAccessibilty(){
+      document.getElementById("Accessibility").classList.toggle("show");
+    }
+
+    window.onclick = function(event){
+      if (!event.target.matches('.dropbtn')){
+        var Accessibilitydropdowns = document.getElementByClassName("Accessibility");
+        var i;
+        for (i=0; i < Accessibilitydropdowns.length; i++){
+          var openAccessiblityDropdown = Accessibilitydropdowns[i];
+          if (openAccessiblityDropdown.classList.contains('show')){
+            openAccessiblityDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+
+
+    function showFont(){
+      document.getElementById("FontSize").classList.toggle("show");
+    }
+
+    window.onclick = function(event){
+      if (!event.target.matches('.dropbtn')){
+        var Fontdropdowns = document.getElementByClassName("FontSize");
+        var j;
+        for (j=0; j < Fontdropdowns.length; j++){
+          var openFontDropdown = Fontdropdowns[j];
+          if (openFontDropdown.classList.contains('show')){
+            openFontDropdown.classList.remove('show');
+          }
+        }
+      }
     }
