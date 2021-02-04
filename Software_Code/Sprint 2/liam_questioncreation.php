@@ -65,7 +65,7 @@ include"config.php";
 		unset($_SESSION['type']);
 		unset($_SESSION['studyID']);
 		unset($_SESSION['question']);
-		?> <script> document.location.href="liam_answercreation.php?studyID=" </script> <?php echo $studyID;
+		?> <script> document.location.href="liam_survey.php?studyID=" </script> <?php echo $studyID;
 	}
 	?>
 

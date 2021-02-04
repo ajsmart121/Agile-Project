@@ -25,7 +25,7 @@ for($i = 0; $i < $answerOptionCount; $i++){
 
 if($_SESSION["questionsremaining"]>0){
 	?>
-	<meta http-equiv="refresh" content="0; URL=liam_questioncreation.php"/>	
+	<script> document.location.href="liam_questioncreation" </script>
 	<?php
 }
 else{
@@ -34,9 +34,8 @@ else{
 	unset($_SESSION['studyID']);
 	unset($_SESSION['question']);
 	echo "Questions submitted!";
-	?>
-	<meta http-equiv="refresh" content="0; URL=liam_survey.php?studyID=<?php echo $studyID; ?>"/>
-	<?php
+	?> 
+	<script> document.location.href="liam_survey.php?studyID=" </script> <?php echo $studyID;
 }
 ?>
 

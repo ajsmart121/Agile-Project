@@ -38,7 +38,7 @@ catch(PDOException $e){
 ?>
 <html>
 <body>
-<a href="liam_questioncreation.php">Add Questions</a>
+<script> document.location.href="liam_questioncreation.php" </script>
 </body>
 </html>
 <?php
