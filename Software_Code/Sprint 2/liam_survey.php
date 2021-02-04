@@ -26,7 +26,7 @@ catch(PDOException $e){
 
 <form action="liam_submitsurvey.php" method="post">
 	<?php
-	/*
+	
 	for($i = 0; $i < $questionCount; $i++){
 		echo "ID: ".$QuestionsFindResult[$i][1];
 		?>
@@ -34,7 +34,7 @@ catch(PDOException $e){
 		<input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
 	<?php
 	}
-	*/
+	
 	?>
 	<input type="submit" value="Submit">
 </form> 
