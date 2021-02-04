@@ -29,7 +29,7 @@ include"config.php";
 		if($questiontype!="textbox"){
 			
 			?>
-			<meta http-equiv="refresh" content="0; URL=https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_answercreation.php?questiontype=<?php echo $questiontype; ?>&questionanswerquantity=<?php echo $questionanswerquantity; ?>"/>
+			<meta http-equiv="refresh" content="0; URL=https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_answercreation.php?questiontype=<?php echo $questiontype; ?>&questionanswerquantity=<?php echo $questionanswerquantity; ?>&studyID=<?php echo $studyID; ?>"/>
 			<?php
 			
 		}
