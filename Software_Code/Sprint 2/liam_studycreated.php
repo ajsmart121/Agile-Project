@@ -7,10 +7,17 @@ unset($_SESSION["questionsremaining"]);
 $studycreator = $_POST["studycreator"];
 $studyname = $_POST["studyname"];
 $questionquantity = $_POST["questionquantity"];
+$email = $_POST["email"];
+$approvalcode = $_POST["ethicscode"];
+$ethicslink = $_POST["ethicslink"];
+$ethicssubmitted = $_POST["ethicssubmitted"];
+$ethicsapproved = $_POST["ethicsapproved"];
+$ethicsdis = $_POST["ethicsdis"];
+
 
 try{
-	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
-	VALUES ('$studycreator', '$questionquantity', '$studyname')";
+	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName, CreatorEmail, EthicsApprovalCode, EthicsLink, EthicsSubmitted, EthicsApproved, EthicsDisclosureText)
+	VALUES ('$studycreator', '$questionquantity', '$studyname','$email','$approvalcode','$ethicslink','$ethicssubmitted','$ethicsapproved','$ethicsdis');
 	$conn->exec($studyInsert);
 }
 
@@ -27,7 +34,7 @@ try{
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
-}	
+}
 ?>
 
 
