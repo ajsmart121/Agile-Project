@@ -6,6 +6,7 @@ include"config.php";
 
 <?php
 $studyID = $_GET['studyID'];
+echo "Study ID = ".$studyID;
 
 try{
 	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID, StudyID FROM Question
