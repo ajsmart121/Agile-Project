@@ -4,7 +4,7 @@
 $study = $_POST["study"];
 $username = $_POST["username"];
 $password = hash("sha256", $password);
-$hashedPassword = $_POST[$hashedPassword];
+$hashedPassword = $_POST["password"];
 echo $hashedPassword;
 $password = $_POST[$password];
 
