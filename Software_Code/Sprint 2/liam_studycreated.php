@@ -3,26 +3,19 @@
 session_start();
 include"config.php";
 unset($_SESSION["questionsremaining"]);
+unset($_SESSION["counter"]);
 
 $studycreator = $_POST["studycreator"];
 $studyname = $_POST["studyname"];
 $questionquantity = $_POST["questionquantity"];
-$email = $_POST["email"];
-$approvalcode = $_POST["ethicscode"];
-$ethicslink = $_POST["ethicslink"];
-$ethicsdis = $_POST["ethicsdis"];
-
-
 try{
-	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName);
+	$studyInsert = "INSERT INTO Study (UserID, StudyQuestionCount, StudyName)
 	VALUES ('$studycreator', '$questionquantity', '$studyname')";
 	$conn->exec($studyInsert);
 }
-
 catch(PDOException $e){
 	echo $studyInsert . "<br>" . $e->getMessage();
 }
-
 try{
 	$studyIDFind = $conn->prepare("SELECT * FROM Study ORDER BY ID DESC LIMIT 1");
 	$studyIDFind->execute();
@@ -32,17 +25,13 @@ try{
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
-}
+}	
 ?>
-
-
 <html>
 <body>
-<a href="liam_questioncreation.php?surveyid=<?php echo $studyID; ?>&questionquantity=<?php echo $questionquantity; ?>">Add Questions</a>
+<a href="https://agilegroup05webapp.herokuapp.com/Software_Code/Sprint%202/liam_questioncreation.php?surveyid=<?php echo $studyID; ?>&questionquantity=<?php echo $questionquantity; ?>">Add Questions</a>
 </body>
 </html>
-
-
 <?php
 $conn = null;
 ?>
