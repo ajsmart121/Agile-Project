@@ -55,7 +55,7 @@ include"config.php";
 			<select id="questiontype" name="questiontype">
 				<option value="textbox">Text Box</option>
 				<option value="radiobuttons">Radio Buttons</option>
-				<option value="checkbox">Check Boxes</option>
+				<!--- <option value="checkbox">Check Boxes</option> --->
 			</select><br>
 			<input type="submit" value="Submit">
 		</form> 

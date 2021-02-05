@@ -58,6 +58,7 @@ catch(PDOException $e){
 					<?php
 				}
 			}
+			/*
 			else{
 				for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
 					?>
@@ -66,6 +67,7 @@ catch(PDOException $e){
 					<?php
 				}
 			}
+			*/
 		}
 		else{	
 			?>
