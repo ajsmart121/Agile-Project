@@ -2,8 +2,7 @@
 <?php
 session_start();
 include"config.php";
-$_SESSION['userID'] = 61;
-$userID = $_SESSION['userID'];
+$userID = $_SESSION['user'];
 $questions = $_SESSION['questions'];
 
 $userAnswerCount = count($_POST['answer']);
