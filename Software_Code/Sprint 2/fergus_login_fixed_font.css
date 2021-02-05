@@ -15,7 +15,7 @@ body {
     padding: 20px;
     color: white;
     margin-top: 200px;
-    width: auto;
+    width: relative;
     height: relative;
     box-shadow: 20px 10px 8px #494b53;
     position: relative;
@@ -24,7 +24,7 @@ body {
 }
 
 .form{
-    padding-left:30%;
+    margin-left:40%;
 }
 
 h1{
