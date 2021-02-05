@@ -14,7 +14,7 @@ if(isset($_GET["userID"])){
   <link rel="stylesheet" type="text/css" href="PaulTheme2.css"> <!--use the theme CSS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous"><!--use the bootstrap-->
     <title>
-        Login Page
+        Survey Results
     </title>
 <!--setbackground to Dundee Colours-->
     <style>
