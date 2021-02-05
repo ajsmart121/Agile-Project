@@ -72,20 +72,24 @@ catch(PDOException $e){
 
 <!--creates main page container-->
 <div class = "Body Layout">
-	<form action="liam_survey.php" method="get">
-	<?php
-	echo nl2br($StudyFindResult->StudyName."\r\n");
-	echo nl2br("If you have any questions, please email ".$StudyFindResult->CreatorEmail."\r\n");
-    echo nl2br("Ethical assessment and statement: ".$StudyFindResult->EthicsLink."\r\n");
-    echo nl2br("Ethics Disclosure: ".$StudyFindResult->EthicsDisclosureText."\r\n");
-    echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.\r\n");
-    ?>
-	
-	<input type="hidden" id="studyID" name="studyID" value="<?php echo $studyID; ?>"><br>
-	<input type="checkbox" name="Understood" required><br><br>
+	<div class = "container">
+		<div id = box2>
+			<form action="liam_survey.php" method="get">
+			<?php
+			echo nl2br($StudyFindResult->StudyName."\r\n");
+			echo nl2br("If you have any questions, please email ".$StudyFindResult->CreatorEmail."\r\n");
+			echo nl2br("Ethical assessment and statement: ".$StudyFindResult->EthicsLink."\r\n");
+			echo nl2br("Ethics Disclosure: ".$StudyFindResult->EthicsDisclosureText."\r\n");
+			echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.\r\n");
+			?>
+			
+			<input type="hidden" id="studyID" name="studyID" value="<?php echo $studyID; ?>">
+			<input type="checkbox" name="Understood" required><br>
 
-	<input type="submit" value="Submit">
-	</form> 
+			<input type="submit" value="Submit">
+			</form> 
+		</div>
+	</div>
 </div>
 
 </body>

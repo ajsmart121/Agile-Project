@@ -78,62 +78,61 @@ catch(PDOException $e){
 <div class = "Body Layout">
            <div class = "container">
              <div id = box2>
-<form action="liam_submitsurvey.php" method="post">
-	<?php
-	for($i = 0; $i < $questionCount; $i++){
-		?>
-		<!-- The line below prints out the QuestionText -->
-		<label for="answer[<?php $i+1 ?>]"> <?php echo "Question ".($i+1).": ".$QuestionsFindResult[$i][0]; ?> </label><br>
-		<?php
-		//The line below checks the question type
-		if($QuestionsFindResult[$i][4]!="textbox"){
-			//We then assign the ID of the current question to questionID
-			$questionID = $QuestionsFindResult[$i][1];
-			//We then search for all the answers assigned to this question
-			try{
-				$AnswersFind = $conn->prepare("SELECT ID, AnswerText
-				FROM Answer
-				WHERE QuestionID = '$questionID'");
-				$AnswersFind->execute();
-				$AnswersFindResult = $AnswersFind->fetchALL();
-			}
-			catch(PDOException $e){
-				echo "Error: " . $e->getMessage();
-			}
-			
-			if($QuestionsFindResult[$i][4]=="radiobuttons"){
-				//We then start a for loop that runs for the amount of answers assigned to the question
-				for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
-					?>
-					<input type="radio" id="answer[<?php echo $j; ?>]" name="answer[<?php echo $i; ?>]" value="<?php echo $AnswersFindResult[$j][1] ?>">
-					<label for="answer[<?php echo $i; ?>]"><?php echo $AnswersFindResult[$j][1] ?></label><br>
+				<form action="liam_submitsurvey.php" method="post">
 					<?php
-				}
-			}
-			/*
-			else{
-				for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
+					for($i = 0; $i < $questionCount; $i++){
+						?>
+						<!-- The line below prints out the QuestionText -->
+						<label for="answer[<?php $i+1 ?>]"> <?php echo "Question ".($i+1).": ".$QuestionsFindResult[$i][0]; ?> </label><br>
+						<?php
+						//The line below checks the question type
+						if($QuestionsFindResult[$i][4]!="textbox"){
+							//We then assign the ID of the current question to questionID
+							$questionID = $QuestionsFindResult[$i][1];
+							//We then search for all the answers assigned to this question
+							try{
+								$AnswersFind = $conn->prepare("SELECT ID, AnswerText
+								FROM Answer
+								WHERE QuestionID = '$questionID'");
+								$AnswersFind->execute();
+								$AnswersFindResult = $AnswersFind->fetchALL();
+							}
+							catch(PDOException $e){
+								echo "Error: " . $e->getMessage();
+							}
+
+							if($QuestionsFindResult[$i][4]=="radiobuttons"){
+							//We then start a for loop that runs for the amount of answers assigned to the question
+								for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
+									?>
+									<input type="radio" id="answer[<?php echo $j; ?>]" name="answer[<?php echo $i; ?>]" value="<?php echo $AnswersFindResult[$j][1] ?>">
+									<label for="answer[<?php echo $i; ?>]"><?php echo $AnswersFindResult[$j][1] ?></label><br>
+									<?php
+								}
+							}
+							/*
+							else{
+							for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
+							?>
+							<input type="checkbox" id="answer[<?php echo $j; ?>]" name="answer[<?php echo $i; ?>]" value="<?php echo $AnswersFindResult[$j][1] ?>">
+							<label for="answer[<?php echo $i; ?>]"><?php echo $AnswersFindResult[$j][1] ?></label><br>
+							<?php
+							}
+							}
+							*/
+						}
+						else{	
+						?>
+						<input type="text" id="answer[<?php echo $i; ?>]" name="answer[<?php echo $i; ?>]" value=""><br>
+						<?php
+						}
+					}
 					?>
-					<input type="checkbox" id="answer[<?php echo $j; ?>]" name="answer[<?php echo $i; ?>]" value="<?php echo $AnswersFindResult[$j][1] ?>">
-					<label for="answer[<?php echo $i; ?>]"><?php echo $AnswersFindResult[$j][1] ?></label><br>
-					<?php
-				}
-			}
-			*/
-		}
-		else{	
-			?>
-			<input type="text" id="answer[<?php echo $i; ?>]" name="answer[<?php echo $i; ?>]" value=""><br><br>
-			<?php
-		}
-	}
-	
-	?>
-	<input type="submit" value="Submit">
-</form> 
-            </div>
-          </div>
-</div>
+					<input type="submit" value="Submit">
+				</form> 
+			</div>
+		</div>
+	</div>
 
 </body>
 <?php
