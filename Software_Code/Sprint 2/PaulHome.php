@@ -61,7 +61,9 @@ include"config.php";
            <div class = "container">
              <div id = box2>
                <div id = box1><!--In future anouncments can be added in here-->
-               if(isset($_SESSION['user'])){
+               
+                 <?php
+                 if(isset($_SESSION['user'])){
                   $user = $_SESSION['user'];
                   try{
                     $UsernameFind = $conn->prepare("SELECT username, ID, StudyID, QuestionAnswerCount, questiontype
@@ -74,7 +76,8 @@ include"config.php";
                     catch(PDOException $e){
                     echo "Error: " . $e->getMessage();
                   }
-               }    
+               } 
+                 ?>
                
                </div>
                    <!--Buttons for the other pages *****Links need updated*****-->
