@@ -11,7 +11,7 @@ include"config.php";
 echo "You are logged in as ".$_SESSION['user'];
 ?>
 
-<form  action="liam_surveyethics.php" method="get">
+<form  action="stewart_surveyethics.php" method="get">
   <label for="studyID">Please enter the ID of the study you wish to view:</label><br>
   <input type="text" id="studyID" name="studyID" value=""><br>
   <input type="submit" value="Submit">
