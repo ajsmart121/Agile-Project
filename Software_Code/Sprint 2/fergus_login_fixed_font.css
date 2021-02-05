@@ -15,12 +15,16 @@ body {
     padding: 20px;
     color: white;
     margin-top: 200px;
-    width: 50%;
-    height: 50%;
+    width: auto;
+    height: relative;
     box-shadow: 20px 10px 8px #494b53;
     position: relative;
     margin-right: 5%;
     margin-left: -5%;
+}
+
+.form{
+    padding-left:30%;
 }
 
 h1{
