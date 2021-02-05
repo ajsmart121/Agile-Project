@@ -11,8 +11,7 @@ include"config.php";
 <body>
 <form action="liam_studycreated.php" method="post">
 
-  <label for="studycreator">Study Creator ID:</label><br>
-  <input type="text" id="studycreator" name="studycreator" value="11"><br>
+  <input type="hidden" id="studycreator" name="studycreator" value="<?php echo $_SESSION['user'] ?>"><br>
 
   <label for="email">Study Creator Email:</label><br>
   <input type="text" id="email" name="email" required placeholder="Example@example.example"><br>
