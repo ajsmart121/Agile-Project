@@ -66,6 +66,7 @@ $userAnswerCount = count($_POST['answer']);
 	<div class = "container">
 		<div id = box2>
 			<?php
+			//Here we take the user input for their answers to the survey and insert them into the database
 			for($i = 0; $i < $userAnswerCount; $i++){
 				$useranswer = $_POST['answer'][$i];
 				$questionid = $questions[$i][1];
