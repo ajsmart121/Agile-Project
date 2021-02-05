@@ -10,6 +10,18 @@ unset($_SESSION['user']);
 
 
 <html>
+  
+  <head> 
+    <title>
+        Login Page
+    </title>
+<!--setbackground to Dundee Colours-->
+    <style>
+        body {
+          background-color: #3e5bc7;
+        }
+    </style>
+  </head>
 <body>
   <!--Dundee Logo -->
   <div class="dropdown" id="dropdownAccessibility">
