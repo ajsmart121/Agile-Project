@@ -3,7 +3,7 @@
 session_start();
 include"config.php";
 
-
+//Brings in $_SESSION variables to hold a few things we need across various pages
 $questionID = $_SESSION['question'];
 $questiontype = $_SESSION['type'];
 $questionanswerquantity = $_SESSION['options'];
@@ -69,6 +69,8 @@ $studyID = $_SESSION['studyID'];
 		<div id = box2>
 			<form action="liam_answerscreated.php" method="post">
 				<?php
+				//This for loop creates text boxes for the user to enter the answer(s) for the current question 
+				//and enters their inputs into an array of options that will be passed to the database
 				for($i = 0; $i < $questionanswerquantity; $i++){
 					?>
 					<label for="answertext[<?php $i+1 ?>]"> <?php echo "Option ".$i+1; ?> </label><br>
