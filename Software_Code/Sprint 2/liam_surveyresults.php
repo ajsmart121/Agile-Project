@@ -11,8 +11,7 @@ if(isset($_GET["userID"])){
 }
 
 if(isset($surveyID) && isset($userID)){
-	
-	//$answerslist = "";
+
 	try{
 		$QuestionsFind = $conn->prepare("SELECT q.QuestionText, ua.UserAnswerText FROM Question q, useranswer ua
 		WHERE q.StudyID = '$surveyID'
@@ -23,8 +22,8 @@ if(isset($surveyID) && isset($userID)){
 		
 		
 		for($i = 0; $i < $questionCount; $i++){
-			echo nl2br("Question: ".($i+1)." ".$QuestionsFindResult[$i][0]."\r\n");
-			echo nl2br("Answer: ".($i+1)." ".$QuestionsFindResult[$i][1]."\r\n\r\n");
+			echo nl2br("Question ".($i+1).": ".$QuestionsFindResult[$i][0]."\r\n");
+			echo nl2br("Answer ".($i+1).": ".$QuestionsFindResult[$i][1]."\r\n");
 		}
 		
 		
@@ -34,13 +33,21 @@ if(isset($surveyID) && isset($userID)){
 		echo "Error: " . $e->getMessage();
 	}
 	
+	?>
+	<form action="csv_export.php" method="post">
+	Click to export as a .CSV file.
+	<br>
+	<input type="hidden" id="studyID" name="studyID" value="<?php echo $surveyID; ?>"><br>
+	<input type="hidden" id="userID" name="studyID" value="<?php echo $studyID; ?>"><br>
+	<input type="submit" value="Submit">
+	</form>
+	<?php
+	
 }	
 
 ?>
 
 <html>
-	<link rel="stylesheet" type="text/css" href="fergus_login_fixed_font.css"> <!--use the theme CSS-->
-	<link rel="stylesheet" type="text/css" href="PaulTheme2.css"> <!--use the theme CSS-->
 <body>
 
 <form action method="get">
