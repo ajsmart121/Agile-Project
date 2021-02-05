@@ -76,7 +76,8 @@ catch(PDOException $e){
 
 <!--creates main page container-->
 <div class = "Body Layout">
-
+           <div class = "container">
+             <div id = box2>
 <form action="liam_submitsurvey.php" method="post">
 	<?php
 	for($i = 0; $i < $questionCount; $i++){
@@ -130,7 +131,8 @@ catch(PDOException $e){
 	?>
 	<input type="submit" value="Submit">
 </form> 
-
+            </div>
+          </div>
 </div>
 
 </body>
