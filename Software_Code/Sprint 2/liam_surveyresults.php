@@ -33,16 +33,6 @@ if(isset($surveyID) && isset($userID)){
 		echo "Error: " . $e->getMessage();
 	}
 	
-	?>
-	<form action="csv_export.php" method="post">
-	Click to export as a .CSV file.
-	<br>
-	<input type="hidden" id="studyID" name="studyID" value="<?php echo $surveyID; ?>"><br>
-	<input type="hidden" id="userID" name="studyID" value="<?php echo $studyID; ?>"><br>
-	<input type="submit" value="Submit">
-	</form>
-	<?php
-	
 }	
 
 ?>
