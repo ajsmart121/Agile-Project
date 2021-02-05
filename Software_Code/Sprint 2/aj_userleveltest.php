@@ -21,7 +21,7 @@ try{
 	echo $userFindResult->Password;
 	$_SESSION['user'] = $userFindResult->ID;
 	
-	?> <script> document.location.href="PaulHome.html" </script> <?php
+	?> <script> document.location.href="PaulHome.php" </script> <?php
 }
 
 catch(PDOException $e){
