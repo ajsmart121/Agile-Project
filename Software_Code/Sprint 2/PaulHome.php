@@ -68,7 +68,7 @@ include"config.php";
                   try{
                     $UsernameFind = $conn->prepare("SELECT username
                     FROM user
-                    WHERE userID = '$user'");
+                    WHERE ID = '$user'");
                     $UsernameFind->execute();
                     $UsernameFindResult = $UsernameFind->fetch(PDO::FETCH_OBJ);
                  echo "Logged in as ".$UsernameFindResult->username;
