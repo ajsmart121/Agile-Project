@@ -59,6 +59,7 @@ include"config.php";
 <div class = "Body Layout">
 	<div class = "container">
 		<div id = box2>
+			<!---This form is used for the creation of the study--->
 			<form action="liam_studycreated.php" method="post">
 
 			  <input type="hidden" id="studycreator" name="studycreator" value="<?php echo $_SESSION['user'] ?>"><br>
