@@ -30,3 +30,33 @@ img{
     object-fit: cover;
 
 }
+
+.submit {
+  /*animates the button*/
+  transition-duration: 0.4s;
+}
+.submit {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.submit:hover {
+  background-color: #536882; /* Green */
+  color: white;
+}
+.submit {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: :5px;
+  margin-bottom:5px;
+  background-color: #232e3b; /* Dundee Colours */
+  border-radius: 6px;
+  border: none;
+  color: white;
+  width:95%;
+  height:20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
