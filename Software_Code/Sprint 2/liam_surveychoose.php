@@ -61,6 +61,7 @@ $userID = $_SESSION['user'];
 <div class = "Body Layout">
 	<div class = "container">
 		<div id = box2>
+		<div id = survey>
 			<?php
 			echo "You are logged in as ".$_SESSION['user'];
 			?>
@@ -69,6 +70,7 @@ $userID = $_SESSION['user'];
 			<input type="text" id="studyID" name="studyID" value=""><br>
 			<input type="submit" value="Submit">
 			</form> 
+			</div>
 		</div>
 	</div>
 </div>
