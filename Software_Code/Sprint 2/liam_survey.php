@@ -58,6 +58,14 @@ catch(PDOException $e){
 					<?php
 				}
 			}
+			else{
+				for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
+					?>
+					<input type="checkbox" id="answer[<?php echo $j; ?>]" name="answer[<?php echo $i; ?>]" value="<?php echo $AnswersFindResult[$j][1] ?>">
+					<label for="answer[<?php echo $i; ?>]"><?php echo $AnswersFindResult[$j][1] ?></label><br>
+					<?php
+				}
+			}
 		}
 		else{	
 			?>
