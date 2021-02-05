@@ -61,7 +61,7 @@ $userID = $_SESSION['user'];
 <div class = "Body Layout">
 	<div class = "container">
 		<div id = box2>
-		<div id = survey>
+		<div id = study>
 			<?php
 			echo "You are logged in as ".$_SESSION['user'];
 			?>
