@@ -17,6 +17,9 @@ body {
     margin-top: 200px;
     width: 500px;
     box-shadow: 20px 10px 8px #494b53;
+    position: relative;
+    margin-right: 5%;
+    margin-left: -5%;
 }
 
 h1{
