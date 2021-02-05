@@ -25,11 +25,6 @@ try{
     WHERE ID = '$studyID'");
     $StudyFind->execute();
     $StudyFindResult = $StudyFind->fetch(PDO::FETCH_OBJ);
-    $email = $StudyFindResult->CreatorEmail;
-    $ethicslink = $StudyFindResult->EthicsLink;
-    $ethicsdis = $StudyFindResult->EthicsDisclosureText;
-	$studyName = $StudyFindResult->StudyName;
-
 }
 catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
@@ -41,20 +36,18 @@ catch(PDOException $e){
 
 <form action="liam_submitsurvey.php" method="post">
 	<?php
-	echo nl2br($studyName."\r\n");
 	echo nl2br($StudyFindResult->StudyName."\r\n");
-	echo nl2br("If you have any questions, please email ".$email."\r\n");
-    echo nl2br("Ethical assessment and statement: ".$ethicslink."\r\n");
-    echo nl2br("Ethics Disclosure: ".$ethicsdis."\r\n");
-    echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.".$ethicsdis."\r\n");
+	echo nl2br("If you have any questions, please email ".$StudyFindResult->CreatorEmail."\r\n");
+    echo nl2br("Ethical assessment and statement: ".$StudyFindResult->EthicsLink."\r\n");
+    echo nl2br("Ethics Disclosure: ".$StudyFindResult->EthicsDisclosureText."\r\n");
+    echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.\r\n");
     ?>
 	<input type="checkbox" name="Understood" required>
 	<?php
 	for($i = 0; $i < $questionCount; $i++){
-		echo "ID: ".$QuestionsFindResult[$i][1];
 		?>
 		<!-- The line below prints out the QuestionText -->
-		<label for="answer[<?php $i+1 ?>]"> <?php echo $QuestionsFindResult[$i][0]; ?> </label><br>
+		<label for="answer[<?php $i+1 ?>]"> <?php echo "Question ".($i+1).": ".$QuestionsFindResult[$i][0]; ?> </label><br>
 		<?php
 		//The line below checks the question type
 		if($QuestionsFindResult[$i][4]!="textbox"){
