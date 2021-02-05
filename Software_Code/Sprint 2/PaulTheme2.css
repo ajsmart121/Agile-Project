@@ -390,6 +390,21 @@ img {
 .dropbtn{
   border: none;
   cursor: pointer;
+  border-radius: 6px;
+  background-color: #3e5bc7; /* Dundee Colours */
+  width: auto;
+  height: auto;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  transition-duration: 0.4s;
+  float: right;
+  display: block;
 }
 .show {display: block;}
 .FontSize:hover {
