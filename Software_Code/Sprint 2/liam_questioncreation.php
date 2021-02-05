@@ -39,7 +39,7 @@ include"config.php";
 			$_SESSION['question'] = $questionIDFindResult->ID;
 			$_SESSION['options'] = $questionanswerquantity;
 			$_SESSION['type'] = $questiontype;
-			header('Location: liam_answercreation.php'.$studyID);
+			header('Location: liam_answercreation.php');
 			exit;	
 		}
 	}
