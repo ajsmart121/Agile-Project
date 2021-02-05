@@ -61,7 +61,22 @@ include"config.php";
            <div class = "container">
              <div id = box2>
                <div id = box1><!--In future anouncments can be added in here-->
-                   </div>
+               if(isset($_SESSION['user'])){
+                  $user = $_SESSION['user'];
+                  try{
+                    $UsernameFind = $conn->prepare("SELECT username, ID, StudyID, QuestionAnswerCount, questiontype
+                    FROM user
+                    WHERE userID = '$user'");
+                    $UsernameFind->execute();
+                    $UsernameFindResult = $UsernameFind->fetch(PDO::FETCH_OBJ);
+                 echo "Logged in as ".$UsernameFindResult->username;
+                  }
+                    catch(PDOException $e){
+                    echo "Error: " . $e->getMessage();
+                  }
+               }    
+               
+               </div>
                    <!--Buttons for the other pages *****Links need updated*****-->
               <input id="button5" type="button5" class="button5" value="Add Questionnaire" onclick="document.location='liam_studycreation.php'">
               <input id="button3" type="button3" class="button3" value="View Questionnaire" onclick="document.location='liam_surveychoose.php'">
