@@ -67,7 +67,6 @@ include"config.php";
               <input id="button3" type="button3" class="button3" value="View Questionnaire" onclick="document.location='liam_surveychoose.php'">
               <input id="button6" type="button3" class="button3" value="Questionnaire Results" onclick="document.location='liam_surveyresults.php'">
                <?php
-               if(isset($_SESSION['user']){
                if(isset($_SESSION['user'])){
                  ?>
                   <input id="button4" type="button4" class="button4" value="Logout" onclick="document.location='aj_userlevellogin.php'">
