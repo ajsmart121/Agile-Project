@@ -12,7 +12,6 @@ unset($_SESSION['user']);
 <html>
 <body>
   <!--Dundee Logo -->
-<body>
   <div class="dropdown" id="dropdownAccessibility">
     <button onclick="showAccessibilty()" class="dropbtn">Colours</button>
   <div class = "Accessibility" id="Accessibility">
