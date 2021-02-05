@@ -78,10 +78,10 @@ include"config.php";
 			  <label for="questionquantity">Number of Questions:</label><br>
 			  <input type="text" id="questionquantity" name="questionquantity" value="3"><br>
 
-			  <label for="ethicssubmitted">Ethics Sheet Submitted: <label><br>
+			  <label for="ethicssubmitted">Ethics Sheet Submitted: </label><br>
 			  <input type="checkbox" id="ethicssubmitted" name="ethicssubmitted" value="Submitted" required><br>
 
-			  <label for="ethicsapproval">Ethics Sheet Approved: <label><br>
+			  <label for="ethicsapproval">Ethics Sheet Approved: </label><br>
 			  <input type="checkbox" id="ethicsapproval" name="ethicsapproval" value="Approved" required><br>
 
 			  <label for="ethicsdis">Ethics Disclosure Text:</label><br>
