@@ -66,7 +66,7 @@ include"config.php";
                  if(isset($_SESSION['user'])){
                   $user = $_SESSION['user'];
                   try{
-                    $UsernameFind = $conn->prepare("SELECT username, ID, StudyID, QuestionAnswerCount, questiontype
+                    $UsernameFind = $conn->prepare("SELECT username
                     FROM user
                     WHERE userID = '$user'");
                     $UsernameFind->execute();
