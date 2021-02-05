@@ -12,7 +12,11 @@ body {
     background-color: #4264e1;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     border-radius: 25px;
-    padding: 20px;
+    /*padding: 20px;*/
+padding-left: 4%;
+padding-right:-10%;
+padding-top:2%;
+padding-bottom:1% ;
     color: white;
     margin-top: 200px;
     width: 500px;
