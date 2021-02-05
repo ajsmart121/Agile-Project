@@ -77,7 +77,7 @@ catch(PDOException $e){
 <!--creates main page container-->
 <div class = "Body Layout">
            <div class = "container">
-             <div id = box2>
+             	<div id = box2>
 				<form action="liam_submitsurvey.php" method="post">
 					<?php
 					for($i = 0; $i < $questionCount; $i++){
@@ -85,7 +85,7 @@ catch(PDOException $e){
 						<!-- The line below prints out the QuestionText -->
 						<label for="answer[<?php $i+1 ?>]"> <?php echo "Question ".($i+1).": ".$QuestionsFindResult[$i][0]; ?> </label><br>
 						<?php
-						//The line below checks the question type
+						//The line below checks the question type, if it's not a textbox (and therefore has pre-written answers) we proceed into the if
 						if($QuestionsFindResult[$i][4]!="textbox"){
 							//We then assign the ID of the current question to questionID
 							$questionID = $QuestionsFindResult[$i][1];
@@ -102,7 +102,7 @@ catch(PDOException $e){
 							}
 
 							if($QuestionsFindResult[$i][4]=="radiobuttons"){
-							//We then start a for loop that runs for the amount of answers assigned to the question
+							//We then start a for loop that runs for the amount of answers assigned to the question, and reads them out
 								for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
 									?>
 									<input type="radio" id="answer[<?php echo $j; ?>]" name="answer[<?php echo $i; ?>]" value="<?php echo $AnswersFindResult[$j][1] ?>">
@@ -110,6 +110,8 @@ catch(PDOException $e){
 									<?php
 								}
 							}
+							//The code below would ideally be used to take checkbox answers, but will only actually process the last one ticked
+							//(last as in last to be created, not last to be ticked), so we commented it out to come back to if we had the time/for future sprints
 							/*
 							else{
 							for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
