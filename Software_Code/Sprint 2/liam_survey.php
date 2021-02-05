@@ -8,7 +8,7 @@ include"config.php";
 $studyID = $_GET['studyID'];
 
 try{
-	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID, StudyID, QuestionAnswerCount, questiontype, StudyName, creatorEmail, ethicsLink, ethicsDisclosureText
+	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID, StudyID, QuestionAnswerCount, questiontype
 	FROM Question
 	WHERE StudyID = '$studyID'");
 	$QuestionsFind->execute();
@@ -20,16 +20,32 @@ catch(PDOException $e){
 	echo "Error: " . $e->getMessage();
 }
 
+try{
+	$StudyFind = $conn->prepare("SELECT CreatorEmail, EthicsLink, EthicsDisclosureText FROM Study
+    WHERE ID = '$studyID'");
+    $StudyFind->execute();
+    $StudyFindResult = $StudyFind->fetch(PDO::FETCH_OBJ);
+    $email = $StudyFindResult->CreatorEmail;
+    $ethicslink = $StudyFindResult->EthicsLink;
+    $ethicsdis = $StudyFindResult->EthicsDisclosureText;
+
+}
+catch(PDOException $e){
+	echo "Error: " . $e->getMessage();
+}
+
 ?>
 <html>
 <body>
 
 <form action="liam_submitsurvey.php" method="post">
 	<?php
-	echo nl2br($QuestionsFindResult[$i][5]."\r\n");
-	echo nl2br("Study Creator Email Address: ".$QuestionsFindResult[$i][6]."\r\n");
-	echo nl2br("Link to ethics sheet: ".$QuestionsFindResult[$i][7]."\r\n");
-	echo nl2br("Ethics Disclosure Text: ".$QuestionsFindResult[$i][8]."\r\n");
+
+	echo nl2br("If you have any questions, please email ".$email."\r\n");
+    echo nl2br("Ethical assessment and statement: ".$ethicslink."\r\n");
+    echo nl2br("Ethics Disclosure: \r\n".$ethicsdis."\r\n");
+    echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.".$ethicsdis."\r\n");
+    <input type="checkbox" name="Understood" required>
 	
 	for($i = 0; $i < $questionCount; $i++){
 		echo "ID: ".$QuestionsFindResult[$i][1];
