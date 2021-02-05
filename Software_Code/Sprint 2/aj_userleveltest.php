@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+	<title>
+        	Login Page
+	</title>
 <?php
 session_start();
 include"config.php";
