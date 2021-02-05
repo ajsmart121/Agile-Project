@@ -429,3 +429,33 @@ img {
   float: right;
   display: block;
 }
+
+/*Pink add button*/
+.study {
+  transition-duration: 0.4s;
+}
+.study {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.study:hover {
+  background-color: #e833a0; /* Green */
+  color: white;
+}
+.study {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: :5px;
+  margin-bottom:5px;
+  background-color: #c42986; /* Dundee Colours */
+  border-radius: 6px;
+  border: none;
+  color: white;
+  width:46%;
+  height:20%;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
