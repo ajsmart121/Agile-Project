@@ -4,12 +4,14 @@ include"config.php";
 
 $studyID = $_SESSION['studyID'];
 	
+	//This runs if the questiontext field of the form of this page has been set, to avoid it running on the first load of the page
 	if(isset($_POST["questiontext"])){
 		
 		$questiontext = $_POST["questiontext"];
 		$questiontype=$_POST["questiontype"];
 		$questionanswerquantity = $_POST["questionanswerquantity"];
 		
+		//This will insert the details of the question the user has entered into the database
 		try{
 			$questionInsert = "INSERT INTO question (QuestionText, QuestionAnswerCount, StudyID, QuestionType)
 			VALUES ('$questiontext', '$questionanswerquantity', '$studyID', '$questiontype')";
@@ -30,7 +32,8 @@ $studyID = $_SESSION['studyID'];
 		catch(PDOException $e){
 			echo "Error: " . $e->getMessage();
 		}	
-	
+		
+		//If the user did not make a textbox question they will be taken to the answer creation page to make answers for their created question
 		if($questiontype!="textbox"){
 			$_SESSION['question'] = $questionIDFindResult->ID;
 			$_SESSION['options'] = $questionanswerquantity;
@@ -117,6 +120,7 @@ $studyID = $_SESSION['studyID'];
 			</form> 
 			<?php
 		}
+			//If the user has created enough questions for the questionnaire, the $_SESSION variables for the creation period will be unset and they will be taken to it
 		else{
 			unset($_SESSION["questionsremaining"]);
 			unset($_SESSION['type']);
