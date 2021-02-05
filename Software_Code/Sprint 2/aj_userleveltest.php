@@ -17,8 +17,9 @@ try{
 	$userFind->execute();
 	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
 
-	echo $userFindResult->Username;
+	echo $userFindResult->ID;->Username;
 	echo $userFindResult->Password;
+	$_SESSION['user'] = $userFindResult->ID;
 	
 	?> <script> document.location.href="PaulHome.html" </script> <?php
 }
