@@ -69,7 +69,7 @@ catch(PDOException $e){
 		}
 		else{	
 			?>
-			<br><input type="text" id="answer[<?php echo $i+1; ?>]" name="answer[<?php echo $i+1; ?>]" value=""><br>
+			<br><input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
 			<?php
 		}
 	}
