@@ -104,9 +104,9 @@ $studyID = $_SESSION['studyID'];
 			?>
 			<form action method="post">
 			<label for="questiontext">Question Text:</label><br>
-			<input type="text" id="questiontext" name="questiontext" value="1"><br>
+			<input type="text" id="questiontext" name="questiontext" value="Example Question"><br>
 			<label for="questionanswerquantity">Question Answer Quantity:</label><br>
-			<input type="text" id="questionanswerquantity" name="questionanswerquantity" value=""><br>
+			<input type="text" id="questionanswerquantity" name="questionanswerquantity" value="1"><br>
 			<label for="questiontype">Question Type:</label>
 			<select id="questiontype" name="questiontype">
 				<option value="textbox">Text Box</option>
