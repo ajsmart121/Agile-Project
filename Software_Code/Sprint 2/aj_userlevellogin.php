@@ -4,7 +4,7 @@
 <?php
 session_start();
 include"config.php";
-$conn = null;
+unset($_SESSION['user']);
 ?>
 
 
@@ -24,6 +24,8 @@ $conn = null;
   </div>
 </body>
 </html>
-
-
+        
+<?php
+$conn = null;
+?>
 <!-- Adapted from Liam's login code, adding security !-->
