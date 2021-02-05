@@ -51,7 +51,7 @@ catch(PDOException $e){
 			//We then start a for loop that runs for the amount of answers assigned to the question
 			for($j = 0; $j < $QuestionsFindResult[$i][3]; $j++){
 				?>
-				<input type="radio" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value="<?php echo $AnswersFindResult[$j][0] ?>">
+				<input type="radio" id="answer[<?php $j+1 ?>]" name="answer[<?php $j+1 ?>]" value="<?php echo $AnswersFindResult[$j][1] ?>">
 				<label for="male"><?php echo $AnswersFindResult[$j][1] ?></label><br>
 				<?php
 			}	
