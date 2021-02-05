@@ -64,6 +64,8 @@ $userID = $_SESSION['user'];
 		<div id = study>
 			<?php
 			echo "You are logged in as ".$_SESSION['user'];
+			//Here you can choose a survey to answer, ideally these surveys would eventually be emailed out to the recipients and we'd have no need for such a page
+			//, but in testing it made sense
 			?>
 			<form  action="stewart_surveyethics.php" method="get">
 			<label for="studyID">Please enter the ID of the study you wish to view:</label><br>
