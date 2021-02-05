@@ -16,7 +16,7 @@ body {
     color: white;
     margin-top: 200px;
     width: 300px;
-    /*width: auto;*/
+    height: auto;
     box-shadow: 20px 10px 8px #494b53;
     /*position: relative;
     margin-right: 5%;
