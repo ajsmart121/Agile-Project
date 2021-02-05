@@ -31,18 +31,16 @@ img{
 
 }
 
-.submit {
+button[type="submit"] {
   /*animates the button*/
   transition-duration: 0.4s;
-}
-.submit {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-.submit:hover {
+button[type="submit"]:hover {
   background-color: #536882; /* Green */
   color: white;
 }
-.submit {
+button[type="submit"] {
   margin-left:10px;
   margin-right:10px;
   margin-top: :5px;
