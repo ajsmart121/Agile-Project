@@ -37,7 +37,7 @@ catch(PDOException $e){
 <form action="liam_submitsurvey.php" method="post">
 	<?php
 	echo nl2br($StudyFindResult->StudyName."\r\n");
-	echo nl2br("If you have any questions, please email ".$StudyFindResult->CreatorEmail."\r\n");
+	echo nl2br("If you have any questions, please email ".$StudyFindResult->CreatorEmail;->StudyName."\r\n");
     echo nl2br("Ethical assessment and statement: ".$StudyFindResult->EthicsLink."\r\n");
     echo nl2br("Ethics Disclosure: ".$StudyFindResult->EthicsDisclosureText."\r\n");
     echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.\r\n");
@@ -85,7 +85,7 @@ catch(PDOException $e){
 		}
 		else{	
 			?>
-			<br><input type="text" id="answer[<?php echo $i; ?>]" name="answer[<?php echo $i; ?>]" value=""><br>
+			<input type="text" id="answer[<?php echo $i; ?>]" name="answer[<?php echo $i; ?>]" value=""><br><br>
 			<?php
 		}
 	}
