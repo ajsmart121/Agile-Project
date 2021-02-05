@@ -7,6 +7,10 @@ include"config.php";
 
 <html>
 <body>
+<?php
+echo "You are logged in as ".$_SESSION['user'];
+?>
+
 <form  action="liam_survey.php" method="get">
   <label for="studyID">Please enter the ID of the study you wish to view:</label><br>
   <input type="text" id="studyID" name="studyID" value=""><br>

@@ -42,7 +42,7 @@ catch(PDOException $e){
     echo nl2br("Ethics Disclosure: ".$StudyFindResult->EthicsDisclosureText."\r\n");
     echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.\r\n");
     ?>
-	<input type="checkbox" name="Understood" required>
+	<input type="checkbox" name="Understood" required><br><br>
 	<?php
 	for($i = 0; $i < $questionCount; $i++){
 		?>
