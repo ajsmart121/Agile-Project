@@ -55,10 +55,12 @@ catch(PDOException $e){
 				<label for="male"><?php echo $AnswersFindResult[$j][1] ?></label><br>
 				<?php
 			}	
-		}	
-		?>
-		<br><input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
-	<?php
+		}
+		else{	
+			?>
+			<br><input type="text" id="answer[<?php $i+1 ?>]" name="answer[<?php $i+1 ?>]" value=""><br>
+			<?php
+		}
 	}
 	
 	?>
