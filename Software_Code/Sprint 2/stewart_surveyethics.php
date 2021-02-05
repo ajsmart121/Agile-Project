@@ -30,7 +30,7 @@ catch(PDOException $e){
     echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.\r\n");
     ?>
 	
-	<input type="hidden" id="studyID" name="studyID" value="<?php echo $_SESSION['studyID'] ?>"><br>
+	<input type="hidden" id="studyID" name="studyID" value="<?php echo $studyID; ?>"><br>
 	<input type="checkbox" name="Understood" required><br><br>
 
 	<input type="submit" value="Submit">
