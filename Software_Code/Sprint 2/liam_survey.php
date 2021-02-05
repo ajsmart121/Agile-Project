@@ -8,7 +8,7 @@ include"config.php";
 $studyID = $_GET['studyID'];
 
 try{
-	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID, StudyID, QuestionAnswerCount, questiontype 
+	$QuestionsFind = $conn->prepare("SELECT QuestionText, ID, StudyID, QuestionAnswerCount, questiontype, StudyName, creatorEmail, ethicsLink, ethicsDisclosureText
 	FROM Question
 	WHERE StudyID = '$studyID'");
 	$QuestionsFind->execute();
@@ -26,6 +26,10 @@ catch(PDOException $e){
 
 <form action="liam_submitsurvey.php" method="post">
 	<?php
+	echo nl2br($QuestionsFindResult[$i][5]."\r\n");
+	echo nl2br("Study Creator Email Address: ".$QuestionsFindResult[$i][6]."\r\n");
+	echo nl2br("Link to ethics sheet: ".$QuestionsFindResult[$i][7]."\r\n");
+	echo nl2br("Ethics Disclosure Text: ".$QuestionsFindResult[$i][8]."\r\n");
 	
 	for($i = 0; $i < $questionCount; $i++){
 		echo "ID: ".$QuestionsFindResult[$i][1];
