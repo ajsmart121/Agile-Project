@@ -7,20 +7,50 @@ $userID = $_POST['userID'];
 ?>
 
 <?php
-header('Content-Type: text/csv; charset=utf-8');
-header('Content-Disposition: attachment; filename=data.csv');
 
-$output = fopen('php://output', 'w');
+$select = "SELECT * FROM useranswer WHERE StudyID = '$studyID'";
 
-fputcsv($output, array('Question ID', 'UserID', 'useranswertext', 'StudyID', 'ID'));
+$export = mysql_query ( $select ) or die ( "Sql error : " . mysql_error( ) );
 
-$rows = mysql_query("SELECT * from useranswer WHERE StudyID = '$studyID'");
+$fields = mysql_num_fields ( $export );
 
-// loop over the rows, outputting them
-while ($row = mysql_fetch_assoc($rows)) fputcsv($output, $row);
+for ( $i = 0; $i < $fields; $i++ )
+{
+    $header .= mysql_field_name( $export , $i ) . "\t";
+}
+
+while( $row = mysql_fetch_row( $export ) )
+{
+    $line = '';
+    foreach( $row as $value )
+    {                                            
+        if ( ( !isset( $value ) ) || ( $value == "" ) )
+        {
+            $value = "\t";
+        }
+        else
+        {
+            $value = str_replace( '"' , '""' , $value );
+            $value = '"' . $value . '"' . "\t";
+        }
+        $line .= $value;
+    }
+    $data .= trim( $line ) . "\n";
+}
+$data = str_replace( "\r" , "" , $data );
+
+if ( $data == "" )
+{
+    $data = "\n(0) Records Found!\n";                        
+}
+
+header("Content-type: application/octet-stream");
+header("Content-Disposition: attachment; filename=your_desired_name.xls");
+header("Pragma: no-cache");
+header("Expires: 0");
+print "$header\n$data";
 
 ?>
-
 
 <?php
 $conn = null;
