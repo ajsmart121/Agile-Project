@@ -39,7 +39,8 @@ include"config.php";
 			$_SESSION['question'] = $questionIDFindResult->ID;
 			$_SESSION['options'] = $questionanswerquantity;
 			$_SESSION['type'] = $questiontype;
-			?> <script> document.location.href="liam_answercreation.php" </script> <?php	
+			header('Location: liam_answercreation.php'.$studyID);
+			exit;	
 		}
 	}
 	
