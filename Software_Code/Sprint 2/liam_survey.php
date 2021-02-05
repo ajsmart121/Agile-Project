@@ -21,13 +21,14 @@ catch(PDOException $e){
 }
 
 try{
-	$StudyFind = $conn->prepare("SELECT CreatorEmail, EthicsLink, EthicsDisclosureText FROM Study
+	$StudyFind = $conn->prepare("SELECT StudyName, CreatorEmail, EthicsLink, EthicsDisclosureText FROM Study
     WHERE ID = '$studyID'");
     $StudyFind->execute();
     $StudyFindResult = $StudyFind->fetch(PDO::FETCH_OBJ);
     $email = $StudyFindResult->CreatorEmail;
     $ethicslink = $StudyFindResult->EthicsLink;
     $ethicsdis = $StudyFindResult->EthicsDisclosureText;
+	$studyName = $StudyFindResult->StudyName;
 
 }
 catch(PDOException $e){
@@ -40,10 +41,11 @@ catch(PDOException $e){
 
 <form action="liam_submitsurvey.php" method="post">
 	<?php
-
+	echo nl2br($studyName."\r\n");
+	echo nl2br($StudyFindResult->StudyName."\r\n");
 	echo nl2br("If you have any questions, please email ".$email."\r\n");
     echo nl2br("Ethical assessment and statement: ".$ethicslink."\r\n");
-    echo nl2br("Ethics Disclosure: \r\n".$ethicsdis."\r\n");
+    echo nl2br("Ethics Disclosure: ".$ethicsdis."\r\n");
     echo nl2br("\r\n I understand and agree to the above Ethics Disclosure. \r\n I am aware of my rights and how to contact should a question arise.".$ethicsdis."\r\n");
     ?>
 	<input type="checkbox" name="Understood" required>
