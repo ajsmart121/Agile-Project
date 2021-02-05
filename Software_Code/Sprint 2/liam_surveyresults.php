@@ -68,6 +68,7 @@ if(isset($_GET["userID"])){
 	<div class = "container">
 		<div id = box2>
 			<?php
+			//Here we have a form that allows you to see a chosen user's answer to a chosen survey
 			if(isset($surveyID) && isset($userID)){
 
 				try{
