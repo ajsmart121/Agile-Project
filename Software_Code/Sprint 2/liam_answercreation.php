@@ -72,7 +72,7 @@ $studyID = $_SESSION['studyID'];
 				for($i = 0; $i < $questionanswerquantity; $i++){
 					?>
 					<label for="answertext[<?php $i+1 ?>]"> <?php echo "Option ".$i+1; ?> </label><br>
-					<input type="text" id="answertext[<?php $i+1 ?>]" name="answertext[<?php $i+1 ?>]" value=""><br>
+					<input type="text" id="answertext[<?php $i+1 ?>]" name="answertext[<?php $i+1 ?>]" value="Example Answer"><br>
 					<?php
 				}
 				?>
