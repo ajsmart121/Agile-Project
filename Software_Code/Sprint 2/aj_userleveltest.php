@@ -17,7 +17,7 @@ try{
 	$userFind->execute();
 	$userFindResult = $userFind->fetch(PDO::FETCH_OBJ);
 
-	echo $userFindResult->ID;->Username;
+	echo $userFindResult->Username;
 	echo $userFindResult->Password;
 	$_SESSION['user'] = $userFindResult->ID;
 	
