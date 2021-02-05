@@ -57,7 +57,7 @@ if(isset($_GET["userID"])){
 
 <!--Adds home button-->
 <div class = "Header Layout">
-  <input id="button2" type="button2" class="button2" value="Home" onclick="document.location=''">
+  <input id="button2" type="button2" class="button2" value="Home" onclick="document.location='PaulHome.php'">
 
   <!--For accessibility options-->
 
